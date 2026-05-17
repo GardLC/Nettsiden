@@ -22,7 +22,7 @@
   }
 
   .hero-tekst {
-    max-width: 680px;
+    /* ingen max-width — h1 får full container-bredde, undertekst styrer sin egne */
   }
 
   .display {
@@ -51,6 +51,12 @@
   @media (max-width: 480px) {
     .display {
       font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .display {
+      font-size: 1.75rem;
     }
   }
 </style>
