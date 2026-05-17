@@ -2,15 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Accordion from '../components/Accordion.astro';
 
-const prinsipper = [
-  { navn: 'Helhetlig' },
-  { navn: 'Menneskeorientert' },
-  { navn: 'Samskapende' },
-  { navn: 'Iterativt' },
-  { navn: 'Gjennomførbar' },
-  { navn: 'Visuelt' },
-];
+const prinsipperItems = [
+  { tittel: 'Helhetlig' },
+  { tittel: 'Menneskeorientert' },
+  { tittel: 'Samskapende' },
+  { tittel: 'Iterativt' },
+  { tittel: 'Gjennomførbar' },
+  { tittel: 'Visuelt' },
+].map((p, i) => ({ ...p, etikett: String(i + 1).padStart(2, '0') }));
 
 const metodesteg = [
   { navn: 'Forstå og ramme inn' },
@@ -38,19 +39,7 @@ const metodesteg = [
         <!-- Prinsipper -->
         <section class="prinsipper-seksjon" aria-labelledby="prinsipper-overskrift">
           <h2 id="prinsipper-overskrift" class="seksjon-etikkett small">Prinsipper</h2>
-          <ol class="prinsipper-liste" role="list">
-            {prinsipper.map((prinsipp, i) => (
-              <li class="prinsipp-punkt">
-                <span class="prinsipp-nummer small" aria-hidden="true">0{i + 1}</span>
-                <div class="prinsipp-tekst">
-                  <h3 class="prinsipp-navn">{prinsipp.navn}</h3>
-                  <p class="body-large prinsipp-forklaring">
-                    <!-- PLASSHOLDER: forklarende setning for {prinsipp.navn} -->
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <Accordion items={prinsipperItems} />
         </section>
 
         <!-- Metode -->
@@ -105,45 +94,6 @@ const metodesteg = [
   .prinsipper-seksjon {
     margin-bottom: clamp(3rem, 6vw, 5rem);
     max-width: var(--content-width);
-  }
-
-  .prinsipper-liste {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .prinsipp-punkt {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .prinsipp-punkt:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .prinsipp-nummer {
-    color: var(--color-text-muted);
-    letter-spacing: 0.05em;
-    flex-shrink: 0;
-    width: 2.5rem;
-  }
-
-  .prinsipp-navn {
-    font-family: var(--font-display);
-    font-weight: var(--fw-regular);
-    font-size: var(--fs-h2);
-    line-height: var(--lh-heading);
-    margin-bottom: 0.5rem;
-  }
-
-  .prinsipp-forklaring {
-    color: var(--color-text-muted);
   }
 
   /* Metode */
