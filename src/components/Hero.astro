@@ -50,13 +50,20 @@
     color: inherit;
     padding: 0 0.12em;
     border-radius: 2px;
+    white-space: nowrap;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
 
   .hero-undertekst {
-    color: var(--color-text-muted);
+    color: var(--color-text);
     max-width: 560px;
+  }
+
+  @media (max-width: 480px) {
+    .display {
+      font-size: 2rem;
+    }
   }
 
   .hero-visuelt {
