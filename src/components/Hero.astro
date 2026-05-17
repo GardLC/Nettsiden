@@ -2,17 +2,16 @@
 ---
 
 <section class="hero" aria-labelledby="hero-overskrift">
-  <div class="container hero-inner">
+  <div class="container">
     <div class="hero-tekst">
       <h1 id="hero-overskrift" class="display">
-        Nye arbeidshverdager med <mark class="aksent">mer samspill</mark> og mindre friksjon
+        Nye arbeidshverdager<br>
+        med <mark class="aksent">mer samspill</mark> og<br>
+        mindre friksjon
       </h1>
       <p class="body-large hero-undertekst">
         Bedre arbeidshverdager skapes sammen med de ansatte og deres ledere, ikke for dem.
       </p>
-    </div>
-    <div class="hero-visuelt" aria-hidden="true">
-      <!-- PLASSHOLDER: visuelt element -->
     </div>
   </div>
 </section>
@@ -22,19 +21,8 @@
     padding-block: var(--section-spacing);
   }
 
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter);
-    align-items: center;
-  }
-
   .hero-tekst {
     max-width: 680px;
-  }
-
-  .hero-overskrift {
-    margin-bottom: 1.5rem;
   }
 
   .display {
@@ -63,22 +51,6 @@
   @media (max-width: 480px) {
     .display {
       font-size: 2rem;
-    }
-  }
-
-  .hero-visuelt {
-    min-height: 400px;
-    border: 1px dashed var(--color-border);
-    border-radius: var(--radius);
-  }
-
-  @media (max-width: 900px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-visuelt {
-      display: none;
     }
   }
 </style>
