@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const prinsipper = [
+  { navn: 'Helhetlig' },
+  { navn: 'Menneskeorientert' },
+  { navn: 'Samskapende' },
+  { navn: 'Iterativt' },
+  { navn: 'Gjennomførbar' },
+  { navn: 'Visuelt' },
+];
+
+const metodesteg = [
+  { navn: 'Forstå og ramme inn' },
+  { navn: 'Utforske mulighetsrommet' },
+  { navn: 'Teste' },
+  { navn: 'Implementere' },
+];
+---
+
+<BaseLayout
+  tittel="Slik jobber jeg"
+  beskrivelse="Prinsipper og metode for designdrevet HR-utviklingsarbeid."
+>
+  <Header />
+  <main id="hovedinnhold">
+    <article class="side-innhold">
+      <div class="container">
+        <header class="side-header">
+          <h1>Slik jobber jeg</h1>
+          <p class="body-large side-ingress">
+            <!-- PLASSHOLDER: introduksjon til tilnærmingen -->
+          </p>
+        </header>
+
+        <!-- Prinsipper -->
+        <section class="prinsipper-seksjon" aria-labelledby="prinsipper-overskrift">
+          <h2 id="prinsipper-overskrift" class="seksjon-etikkett small">Prinsipper</h2>
+          <ol class="prinsipper-liste" role="list">
+            {prinsipper.map((prinsipp, i) => (
+              <li class="prinsipp-punkt">
+                <span class="prinsipp-nummer small" aria-hidden="true">0{i + 1}</span>
+                <div class="prinsipp-tekst">
+                  <h3 class="prinsipp-navn">{prinsipp.navn}</h3>
+                  <p class="body-large prinsipp-forklaring">
+                    <!-- PLASSHOLDER: forklarende setning for {prinsipp.navn} -->
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <!-- Metode -->
+        <section class="metode-seksjon" aria-labelledby="metode-overskrift">
+          <h2 id="metode-overskrift" class="seksjon-etikkett small">Metode</h2>
+          <ol class="metode-liste" role="list">
+            {metodesteg.map((steg, i) => (
+              <li class="metode-steg">
+                <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
+                <div class="steg-tekst">
+                  <h3 class="steg-navn">{steg.navn}</h3>
+                  <p class="body-large steg-forklaring">
+                    <!-- PLASSHOLDER: forklarende setning for {steg.navn} -->
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .side-innhold {
+    padding-block: var(--section-spacing);
+  }
+
+  .side-header {
+    max-width: var(--content-width);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .side-header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .side-ingress {
+    color: var(--color-text-muted);
+  }
+
+  .seksjon-etikkett {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  /* Prinsipper */
+  .prinsipper-seksjon {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: var(--content-width);
+  }
+
+  .prinsipper-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .prinsipp-punkt {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prinsipp-punkt:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .prinsipp-nummer {
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+
+  .prinsipp-navn {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .prinsipp-forklaring {
+    color: var(--color-text-muted);
+  }
+
+  /* Metode */
+  .metode-seksjon {
+    max-width: var(--content-width);
+  }
+
+  .metode-liste {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+  }
+
+  .metode-steg {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .steg-nummer {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .steg-navn {
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .steg-forklaring {
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 600px) {
+    .metode-liste {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

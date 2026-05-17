@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Problembevis from '../components/Problembevis.astro';
+import Monster from '../components/Monster.astro';
+import SlikJobberVi from '../components/SlikJobberVi.astro';
+import HvorJegBidrar from '../components/HvorJegBidrar.astro';
+import Om from '../components/Om.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<BaseLayout
+  tittel="Gard L. Christiansen"
+  beskrivelse="Designdrevet HR-utviklingsarbeid — bedre arbeidshverdager skapes sammen med de ansatte og deres ledere."
+>
+  <Header />
+  <main id="hovedinnhold">
+    <Hero />
+    <Problembevis />
+    <Monster />
+    <SlikJobberVi />
+    <HvorJegBidrar />
+    <Om />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>

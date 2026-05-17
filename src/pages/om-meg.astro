@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  tittel="Om meg"
+  beskrivelse="Om Gard L. Christiansen — designdrevet HR-utviklingsarbeid i norske teknologiselskaper."
+>
+  <Header />
+  <main id="hovedinnhold">
+    <article class="om-side">
+      <div class="container">
+        <header class="om-header">
+          <h1>Om meg</h1>
+          <nav class="anker-nav" aria-label="Hopp til del">
+            <a href="#kort" class="anker-lenke small">Meg på 2 minutter</a>
+            <span aria-hidden="true">·</span>
+            <a href="#lang" class="anker-lenke small">Meg på 10 minutter</a>
+          </nav>
+        </header>
+
+        <!-- Meg på 2 minutter -->
+        <section id="kort" class="om-del" aria-labelledby="kort-overskrift">
+          <h2 id="kort-overskrift">Meg på 2 minutter</h2>
+          <div class="om-del-innhold">
+            <div class="om-foto-wrapper">
+              <!-- PLASSHOLDER: profilbilde -->
+              <div class="foto-plassholder" aria-label="Profilbilde av Gard L. Christiansen"></div>
+            </div>
+            <div class="om-bio">
+              <p class="body-large">
+                <!-- PLASSHOLDER: avsnitt 1 — faglig bakgrunn og posisjonering -->
+              </p>
+              <p>
+                <!-- PLASSHOLDER: avsnitt 2 — tilnærming og verdier -->
+              </p>
+              <p>
+                <!-- PLASSHOLDER: avsnitt 3 — hva jeg jobber med nå -->
+              </p>
+              <p>
+                <!-- PLASSHOLDER: avsnitt 4 — kontekst / privat -->
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Meg på 10 minutter -->
+        <section id="lang" class="om-del" aria-labelledby="lang-overskrift">
+          <h2 id="lang-overskrift">Meg på 10 minutter</h2>
+          <p class="body-large om-lang-ingress">
+            <!-- PLASSHOLDER: introduksjon til den lengre versjonen — kan komme senere -->
+          </p>
+          <div class="om-lang-innhold">
+            <!-- PLASSHOLDER: utvidet biografi -->
+          </div>
+          <a
+            href="https://gardlc.com"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Se portefølje på gardlc.com
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .om-side {
+    padding-block: var(--section-spacing);
+  }
+
+  .om-header {
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  .om-header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .anker-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .anker-nav span {
+    color: var(--color-border);
+  }
+
+  .anker-lenke {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .anker-lenke:hover {
+    color: var(--color-text);
+  }
+
+  .om-del {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: 900px;
+  }
+
+  .om-del h2 {
+    margin-bottom: 2rem;
+  }
+
+  .om-del-innhold {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: flex-start;
+  }
+
+  .foto-plassholder {
+    width: 220px;
+    aspect-ratio: 3/4;
+    background-color: var(--color-sand);
+    border-radius: var(--radius);
+    border: 1px dashed var(--color-border);
+  }
+
+  .om-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .om-bio .body-large {
+    color: var(--color-text-muted);
+  }
+
+  .om-lang-ingress {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .om-lang-innhold {
+    margin-bottom: 2rem;
+    color: var(--color-text-muted);
+    min-height: 4rem;
+  }
+
+  @media (max-width: 700px) {
+    .om-del-innhold {
+      grid-template-columns: 1fr;
+    }
+
+    .foto-plassholder {
+      width: 140px;
+    }
+  }
+</style>

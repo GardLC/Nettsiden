@@ -1,0 +1,68 @@
+---
+---
+
+<section class="hero" aria-labelledby="hero-overskrift">
+  <div class="container hero-inner">
+    <div class="hero-tekst">
+      <h1 id="hero-overskrift" class="display">
+        Nye arbeidshverdager med mer samspill og mindre friksjon
+      </h1>
+      <p class="body-large hero-undertekst">
+        Bedre arbeidshverdager skapes sammen med de ansatte og deres ledere, ikke for dem.
+      </p>
+    </div>
+    <div class="hero-visuelt" aria-hidden="true">
+      <!-- PLASSHOLDER: visuelt element -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: var(--section-spacing);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+    align-items: center;
+  }
+
+  .hero-tekst {
+    max-width: 680px;
+  }
+
+  .hero-overskrift {
+    margin-bottom: 1.5rem;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-undertekst {
+    color: var(--color-text-muted);
+    max-width: 560px;
+  }
+
+  .hero-visuelt {
+    min-height: 400px;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visuelt {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,50 @@
+:root {
+  /* Grunnpalett */
+  --color-sand: #D1B9A1;
+  --color-oker: #E8C08D;
+  --color-oliven-dyp: #514D34;
+  --color-salviegronn: #B6B798;
+  --color-mosegronn: #ABB087;
+  --color-off-white: #E5E1DE;
+
+  /* Aksent — PLASSHOLDER: bytt ut når valgt */
+  --color-accent: #00FFAA;
+
+  /* Funksjonelle farger */
+  --color-text: var(--color-oliven-dyp);
+  --color-text-muted: #6B6750;
+  --color-bg: var(--color-off-white);
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-oliven-dyp);
+  --color-border: rgba(81, 77, 52, 0.15);
+
+  /* Skrifttyper */
+  --font-display: "PP Neue Machina", system-ui, sans-serif;
+  --font-body: "PP Neue Montreal", system-ui, sans-serif;
+
+  /* Type scale */
+  --fs-display: clamp(2.5rem, 5vw, 4.5rem);
+  --fs-h1: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-h2: clamp(1.125rem, 1.5vw, 1.375rem);
+  --fs-body-large: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Linjehøyder */
+  --lh-display: 1.05;
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+  --lh-small: 1.5;
+
+  /* Vekter */
+  --fw-book: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* Layout */
+  --max-width: 1200px;
+  --content-width: 800px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --section-spacing: clamp(4rem, 8vw, 8rem);
+  --radius: 4px;
+}

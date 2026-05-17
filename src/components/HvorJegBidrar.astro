@@ -1,0 +1,97 @@
+---
+const kort = [
+  { tittel: 'Innfasing av medarbeidere (onboarding)' },
+  { tittel: 'Medarbeider- og kandidatopplevelser' },
+  { tittel: 'Læring og utvikling' },
+  { tittel: 'Mangfold, likestilling og inkludering' },
+  { tittel: 'Innsikt og gap-analyse' },
+];
+---
+
+<section class="hvor-bidrar" aria-labelledby="hvor-bidrar-overskrift">
+  <div class="container">
+    <h1 id="hvor-bidrar-overskrift">Hvor jeg kan bidra</h1>
+    <ul class="kort-grid" role="list">
+      {kort.map(k => (
+        <li class="kort">
+          <h2 class="kort-tittel">{k.tittel}</h2>
+          <p class="kort-tekst body-large">
+            <!-- PLASSHOLDER: én forklarende linje -->
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hvor-bidrar {
+    padding-block: var(--section-spacing);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hvor-bidrar h1 {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .kort-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--gutter);
+  }
+
+  .kort {
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  /* Første rad: 3 kort, hvert 2 kolonner */
+  .kort:nth-child(1),
+  .kort:nth-child(2),
+  .kort:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  /* Andre rad: 2 kort sentrert */
+  .kort:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .kort:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .kort-tittel {
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .kort-tekst {
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .kort-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .kort:nth-child(1),
+    .kort:nth-child(2),
+    .kort:nth-child(3),
+    .kort:nth-child(4),
+    .kort:nth-child(5) {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .kort-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

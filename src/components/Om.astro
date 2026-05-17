@@ -1,0 +1,61 @@
+---
+---
+
+<section class="om-seksjon" aria-labelledby="om-seksjon-overskrift">
+  <div class="container om-inner">
+    <div class="om-foto" aria-hidden="true">
+      <!-- PLASSHOLDER: foto — hentes fra /om-meg -->
+    </div>
+    <div class="om-tekst">
+      <h2 id="om-seksjon-overskrift">Gard L. Christiansen</h2>
+      <p class="body-large om-ingress">
+        <!-- PLASSHOLDER: én setning som plasserer faglig -->
+      </p>
+      <a href="/om-meg" class="btn">Mer om meg</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .om-seksjon {
+    padding-block: var(--section-spacing);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .om-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    max-width: 800px;
+  }
+
+  .om-foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px dashed var(--color-border);
+    background-color: var(--color-sand);
+    flex-shrink: 0;
+  }
+
+  .om-tekst h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .om-ingress {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .om-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .om-foto {
+      width: 140px;
+      height: 140px;
+    }
+  }
+</style>

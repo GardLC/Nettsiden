@@ -1,0 +1,66 @@
+---
+---
+
+<section class="problembevis" aria-labelledby="problembevis-overskrift">
+  <div class="container">
+    <div class="problembevis-inner">
+      <div class="tall-blokk">
+        <span class="stort-tall" aria-label="12 prosent">12%</span>
+        <p class="problembevis-poeng body-large">
+          <!-- PLASSHOLDER: tekst om at 12% har tilfredsstillende innfasing, og at dette er en blindsone hos arbeidsgivere -->
+        </p>
+      </div>
+      <p class="problembevis-tillegg body-large">
+        <!-- PLASSHOLDER: tekst om at ledere bekrefter det samme og peker ut veien ut av problemet -->
+      </p>
+      <div class="kilder small" aria-label="Kilder">
+        <p>Kilder: HR Norge, Onboardingundersøkelsen 2023 · 15 dybdeintervjuer med norske ledere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problembevis {
+    padding-block: var(--section-spacing);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .problembevis-inner {
+    max-width: var(--content-width);
+  }
+
+  .tall-blokk {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .stort-tall {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 1;
+    color: var(--color-text);
+    flex-shrink: 0;
+  }
+
+  .problembevis-poeng {
+    flex: 1;
+    min-width: 200px;
+    color: var(--color-text-muted);
+  }
+
+  .problembevis-tillegg {
+    margin-bottom: 2rem;
+    color: var(--color-text-muted);
+  }
+
+  .kilder {
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+</style>

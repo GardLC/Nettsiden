@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alleArtikler = await getCollection('artikler', ({ data }) => !data.utkast);
+const sorterteArtikler = alleArtikler.sort(
+  (a, b) => b.data.publisert.getTime() - a.data.publisert.getTime()
+);
+
+function formaterDato(dato: Date): string {
+  return dato.toLocaleDateString('nb-NO', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<BaseLayout
+  tittel="Artikler"
+  beskrivelse="Artikler om designdrevet HR-utviklingsarbeid, onboarding og medarbeideropplevelser."
+>
+  <Header />
+  <main id="hovedinnhold">
+    <section class="artikler-side">
+      <div class="container">
+        <header class="artikler-header">
+          <h1>Artikler</h1>
+        </header>
+
+        {sorterteArtikler.length === 0 ? (
+          <p class="ingen-artikler body-large">Ingen artikler publisert ennå.</p>
+        ) : (
+          <ul class="artikkel-liste" role="list">
+            {sorterteArtikler.map(artikkel => (
+              <li class="artikkel-rad">
+                <article>
+                  <a href={`/artikler/${artikkel.slug}`} class="artikkel-lenke">
+                    <h2 class="artikkel-tittel">{artikkel.data.tittel}</h2>
+                  </a>
+                  <p class="artikkel-ingress body-large">{artikkel.data.ingress}</p>
+                  <div class="artikkel-meta">
+                    <time datetime={artikkel.data.publisert.toISOString()} class="small">
+                      {formaterDato(artikkel.data.publisert)}
+                    </time>
+                    {artikkel.data.tema && artikkel.data.tema.length > 0 && (
+                      <ul class="tema-liste" role="list" aria-label="Tema">
+                        {artikkel.data.tema.map(t => (
+                          <li class="tema-tag small">{t}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .artikler-side {
+    padding-block: var(--section-spacing);
+  }
+
+  .artikler-header {
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+    max-width: var(--content-width);
+  }
+
+  .ingen-artikler {
+    color: var(--color-text-muted);
+  }
+
+  .artikkel-liste {
+    list-style: none;
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .artikkel-rad {
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .artikkel-rad:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .artikkel-lenke {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .artikkel-lenke:hover .artikkel-tittel {
+    color: var(--color-text-muted);
+  }
+
+  .artikkel-tittel {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    transition: color 0.15s ease;
+  }
+
+  .artikkel-ingress {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .artikkel-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .artikkel-meta time {
+    color: var(--color-text-muted);
+  }
+
+  .tema-liste {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tema-tag {
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    padding: 0.125rem 0.5rem;
+    color: var(--color-text-muted);
+  }
+</style>
