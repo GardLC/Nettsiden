@@ -5,7 +5,7 @@
   <div class="container hero-inner">
     <div class="hero-tekst">
       <h1 id="hero-overskrift" class="display">
-        Nye arbeidshverdager med mer samspill og mindre friksjon
+        Nye arbeidshverdager med <mark class="aksent">mer samspill</mark> og mindre friksjon
       </h1>
       <p class="body-large hero-undertekst">
         Bedre arbeidshverdager skapes sammen med de ansatte og deres ledere, ikke for dem.
@@ -43,6 +43,15 @@
     font-size: var(--fs-display);
     line-height: var(--lh-display);
     margin-bottom: 1.5rem;
+  }
+
+  mark.aksent {
+    background: var(--color-accent);
+    color: inherit;
+    padding: 0 0.12em;
+    border-radius: 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
   .hero-undertekst {

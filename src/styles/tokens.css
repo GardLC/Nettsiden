@@ -11,7 +11,7 @@
   --color-accent: #00FFAA;
 
   /* Funksjonelle farger */
-  --color-text: var(--color-oliven-dyp);
+  --color-text: #000000;
   --color-text-muted: #6B6750;
   --color-bg: var(--color-off-white);
   --color-link: var(--color-accent);
