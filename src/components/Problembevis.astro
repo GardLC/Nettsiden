@@ -5,6 +5,10 @@
   <div class="container">
     <div class="problembevis-inner">
       <h2 id="problembevis-overskrift" class="seksjon-overskrift">Hva de nyansatte sier</h2>
+      <blockquote class="sitat">
+        <p class="sitat-tekst">«Det handler om mine sjanser for å lykkes godt i jobben. Som ung er det viktig å få en god start, og da er innfasingen veldig viktig.»</p>
+        <footer class="sitat-kilde">— Nyansatt</footer>
+      </blockquote>
       <p class="kropp">
         De heldige som får en skikkelig god start er alt for få. Bare 12 %.
       </p>
@@ -31,6 +35,26 @@
     line-height: var(--lh-heading);
     font-weight: var(--fw-medium);
     margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .sitat {
+    margin: 0 0 2rem 0;
+  }
+
+  .sitat-tekst {
+    font-family: var(--font-body);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    font-weight: var(--fw-regular);
+    font-style: italic;
+    margin-bottom: 0.4rem;
+  }
+
+  .sitat-kilde {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    font-weight: var(--fw-regular);
+    color: var(--color-text);
   }
 
   .kropp {
