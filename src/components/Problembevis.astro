@@ -9,9 +9,10 @@
         <p class="sitat-tekst">«Det handler om mine sjanser for å lykkes godt i jobben. Som ung er det viktig å få en god start, og da er innfasingen veldig viktig.»</p>
         <footer class="sitat-kilde">— Nyansatt</footer>
       </blockquote>
-      <p class="kropp">
-        De heldige som får en skikkelig god start er alt for få. Bare 12 %.
-      </p>
+      <p class="ingress">De heldige som får en skikkelig god start er alt for få.</p>
+      <div class="tall-blokk">
+        <span class="stort-tall" aria-label="12 prosent">12%</span>
+      </div>
       <div class="kilde-blokk" aria-label="Kilde">
         <p class="kilde-tekst">Kilde: GELx 2017 via HR Norge</p>
       </div>
@@ -38,7 +39,7 @@
   }
 
   .sitat {
-    margin: 0 0 2rem 0;
+    margin: 0 0 2.5rem 0;
   }
 
   .sitat-tekst {
@@ -57,12 +58,25 @@
     color: var(--color-text);
   }
 
-  .kropp {
+  .ingress {
     font-family: var(--font-body);
     font-size: var(--fs-h2);
     line-height: var(--lh-heading);
     font-weight: var(--fw-regular);
+    margin-bottom: 0.75rem;
+  }
+
+  .tall-blokk {
     margin-bottom: 2.5rem;
+  }
+
+  .stort-tall {
+    font-family: var(--font-display);
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    font-weight: var(--fw-medium);
+    color: var(--color-text);
+    display: block;
   }
 
   .kilde-blokk {
