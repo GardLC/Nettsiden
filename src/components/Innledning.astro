@@ -4,17 +4,18 @@
 <section class="innledning">
   <div class="container">
     <div class="innledning-inner">
+      <h2 class="seksjon-overskrift">Hva norske ledere sier</h2>
       <blockquote class="sitat">
-        <p class="sitat-tekst body-large">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</p>
-        <footer class="sitat-kilde small">— Tech lead</footer>
+        <p class="sitat-tekst">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</p>
+        <footer class="sitat-kilde">— Tech lead</footer>
       </blockquote>
       <blockquote class="sitat">
-        <p class="sitat-tekst body-large">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</p>
-        <footer class="sitat-kilde small">— Avdelingsleder</footer>
+        <p class="sitat-tekst">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</p>
+        <footer class="sitat-kilde">— Avdelingsleder</footer>
       </blockquote>
       <blockquote class="sitat">
-        <p class="sitat-tekst body-large">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</p>
-        <footer class="sitat-kilde small">— CTO</footer>
+        <p class="sitat-tekst">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</p>
+        <footer class="sitat-kilde">— CTO</footer>
       </blockquote>
     </div>
   </div>
@@ -33,17 +34,31 @@
     gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 
+  .seksjon-overskrift {
+    font-family: var(--font-display);
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
+    font-weight: var(--fw-medium);
+    margin-bottom: 0.5rem;
+  }
+
   .sitat {
     margin: 0;
   }
 
   .sitat-tekst {
+    font-family: var(--font-body);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    font-weight: var(--fw-regular);
     font-style: italic;
-    line-height: var(--lh-body);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.4rem;
   }
 
   .sitat-kilde {
-    color: var(--color-text-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    font-weight: var(--fw-regular);
+    color: var(--color-text);
   }
 </style>
