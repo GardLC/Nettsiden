@@ -1,0 +1,123 @@
+---
+---
+
+<div class="floke-stage" aria-hidden="true">
+  <svg viewBox="0 0 1600 700" preserveAspectRatio="none" focusable="false">
+    <g>
+      <path id="path-line-1" class="strand" d=""></path>
+      <path id="path-line-2" class="strand" d=""></path>
+      <path id="path-line-3" class="strand" d=""></path>
+      <path id="path-line-4" class="strand" d=""></path>
+      <path id="path-line-5" class="strand" d=""></path>
+      <path id="path-line-6" class="strand" d=""></path>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .floke-stage {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .floke-stage svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+  .floke-stage .strand {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .floke-stage #path-line-1 { opacity: 0.35; }
+  .floke-stage #path-line-2 { opacity: 0.55; }
+  .floke-stage #path-line-3 { stroke: var(--color-accent); opacity: 1; }
+  .floke-stage #path-line-4 { opacity: 0.70; }
+  .floke-stage #path-line-5 { opacity: 0.55; }
+  .floke-stage #path-line-6 { opacity: 0.35; }
+</style>
+
+<script>
+  (function () {
+    const N            = 6;
+    const FINAL_Y      = [100, 200, 300, 400, 500, 600];
+    const TANGLE_END   = 1080;
+    const AMP          = 180;
+    const LOOP_SECONDS = 8;
+
+    const W1 = 760, W2 = 430;
+    const k1 = (2 * Math.PI) / W1, k2 = (2 * Math.PI) / W2;
+    const v1 = W1 / LOOP_SECONDS,  v2 = W2 / LOOP_SECONDS;
+    const PHASE1 = (i) => (i / N) * Math.PI * 2;
+    const PHASE2 = (i) => (i * 2.3999632) % (Math.PI * 2);
+
+    function envelope(x) {
+      if (x <= 0 || x >= TANGLE_END) return 0;
+      const u = x / TANGLE_END;
+      return Math.sin(Math.PI * Math.pow(u, 0.55));
+    }
+    function envelopeDeriv(x) {
+      if (x <= 0 || x >= TANGLE_END) return 0;
+      const u = x / TANGLE_END, p = 0.55;
+      return Math.cos(Math.PI * Math.pow(u, p)) * Math.PI * p * Math.pow(u, p - 1) / TANGLE_END;
+    }
+    function yAt(x, i, t) {
+      const env = envelope(x);
+      const wave =
+        Math.sin(k1 * x - k1 * v1 * t + PHASE1(i)) +
+        0.55 * Math.sin(k2 * x - k2 * v2 * t + PHASE2(i));
+      return FINAL_Y[i] + AMP * env * wave;
+    }
+    function slopeAt(x, i, t) {
+      const env = envelope(x), dEnv = envelopeDeriv(x);
+      const wave =
+        Math.sin(k1 * x - k1 * v1 * t + PHASE1(i)) +
+        0.55 * Math.sin(k2 * x - k2 * v2 * t + PHASE2(i));
+      const dWave =
+        k1 * Math.cos(k1 * x - k1 * v1 * t + PHASE1(i)) +
+        0.55 * k2 * Math.cos(k2 * x - k2 * v2 * t + PHASE2(i));
+      return AMP * (dEnv * wave + env * dWave);
+    }
+
+    const XS = [0, 110, 220, 330, 440, 550, 660, 770, 880, 990, 1080, 1240, 1420, 1600];
+
+    function pathFor(i, t) {
+      let d = `M${XS[0]},${yAt(XS[0], i, t).toFixed(2)}`;
+      for (let s = 0; s < XS.length - 1; s++) {
+        const xa = XS[s], xb = XS[s + 1], dx = xb - xa;
+        const ya = yAt(xa, i, t), yb = yAt(xb, i, t);
+        const ma = slopeAt(xa, i, t), mb = slopeAt(xb, i, t);
+        const cp1x = xa + dx / 3, cp1y = ya + (dx / 3) * ma;
+        const cp2x = xb - dx / 3, cp2y = yb - (dx / 3) * mb;
+        d += ` C${cp1x.toFixed(2)},${cp1y.toFixed(2)} ${cp2x.toFixed(2)},${cp2y.toFixed(2)} ${xb},${yb.toFixed(2)}`;
+      }
+      return d;
+    }
+
+    const paths = Array.from({ length: N }, (_, i) =>
+      document.getElementById(`path-line-${i + 1}`)
+    );
+
+    function render(t) {
+      for (let i = 0; i < N; i++) paths[i].setAttribute('d', pathFor(i, t));
+    }
+
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      render(LOOP_SECONDS * 0.5);
+      return;
+    }
+    let start = null;
+    function frame(ts) {
+      if (start === null) start = ts;
+      render((ts - start) / 1000);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+</script>

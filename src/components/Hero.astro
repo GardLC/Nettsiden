@@ -1,7 +1,9 @@
 ---
+import FlokeAnimation from './FlokeAnimation.astro';
 ---
 
 <section class="hero" aria-labelledby="hero-overskrift">
+  <FlokeAnimation />
   <div class="container">
     <div class="hero-tekst">
       <h1 id="hero-overskrift" class="display">
@@ -18,8 +20,15 @@
 
 <style>
   .hero {
+    position: relative;
+    overflow: hidden;
     padding-block: var(--section-spacing);
     background-color: var(--color-off-white);
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .hero-tekst {
@@ -31,6 +40,7 @@
     font-weight: var(--fw-regular);
     font-size: clamp(2rem, 4vw, 3.75rem);
     line-height: var(--lh-display);
+    color: var(--color-text);
     margin-bottom: 1.5rem;
   }
 
