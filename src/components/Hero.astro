@@ -3,9 +3,9 @@ import FlokeAnimation from './FlokeAnimation.astro';
 ---
 
 <section class="hero" aria-labelledby="hero-overskrift">
-  <FlokeAnimation />
   <div class="container">
     <div class="hero-tekst">
+      <FlokeAnimation />
       <h1 id="hero-overskrift" class="display">
         Nye arbeidshverdager<br>
         med <mark class="aksent">mer samspill</mark><br>
@@ -32,7 +32,7 @@ import FlokeAnimation from './FlokeAnimation.astro';
   }
 
   .hero-tekst {
-    /* ingen max-width — h1 får full container-bredde, undertekst styrer sin egne */
+    position: relative;
   }
 
   .display {
@@ -42,6 +42,8 @@ import FlokeAnimation from './FlokeAnimation.astro';
     line-height: var(--lh-display);
     color: var(--color-text);
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   mark.aksent {
@@ -57,6 +59,8 @@ import FlokeAnimation from './FlokeAnimation.astro';
   .hero-undertekst {
     color: var(--color-text);
     max-width: 560px;
+    position: relative;
+    z-index: 1;
   }
 
   @media (max-width: 480px) {
