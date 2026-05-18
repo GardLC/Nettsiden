@@ -1,6 +1,6 @@
 ---
 const navLenker = [
-  { tekst: 'Slik jobber vi', href: '/slik-jobber-jeg' },
+  { tekst: 'Slik jobber jeg', href: '/slik-jobber-jeg' },
   { tekst: 'Om meg', href: '/om-meg' },
   { tekst: 'Artikler', href: '/artikler' },
   { tekst: 'Kontakt', href: '/#kontakt' },
@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="wordmark" aria-label="Gard L. Christiansen – forsiden">
-      Gard L. Christiansen
+      <img src="/Gard_logo_med_sitat.png" alt="Gard L. Christiansen" class="logo-bilde" />
     </a>
 
     <nav aria-label="Hovednavigasjon">
@@ -75,16 +75,16 @@ const currentPath = Astro.url.pathname;
   }
 
   .wordmark {
-    font-family: var(--font-display);
-    font-weight: var(--fw-regular);
-    font-size: var(--fs-body);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--color-text);
-    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .wordmark:hover {
-    color: var(--color-text-muted);
+  .logo-bilde {
+    height: 2.25rem;
+    width: auto;
+    display: block;
   }
 
   .nav-liste {
