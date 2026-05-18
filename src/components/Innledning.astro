@@ -4,9 +4,18 @@
 <section class="innledning">
   <div class="container">
     <div class="innledning-inner">
-      <p class="plassholder body-large">
-        [PLASSHOLDER: Innledningssetning som etablerer at innfasing er en utfordring i norsk arbeidsliv]
-      </p>
+      <blockquote class="sitat">
+        <p class="sitat-tekst body-large">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</p>
+        <footer class="sitat-kilde small">— Tech lead</footer>
+      </blockquote>
+      <blockquote class="sitat">
+        <p class="sitat-tekst body-large">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</p>
+        <footer class="sitat-kilde small">— Avdelingsleder</footer>
+      </blockquote>
+      <blockquote class="sitat">
+        <p class="sitat-tekst body-large">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</p>
+        <footer class="sitat-kilde small">— CTO</footer>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -19,17 +28,22 @@
 
   .innledning-inner {
     max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  .plassholder {
-    font-family: var(--font-body);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-body-large);
+  .sitat {
+    margin: 0;
+  }
+
+  .sitat-tekst {
+    font-style: italic;
     line-height: var(--lh-body);
+    margin-bottom: 0.35rem;
+  }
+
+  .sitat-kilde {
     color: var(--color-text-muted);
-    background-color: #e0e0e0;
-    border: 1px dashed #999;
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius);
   }
 </style>
