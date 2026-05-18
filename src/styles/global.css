@@ -111,6 +111,10 @@ a:focus-visible {
 
 section {
   padding-block: var(--section-spacing);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Horisontale skillelinjer */
@@ -154,6 +158,7 @@ hr {
 /* Responsivt */
 @media (max-width: 768px) {
   section {
-    padding-block: calc(var(--section-spacing) * 0.6);
+    padding-block: calc(var(--section-spacing) * 0.7);
+    min-height: 80vh;
   }
 }

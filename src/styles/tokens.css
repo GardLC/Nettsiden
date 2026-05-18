@@ -45,6 +45,6 @@
   --max-width: 1200px;
   --content-width: 800px;
   --gutter: clamp(1rem, 4vw, 3rem);
-  --section-spacing: clamp(4rem, 8vw, 8rem);
+  --section-spacing: clamp(5rem, 10vw, 10rem);
   --radius: 4px;
 }
