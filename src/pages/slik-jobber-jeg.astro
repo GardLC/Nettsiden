@@ -5,12 +5,30 @@ import Footer from '../components/Footer.astro';
 import Accordion from '../components/Accordion.astro';
 
 const prinsipperItems = [
-  { tittel: 'Helhetlig' },
-  { tittel: 'Menneskeorientert' },
-  { tittel: 'Samskapende' },
-  { tittel: 'Iterativt' },
-  { tittel: 'Gjennomførbar' },
-  { tittel: 'Visuelt' },
+  {
+    tittel: 'Helhetlig',
+    forklaring: 'Tjenester må sees som en sammenhengende opplevelse, ikke som enkeltstående kontaktpunkter eller prosesser. Målet er å forstå hvordan mennesker, systemer, organisasjon og teknologi påvirker hverandre over tid.',
+  },
+  {
+    tittel: 'Menneskeorientert',
+    forklaring: 'Tjenestedesign tar utgangspunkt i behovene, erfaringene og situasjonene til menneskene tjenesten er til for. Innsikt fra brukere og ansatte brukes aktivt for å skape løsninger som oppleves relevante og nyttige.',
+  },
+  {
+    tittel: 'Samskapende',
+    forklaring: 'Gode tjenester utvikles best når ulike perspektiver involveres i arbeidet. Derfor samarbeider man tett med brukere, ansatte og andre relevante aktører gjennom hele prosessen.',
+  },
+  {
+    tittel: 'Iterativt',
+    forklaring: 'Tjenestedesign handler om å utforske, teste og forbedre løsninger steg for steg. Arbeidet skjer i flere runder hvor læring og tilbakemeldinger brukes til å justere retning underveis.',
+  },
+  {
+    tittel: 'Gjennomførbart',
+    forklaring: 'Løsninger må fungere i praksis, ikke bare på idéstadiet. Derfor balanseres brukerbehov med organisasjonens ressurser, mål og rammebetingelser.',
+  },
+  {
+    tittel: 'Visuelt',
+    forklaring: 'Visualisering brukes for å gjøre komplekse sammenhenger enklere å forstå og diskutere. Skisser, kart og prototyper gjør ideer mer konkrete og skaper et bedre grunnlag for samarbeid og beslutninger.',
+  },
 ].map((p, i) => ({ ...p, etikett: String(i + 1).padStart(2, '0') }));
 
 const metodesteg = [
