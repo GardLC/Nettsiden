@@ -4,19 +4,9 @@
 <section class="innledning">
   <div class="container">
     <div class="innledning-inner">
-      <h2 class="seksjon-overskrift">Hva norske ledere sier om sin innfasing</h2>
-      <blockquote class="sitat">
-        <p class="sitat-tekst">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</p>
-        <footer class="sitat-kilde">— Tech lead</footer>
-      </blockquote>
-      <blockquote class="sitat">
-        <p class="sitat-tekst">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</p>
-        <footer class="sitat-kilde">— Avdelingsleder</footer>
-      </blockquote>
-      <blockquote class="sitat">
-        <p class="sitat-tekst">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</p>
-        <footer class="sitat-kilde">— CTO</footer>
-      </blockquote>
+      <p class="body-large innledning-bro">
+        Ledere jeg har møtt gjennom mange år vet at innfasingen ikke fungerer. De sier det rett ut. Likevel skjer det samme om igjen, fordi problemet aldri løses der det oppstår, i samspillet mellom HR og de som faktisk tar imot folk.
+      </p>
     </div>
   </div>
 </section>
@@ -29,36 +19,9 @@
 
   .innledning-inner {
     max-width: var(--content-width);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  .seksjon-overskrift {
-    font-family: var(--font-display);
-    font-size: var(--fs-h1);
-    line-height: var(--lh-heading);
-    font-weight: var(--fw-medium);
-    margin-bottom: 0.5rem;
-  }
-
-  .sitat {
-    margin: 0;
-  }
-
-  .sitat-tekst {
-    font-family: var(--font-body);
-    font-size: var(--fs-h2);
-    line-height: var(--lh-heading);
-    font-weight: var(--fw-regular);
-    font-style: italic;
-    margin-bottom: 0.4rem;
-  }
-
-  .sitat-kilde {
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
-    font-weight: var(--fw-regular);
-    color: var(--color-text);
+  .innledning-bro {
+    color: var(--color-text-muted);
   }
 </style>
