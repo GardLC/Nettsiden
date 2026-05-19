@@ -7,15 +7,12 @@ import FlokeAnimation from './FlokeAnimation.astro';
     <div class="hero-tekst">
       <FlokeAnimation />
       <h1 id="hero-overskrift" class="display">
-        Innfasing er det ingen helt eier.
+        Norske arbeidsgivere bruker store ressurser på å rekruttere de rette menneskene. Innfasingen overlates til tilfeldighetene.
       </h1>
       <blockquote class="hero-sitat">
         <p class="hero-sitat-tekst">«Vår innfasing er pinlig dårlig, vi har snakket om det lenge.»</p>
         <footer class="hero-sitat-kilde">— Tech lead</footer>
       </blockquote>
-      <p class="body-large hero-undertekst">
-        Norske arbeidsgivere bruker store ressurser på å rekruttere de rette menneskene. Innfasingen overlates til tilfeldighetene.
-      </p>
     </div>
   </div>
 </section>
@@ -51,7 +48,7 @@ import FlokeAnimation from './FlokeAnimation.astro';
   }
 
   .hero-sitat {
-    margin: 0 0 1.5rem 0;
+    margin: 0;
     position: relative;
     z-index: 1;
   }
@@ -62,7 +59,6 @@ import FlokeAnimation from './FlokeAnimation.astro';
     line-height: var(--lh-heading);
     font-weight: var(--fw-regular);
     font-style: italic;
-    color: var(--color-text-muted);
     margin-bottom: 0.4rem;
   }
 
@@ -70,14 +66,7 @@ import FlokeAnimation from './FlokeAnimation.astro';
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     font-weight: var(--fw-regular);
-    color: var(--color-text-muted);
-  }
-
-  .hero-undertekst {
     color: var(--color-text);
-    max-width: 560px;
-    position: relative;
-    z-index: 1;
   }
 
   @media (max-width: 480px) {
