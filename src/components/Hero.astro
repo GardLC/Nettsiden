@@ -7,12 +7,13 @@ import FlokeAnimation from './FlokeAnimation.astro';
     <div class="hero-tekst">
       <FlokeAnimation />
       <h1 id="hero-overskrift" class="display">
-        Norske arbeidsgivere bruker store ressurser på å rekruttere de rette menneskene. Innfasingen overlates til tilfeldighetene.
+        Nye arbeidshverdager<br>
+        med <mark class="aksent">mer samspill</mark><br>
+        og mindre friksjon
       </h1>
-      <blockquote class="hero-sitat">
-        <p class="hero-sitat-tekst">«Vår innfasing er pinlig dårlig, vi har snakket om det lenge.»</p>
-        <footer class="hero-sitat-kilde">— Tech lead</footer>
-      </blockquote>
+      <p class="body-large hero-undertekst">
+        Arbeidshverdagen er full av øyeblikk som enten bygger opp eller bryter ned engasjement, samarbeid og trivsel. De færreste er bevisst utformet. Nesten alle kan bli bedre.
+      </p>
     </div>
   </div>
 </section>
@@ -47,26 +48,21 @@ import FlokeAnimation from './FlokeAnimation.astro';
     z-index: 1;
   }
 
-  .hero-sitat {
-    margin: 0;
+  mark.aksent {
+    background: var(--color-accent);
+    color: inherit;
+    padding: 0 0.12em;
+    border-radius: 2px;
+    white-space: nowrap;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .hero-undertekst {
+    color: var(--color-text);
+    max-width: 560px;
     position: relative;
     z-index: 1;
-  }
-
-  .hero-sitat-tekst {
-    font-family: var(--font-body);
-    font-size: var(--fs-h2);
-    line-height: var(--lh-heading);
-    font-weight: var(--fw-regular);
-    font-style: italic;
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-sitat-kilde {
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
-    font-weight: var(--fw-regular);
-    color: var(--color-text);
   }
 
   @media (max-width: 480px) {
