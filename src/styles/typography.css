@@ -61,7 +61,7 @@ h3, .h3 {
 
 .small {
   font-family: var(--font-body);
-  font-weight: var(--fw-book);
+  font-weight: var(--fw-regular);
   font-size: var(--fs-small);
   line-height: var(--lh-small);
 }
