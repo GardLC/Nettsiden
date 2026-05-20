@@ -19,8 +19,8 @@
   --color-border: rgba(81, 77, 52, 0.15);
 
   /* Skrifttyper */
-  --font-display: "PP Neue Machina", system-ui, sans-serif;
-  --font-body: "PP Neue Montreal", system-ui, sans-serif;
+--font-display: "Fraunces", serif;
+--font-body: alfabet, sans-serif;
 
   /* Type scale */
   --fs-display: clamp(3rem, 6vw, 5.5rem);

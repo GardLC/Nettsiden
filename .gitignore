@@ -1,0 +1,21 @@
+# Bygg
+dist/
+.astro/
+
+# Avhengigheter
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Design- og prosjektfiler
+*.fig
+*.ai
+*.zip
+*.pdf
+*.rtf
+
+# Lokalt miljø
+.env
+.env.*

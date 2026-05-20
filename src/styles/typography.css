@@ -1,68 +1,39 @@
+/* === Fonter === */
 @font-face {
-  font-family: "PP Neue Machina";
-  src: url("/fonts/PPNeueMachina-InktrapRegular.otf") format("opentype");
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;   /* variabel font */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/InstrumentSerif-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("/fonts/PPNeueMontreal-Book.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+/* === Skala === */
+h1 {                      /* Fraunces 60 */
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  font-size: 3.75rem;     /* 60px */
 }
 
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("/fonts/PPNeueMontreal-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+h2 {                      /* Fraunces 48 */
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  font-size: 3rem;        /* 48px */
 }
 
-/* Display */
-.display {
-  font-family: var(--font-display);
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-display);
-  line-height: var(--lh-display);
+h3 {                      /* Fraunces 24 */
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  font-size: 1.5rem;      /* 24px */
 }
 
-/* Heading hierarki */
-h1, .h1 {
-  font-family: var(--font-display);
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-h1);
-  line-height: var(--lh-heading);
-}
-
-h2, .h2 {
-  font-family: var(--font-body);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-h2);
-  line-height: var(--lh-heading);
-}
-
-h3, .h3 {
-  font-family: var(--font-body);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-body-large);
-  line-height: var(--lh-heading);
-}
-
-.body-large {
-  font-family: var(--font-body);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-body-large);
-  line-height: var(--lh-body);
-  color: var(--color-text);
-}
-
-.small {
-  font-family: var(--font-body);
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-small);
-  line-height: var(--lh-small);
+.sitat {                  /* Instrument Serif 36 */
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 2.25rem;     /* 36px */
 }
