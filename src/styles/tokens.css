@@ -46,5 +46,6 @@
   --content-width: 800px;
   --gutter: clamp(1rem, 4vw, 3rem);
   --section-spacing: clamp(5rem, 10vw, 10rem);
+  --headline-anchor: 28vh;
   --radius: 4px;
 }
