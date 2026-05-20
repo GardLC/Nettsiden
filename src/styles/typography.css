@@ -14,23 +14,14 @@
 }
 
 /* === Skala === */
-h1 {                      /* Fraunces 60 */
-  font-family: "Fraunces", serif;
-  font-weight: 400;
-  font-size: 3.75rem;     /* 60px */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
 }
 
-h2 {                      /* Fraunces 48 */
-  font-family: "Fraunces", serif;
-  font-weight: 400;
-  font-size: 3rem;        /* 48px */
-}
-
-h3 {                      /* Fraunces 24 */
-  font-family: "Fraunces", serif;
-  font-weight: 400;
-  font-size: 1.5rem;      /* 24px */
-}
+h1 { font-size: 3.75rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
 
 .sitat {                  /* Instrument Serif 36 */
   font-family: "Instrument Serif", serif;

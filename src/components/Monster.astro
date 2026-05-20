@@ -30,7 +30,7 @@ const punkter = [
           <span class="monster-nummer" aria-hidden="true">{i + 1}</span>
           <div class="monster-tekst">
             <h2 class="monster-tittel">{punkt.tittel}</h2>
-            <p class="monster-detalj body-large">{punkt.detalj}</p>
+            <p class="monster-detalj">{punkt.detalj}</p>
           </div>
         </li>
       ))}
@@ -47,7 +47,7 @@ const punkter = [
   .monster h1 {
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
-    font-size: var(--fs-h1);
+    font-size: 3.75rem; /* 60px — hardkodet fordi --fs-h1 token ikke er pålitelig */
     line-height: var(--lh-heading);
     margin-bottom: clamp(2rem, 5vw, 4rem);
   }
@@ -110,14 +110,16 @@ const punkter = [
   .monster-tittel {
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
-    font-size: var(--fs-h1);
+    font-size: 2.25rem; /* 36px — tydelig mindre enn h1 på 60px */
     line-height: var(--lh-heading);
     margin-bottom: 0.25rem;
   }
 
   .monster-detalj {
+    font-family: var(--font-body);
+    font-weight: var(--fw-medium);
+    font-size: 1.875rem; /* 30px */
     font-style: normal;
-    font-weight: var(--fw-regular);
     color: var(--color-text);
   }
 
