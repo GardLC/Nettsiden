@@ -18,9 +18,6 @@ const punkter = [
 <section class="monster" aria-labelledby="monster-overskrift">
   <div class="container">
     <h1 id="monster-overskrift">Mønsteret er tydelig</h1>
-    <div class="monster-stat">
-      </div>
-    </div>
     <ol class="monster-liste" role="list">
       {punkter.map((punkt, i) => (
         <li class="monster-punkt">
@@ -47,11 +44,6 @@ const punkter = [
     font-size: 3.75rem;
     line-height: var(--lh-heading);
     margin-bottom: clamp(2rem, 5vw, 4rem);
-  }
-
-  .monster-stat {
-    max-width: var(--content-width);
-    margin-bottom: clamp(3rem, 6vw, 5rem);
   }
 
   .stat-tekst {
