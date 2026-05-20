@@ -21,6 +21,7 @@
   /* Skrifttyper */
 --font-display: "Fraunces", serif;
 --font-body: alfabet, sans-serif;
+--font-serif: "Instrument Serif", serif;
 
   /* Type scale */
   --fs-display: clamp(3rem, 6vw, 5.5rem);
@@ -40,6 +41,7 @@
   --fw-book: 300;
   --fw-regular: 400;
   --fw-medium: 500;
+--fw-semibold: 600;
 
   /* Layout */
   --max-width: 1200px;
