@@ -1,0 +1,58 @@
+---
+---
+
+<section class="ledersitater" aria-labelledby="ledersitater-overskrift">
+  <div class="container">
+    <h2 id="ledersitater-overskrift" class="ledersitater-tittel">
+      Hva norske ledere sier<br class="bryt-d">
+      om egen innfasing
+    </h2>
+    <ul class="sitatliste" role="list">
+      <li class="sitat-blokk">
+        <blockquote class="sitat">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</blockquote>
+        <p class="sitat-kilde">CTO</p>
+      </li>
+      <li class="sitat-blokk">
+        <blockquote class="sitat">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</blockquote>
+        <p class="sitat-kilde">Avdelingsleder</p>
+      </li>
+      <li class="sitat-blokk">
+        <blockquote class="sitat">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</blockquote>
+        <p class="sitat-kilde">Tech lead</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .ledersitater-tittel {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: clamp(2rem, 4vw, 2.625rem);
+    line-height: var(--lh-heading);
+    margin-bottom: 3rem;
+  }
+
+  .sitatliste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 760px;
+  }
+
+  .sitat {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .sitat-kilde {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+</style>
