@@ -182,6 +182,24 @@ hr {
   margin-block: 1.5rem;
 }
 
+/* Referanser — tekst etter hr i prose er mindre og dempet */
+.prose hr ~ h2,
+.prose hr ~ h3 {
+  font-size: 1rem;
+  margin-top: 2rem;
+  color: var(--color-text-muted);
+}
+
+.prose hr ~ p {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: var(--lh-small);
+}
+
+.prose img {
+  margin-inline: auto;
+}
+
 /* Responsivt */
 @media (max-width: 768px) {
   section {
