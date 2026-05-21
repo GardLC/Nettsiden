@@ -187,7 +187,7 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (max-width: 768px) {
-    nav {
+    .site-header nav {
       display: none;
     }
 
@@ -198,39 +198,39 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
-  const hamburger = document.querySelector('.hamburger') as HTMLButtonElement;
-  const mobilMeny = document.getElementById('mobil-meny') as HTMLElement;
-  const lukkKnapp = document.querySelector('.lukk-meny') as HTMLButtonElement;
-  const mobilLenker = document.querySelectorAll('.mobil-nav-lenke');
+  const hamburger = document.querySelector('.hamburger') as HTMLButtonElement | null;
+  const mobilMeny = document.getElementById('mobil-meny');
+  const lukkKnapp = document.querySelector('.lukk-meny') as HTMLButtonElement | null;
 
-  function apneMeny() {
-    mobilMeny.classList.add('aktiv');
-    mobilMeny.setAttribute('aria-hidden', 'false');
-    hamburger.setAttribute('aria-expanded', 'true');
-    hamburger.setAttribute('aria-label', 'Lukk meny');
-    lukkKnapp.focus();
-    document.body.style.overflow = 'hidden';
+  if (hamburger && mobilMeny && lukkKnapp) {
+    const mobilLenker = document.querySelectorAll('.mobil-nav-lenke');
+
+    const apneMeny = () => {
+      mobilMeny.classList.add('aktiv');
+      mobilMeny.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Lukk meny');
+      lukkKnapp.focus();
+      document.body.style.overflow = 'hidden';
+    };
+
+    const lukkMeny = () => {
+      mobilMeny.classList.remove('aktiv');
+      mobilMeny.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Åpne meny');
+      hamburger.focus();
+      document.body.style.overflow = '';
+    };
+
+    hamburger.addEventListener('click', apneMeny);
+    lukkKnapp.addEventListener('click', lukkMeny);
+    mobilLenker.forEach(lenke => lenke.addEventListener('click', lukkMeny));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobilMeny.classList.contains('aktiv')) {
+        lukkMeny();
+      }
+    });
   }
-
-  function lukkMeny() {
-    mobilMeny.classList.remove('aktiv');
-    mobilMeny.setAttribute('aria-hidden', 'true');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-label', 'Åpne meny');
-    hamburger.focus();
-    document.body.style.overflow = '';
-  }
-
-  hamburger.addEventListener('click', apneMeny);
-  lukkKnapp.addEventListener('click', lukkMeny);
-
-  mobilLenker.forEach(lenke => {
-    lenke.addEventListener('click', lukkMeny);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobilMeny.classList.contains('aktiv')) {
-      lukkMeny();
-    }
-  });
 </script>

@@ -1,7 +1,6 @@
 ---
 tittel: Strukturert intervju – bruker du tvangstrøye eller redningsvest?
 publisert: 2026-03-19
-ingress: Strukturerte intervjuer er den sikreste veien til gode ansettelser. Men i jakten på objektivitet har mange endt opp med en rigiditet som kveler informasjonsflyten.
 type: artikkel
 headerbilde: /pictures/redningsvest_tvangstroye.jpg
 tema:

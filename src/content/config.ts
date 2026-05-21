@@ -5,7 +5,8 @@ const artikler = defineCollection({
   schema: z.object({
     tittel: z.string(),
     publisert: z.date(),
-    ingress: z.string(),
+    ingress: z.string().optional(),
+    sammendrag: z.string().optional(),
     type: z.enum(['artikkel', 'infographic']),
     headerbilde: z.string().optional(),
     tema: z.array(z.string()).optional(),

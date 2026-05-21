@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 
 interface Props {
   tittel: string;
-  ingress: string;
+  ingress?: string;
   publisert: Date;
   type: 'artikkel' | 'infographic';
   headerbilde?: string;
@@ -36,7 +36,7 @@ const dato = publisert.toLocaleDateString('nb-NO', {
             {type === 'infographic' && <span class="artikkel-type">Infographic</span>}
           </p>
           <h1>{tittel}</h1>
-          <p class="artikkel-ingress">{ingress}</p>
+{ingress && <p class="artikkel-ingress">{ingress}</p>}
         </header>
 
         <div class="prose">
