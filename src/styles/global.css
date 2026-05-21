@@ -125,13 +125,40 @@ hr {
 }
 
 /* Prose-styling for rendered markdown */
-.prose h1, .prose h2, .prose h3 {
-  margin-top: 2rem;
+.prose {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+.prose h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: var(--lh-heading);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: var(--lh-heading);
+  margin-top: 3rem;
   margin-bottom: 0.75rem;
 }
 
+.prose h3 {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: var(--lh-heading);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
 .prose p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose p + h2,
+.prose p + h3 {
+  margin-top: 2.5rem;
 }
 
 .prose ul, .prose ol {
