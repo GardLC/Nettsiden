@@ -13,7 +13,7 @@
   /* Funksjonelle farger */
   --color-text: #000000;
   --color-text-muted: #6B6750;
-  --color-bg: var(--color-off-white);
+  --color-bg: var(--color-sand);
   --color-link: var(--color-accent);
   --color-link-hover: var(--color-oliven-dyp);
   --color-border: rgba(81, 77, 52, 0.15);
