@@ -24,6 +24,10 @@ body {
   min-height: 100dvh;
 }
 
+main {
+  margin-top: -4rem;
+}
+
 img, video, svg {
   display: block;
   max-width: 100%;
