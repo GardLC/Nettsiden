@@ -1,127 +1,177 @@
 ---
 ---
 
-<div class="floke-stage" aria-hidden="true">
-  <svg viewBox="0 0 1600 700" preserveAspectRatio="none" focusable="false">
-    <g>
-      <path id="path-line-1" class="strand" d=""></path>
-      <path id="path-line-2" class="strand" d=""></path>
-      <path id="path-line-3" class="strand" d=""></path>
-      <path id="path-line-4" class="strand" d=""></path>
-      <path id="path-line-5" class="strand" d=""></path>
-      <path id="path-line-6" class="strand" d=""></path>
-    </g>
+<div class="shapes-stage" id="shapes-stage" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <path id="sp0" d="M0 297.77L114.48 51.5 381.13 0 266.65 246.27 0 297.77z"/>
+    <path id="sp1" d="M305 391.55L143.52 451 0 59.45 161.48 0 305 391.55z"/>
+    <path id="sp2" d="M175.57 223.91C62.35 187.82-15.13 112.71 2.5 56.15S126.22-17 239.43 19.09s190.7 111.2 173.07 167.76S288.78 260 175.57 223.91z"/>
+    <path id="sp3" d="M399 295.14L326.01 376 0 80.86 72.99 0 399 295.14z"/>
+    <path id="sp4" d="M884.5 52.47L24.05 447.6 0 395.13 860.46 0l24.04 52.47z"/>
+    <path id="sp5" d="M222.91 162.71l-94.16 74.98L17.3 193.83 0 74.98 94.16 0l111.45 43.86 17.3 118.85z"/>
+    <path id="sp6" d="M315 158c0 87.26-70.52 158-157.5 158S0 245.26 0 158 70.52 0 157.5 0 315 70.74 315 158"/>
   </svg>
 </div>
 
 <style>
-  .floke-stage {
+  .shapes-stage {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    opacity: 0.6;
+    inset: 0;
+    overflow: hidden;
     pointer-events: none;
   }
-  .floke-stage svg {
+
+  :global(.shapes-stage .shape) {
+    position: absolute;
+    transform-origin: 50% 50%;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  :global(.shapes-stage .shape svg) {
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
-    overflow: visible;
   }
-  .floke-stage .strand {
-    fill: none;
-    stroke: #000;
-    stroke-width: 1px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vector-effect: non-scaling-stroke;
-  }
-  .floke-stage #path-line-1 { opacity: 0.35; }
-  .floke-stage #path-line-2 { opacity: 0.55; }
-  .floke-stage #path-line-3 { stroke: var(--color-accent); opacity: 1; }
-  .floke-stage #path-line-4 { opacity: 0.70; }
-  .floke-stage #path-line-5 { opacity: 0.55; }
-  .floke-stage #path-line-6 { opacity: 0.35; }
 </style>
 
-<script>
-  (function () {
-    const N            = 6;
-    const FINAL_Y      = [100, 200, 300, 400, 500, 600];
-    const TANGLE_END   = 1080;
-    const AMP          = 180;
-    const LOOP_SECONDS = 8;
+<script is:inline>
+(function () {
+  var CAT_SHAPE   = 0x0001;
+  var CAT_WALL    = 0x0002;
+  var CAT_CHEVRON = 0x0004;
+  var CAT_OVAL    = 0x0008;
 
-    const W1 = 760, W2 = 430;
-    const k1 = (2 * Math.PI) / W1, k2 = (2 * Math.PI) / W2;
-    const v1 = W1 / LOOP_SECONDS,  v2 = W2 / LOOP_SECONDS;
-    const PHASE1 = (i) => (i / N) * Math.PI * 2;
-    const PHASE2 = (i) => (i * 2.3999632) % (Math.PI * 2);
+  var SHAPES = [
+    { id:'sp3', color:'#E8C08D',
+      path:'M399 295.14L326.01 376 0 80.86 72.99 0 399 295.14z',
+      vw:399, vh:376, x:-0.04, y:200, a:-0.20 },
+    { id:'sp6', color:'#514D34',
+      path:'M315 158c0 87.26-70.52 158-157.5 158S0 245.26 0 158 70.52 0 157.5 0 315 70.74 315 158',
+      vw:315, vh:316, x:0.16, y:320, a:0.00  },
+    { id:'sp4', color:'#B6B798',
+      path:'M884.5 52.47L24.05 447.6 0 395.13 860.46 0l24.04 52.47z',
+      vw:885, vh:448, x:0.40, y:160, a:-0.20 },
+    { id:'sp1', color:'#ABB087',
+      path:'M305 391.55L143.52 451 0 59.45 161.48 0 305 391.55z',
+      vw:305, vh:451, x:0.50, y:360, a:0.03  },
+    { id:'sp5', color:'#E8C08D',
+      path:'M222.91 162.71l-94.16 74.98L17.3 193.83 0 74.98 94.16 0l111.45 43.86 17.3 118.85z',
+      vw:223, vh:238, x:0.63, y:220, a:0.12  },
+    { id:'sp0', color:'#514D34',
+      path:'M0 297.77L114.48 51.5 381.13 0 266.65 246.27 0 297.77z',
+      vw:381, vh:298, x:0.82, y:260, a:-0.10 },
+  ];
 
-    function envelope(x) {
-      if (x <= 0 || x >= TANGLE_END) return 0;
-      const u = x / TANGLE_END;
-      return Math.sin(Math.PI * Math.pow(u, 0.55));
-    }
-    function envelopeDeriv(x) {
-      if (x <= 0 || x >= TANGLE_END) return 0;
-      const u = x / TANGLE_END, p = 0.55;
-      return Math.cos(Math.PI * Math.pow(u, p)) * Math.PI * p * Math.pow(u, p - 1) / TANGLE_END;
-    }
-    function yAt(x, i, t) {
-      const env = envelope(x);
-      const wave =
-        Math.sin(k1 * x - k1 * v1 * t + PHASE1(i)) +
-        0.55 * Math.sin(k2 * x - k2 * v2 * t + PHASE2(i));
-      return FINAL_Y[i] + AMP * env * wave;
-    }
-    function slopeAt(x, i, t) {
-      const env = envelope(x), dEnv = envelopeDeriv(x);
-      const wave =
-        Math.sin(k1 * x - k1 * v1 * t + PHASE1(i)) +
-        0.55 * Math.sin(k2 * x - k2 * v2 * t + PHASE2(i));
-      const dWave =
-        k1 * Math.cos(k1 * x - k1 * v1 * t + PHASE1(i)) +
-        0.55 * k2 * Math.cos(k2 * x - k2 * v2 * t + PHASE2(i));
-      return AMP * (dEnv * wave + env * dWave);
-    }
+  var OVAL = {
+    id:'sp2', color:'#ABB087',
+    path:'M175.57 223.91C62.35 187.82-15.13 112.71 2.5 56.15S126.22-17 239.43 19.09s190.7 111.2 173.07 167.76S288.78 260 175.57 223.91z',
+    vw:415, vh:243, x:0.90, y:80, a:0.15
+  };
 
-    const XS = [0, 110, 220, 330, 440, 550, 660, 770, 880, 990, 1080, 1240, 1420, 1600];
+  var engine, runner, rafId;
+  var bodies   = [];
+  var elements = [];
 
-    function pathFor(i, t) {
-      let d = `M${XS[0]},${yAt(XS[0], i, t).toFixed(2)}`;
-      for (let s = 0; s < XS.length - 1; s++) {
-        const xa = XS[s], xb = XS[s + 1], dx = xb - xa;
-        const ya = yAt(xa, i, t), yb = yAt(xb, i, t);
-        const ma = slopeAt(xa, i, t), mb = slopeAt(xb, i, t);
-        const cp1x = xa + dx / 3, cp1y = ya + (dx / 3) * ma;
-        const cp2x = xb - dx / 3, cp2y = yb - (dx / 3) * mb;
-        d += ` C${cp1x.toFixed(2)},${cp1y.toFixed(2)} ${cp2x.toFixed(2)},${cp2y.toFixed(2)} ${xb},${yb.toFixed(2)}`;
-      }
-      return d;
-    }
+  function loadScript(src, cb) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = cb;
+    document.head.appendChild(s);
+  }
 
-    const paths = Array.from({ length: N }, (_, i) =>
-      document.getElementById(`path-line-${i + 1}`)
-    );
+  function makeBody(s, x, y, collisionFilter, scale) {
+    var verts = Matter.Svg.pathToVertices(document.getElementById(s.id), 10);
+    verts = Matter.Vertices.scale(verts, scale, scale);
+    var body = Matter.Bodies.fromVertices(x, y, verts, {
+      collisionFilter: collisionFilter,
+      restitution: 0.10,
+      friction:    0.85,
+      frictionAir: 0.020
+    }, true);
+    Matter.Body.setAngle(body, s.a);
+    return body;
+  }
 
-    function render(t) {
-      for (let i = 0; i < N; i++) paths[i].setAttribute('d', pathFor(i, t));
-    }
+  function init() {
+    var stage = document.getElementById('shapes-stage');
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    var scale = (W / 1600) * 1.1;
 
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      render(LOOP_SECONDS * 0.5);
-      return;
+    Matter.Common.setDecomp(window.decomp);
+    engine = Matter.Engine.create();
+    engine.world.gravity.y = 0.55;
+
+    SHAPES.forEach(function (s) {
+      var cf = s.id === 'sp0'
+        ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
+        : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON };
+      var body = makeBody(s, W * s.x, -s.y, cf, scale);
+      bodies.push(body);
+      Matter.World.add(engine.world, body);
+    });
+
+    var ovalBody = makeBody(OVAL, W * OVAL.x, -OVAL.y,
+      { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON }, scale);
+    bodies.push(ovalBody);
+    Matter.World.add(engine.world, ovalBody);
+
+    var wOpts = {
+      isStatic: true,
+      collisionFilter: { category: CAT_WALL, mask: CAT_SHAPE | CAT_CHEVRON | CAT_OVAL }
+    };
+    Matter.World.add(engine.world, [
+      Matter.Bodies.rectangle(W / 2,  H + 55, W * 3, 110, wOpts),
+      Matter.Bodies.rectangle(-55,    H / 2,  110, H * 3, wOpts),
+      Matter.Bodies.rectangle(W + 55, H / 2,  110, H * 3, wOpts),
+    ]);
+
+    SHAPES.concat([OVAL]).forEach(function (s) {
+      var w = s.vw * scale;
+      var h = s.vh * scale;
+      var el = document.createElement('div');
+      el.className = 'shape';
+      el.style.width  = w + 'px';
+      el.style.height = h + 'px';
+      el.innerHTML =
+        '<svg viewBox="0 0 ' + s.vw + ' ' + s.vh + '" xmlns="http://www.w3.org/2000/svg">' +
+        '<path fill="' + s.color + '" d="' + s.path + '"/></svg>';
+      stage.appendChild(el);
+      elements.push({ el: el, w: w, h: h });
+    });
+
+    runner = Matter.Runner.create();
+    Matter.Runner.run(runner, engine);
+
+    function tick() {
+      rafId = requestAnimationFrame(tick);
+      bodies.forEach(function (body, i) {
+        var info = elements[i];
+        info.el.style.left      = (body.position.x - info.w / 2) + 'px';
+        info.el.style.top       = (body.position.y - info.h / 2) + 'px';
+        info.el.style.transform = 'rotate(' + body.angle + 'rad)';
+      });
     }
-    let start = null;
-    function frame(ts) {
-      if (start === null) start = ts;
-      render((ts - start) / 1000);
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  })();
+    tick();
+  }
+
+  function start() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    loadScript('https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js', function () {
+      loadScript('https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js', function () {
+        loadScript('https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js', function () {
+          setTimeout(init, 100);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
 </script>
