@@ -4,19 +4,14 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  tittel="Om meg"
+  tittel="Kort om meg"
   beskrivelse="Om Gard L. Christiansen — designdrevet HR-utviklingsarbeid i norske teknologiselskaper."
 >
   <main id="hovedinnhold">
     <article class="om-side">
       <div class="container">
         <header class="om-header">
-          <h1>Om meg</h1>
-          <nav class="anker-nav" aria-label="Hopp til del">
-            <a href="#kort" class="anker-lenke small">Meg på 2 minutter</a>
-            <span aria-hidden="true">·</span>
-            <a href="#lang" class="anker-lenke small">Meg på 10 minutter</a>
-          </nav>
+          <h1>Kort om meg</h1>
         </header>
 
         <!-- Meg på 2 minutter -->
@@ -24,8 +19,7 @@ import Footer from '../components/Footer.astro';
           <h2 id="kort-overskrift">Meg på 2 minutter</h2>
           <div class="om-del-innhold">
             <div class="om-foto-wrapper">
-              <!-- PLASSHOLDER: profilbilde -->
-              <div class="foto-plassholder" aria-label="Profilbilde av Gard L. Christiansen"></div>
+              <img src="/pictures/gardfoto.png" alt="Gard L. Christiansen" class="om-foto" />
             </div>
             <div class="om-bio">
               <p class="body-large">
@@ -45,21 +39,6 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <hr />
-
-        <!-- Meg på 10 minutter -->
-        <section id="lang" class="om-del" aria-labelledby="lang-overskrift">
-          <h2 id="lang-overskrift">Meg på 10 minutter</h2>
-          <p class="body-large om-lang-ingress">
-            <!-- PLASSHOLDER: introduksjon til den lengre versjonen — kan komme senere -->
-          </p>
-          <div class="om-lang-innhold">
-            <!-- PLASSHOLDER: utvidet biografi -->
-          </div>
-          <a
-            href="https://gardlc.com"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Se portefølje på gardlc.com
           </a>
@@ -121,12 +100,11 @@ import Footer from '../components/Footer.astro';
     align-items: flex-start;
   }
 
-  .foto-plassholder {
+  .om-foto {
     width: 220px;
-    aspect-ratio: 3/4;
-    background-color: var(--color-sand);
+    height: auto;
     border-radius: var(--radius);
-    border: 1px dashed var(--color-border);
+    display: block;
   }
 
   .om-bio {
