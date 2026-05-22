@@ -17,7 +17,6 @@
   .shapes-stage {
     position: absolute;
     inset: 0;
-    overflow: hidden;
     pointer-events: none;
   }
 
@@ -96,8 +95,8 @@
 
   function init() {
     var stage = document.getElementById('shapes-stage');
-    var W = window.innerWidth;
-    var H = window.innerHeight;
+    var W = stage.offsetWidth  || window.innerWidth;
+    var H = stage.offsetHeight || window.innerHeight;
     var scale = (W / 1600) * 1.1;
 
     Matter.Common.setDecomp(window.decomp);
