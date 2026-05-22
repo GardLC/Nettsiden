@@ -63,8 +63,14 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .site-header.scrolled {
     background-color: var(--color-sand);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom-color: var(--color-border);
   }
 
   .header-inner {
@@ -198,6 +204,14 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
+  const siteHeader = document.querySelector('.site-header') as HTMLElement | null;
+
+  const oppdaterHeader = () => {
+    siteHeader?.classList.toggle('scrolled', window.scrollY > 10);
+  };
+  window.addEventListener('scroll', oppdaterHeader, { passive: true });
+  oppdaterHeader();
+
   const hamburger = document.querySelector('.hamburger') as HTMLButtonElement | null;
   const mobilMeny = document.getElementById('mobil-meny');
   const lukkKnapp = document.querySelector('.lukk-meny') as HTMLButtonElement | null;
