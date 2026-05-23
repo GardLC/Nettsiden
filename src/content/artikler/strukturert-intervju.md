@@ -10,7 +10,6 @@ tema:
   - ledelse
 utkast: false
 ---
-
 Vi har lenge blitt fortalt at strukturerte intervjuer er den sikreste veien til gode ansettelser. Men i jakten på objektivitet har mange endt opp med en rigiditet som kveler informasjonsflyten. Nyere forskning viser at variasjonen mellom et godt og et dårlig strukturert intervju er signifikant — i motsetning til forskjellen på semi-strukturerte og fullt strukturerte intervjuer, som er helt ubetydelig.
 
 Ved å fjerne profesjonell sondering mister vi ikke bare kandidaten, men også innsikten.
