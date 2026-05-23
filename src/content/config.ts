@@ -4,6 +4,7 @@ const artikler = defineCollection({
   type: 'content',
   schema: z.object({
     tittel: z.string(),
+    tittelDisplay: z.string().optional(),
     publisert: z.date(),
     ingress: z.string().optional(),
     sammendrag: z.string().optional(),
