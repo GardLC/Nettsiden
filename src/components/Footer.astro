@@ -4,6 +4,9 @@ const ar = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="container footer-inner">
+    <a href="/" aria-label="Gard L. Christiansen – forsiden">
+      <img src="/Gard_logo.png" alt="Gard L. Christiansen" class="footer-logo" />
+    </a>
     <div class="footer-kontakt">
       <a href="mailto:gard@gardlc.com" class="footer-lenke">gard@gardlc.com</a>
       <span class="footer-skillelinje" aria-hidden="true">·</span>
@@ -28,10 +31,10 @@ const ar = new Date().getFullYear();
     flex-wrap: wrap;
   }
 
-  .footer-navn {
-    font-family: var(--font-display);
-    font-weight: var(--fw-regular);
-    font-size: var(--fs-small);
+  .footer-logo {
+    height: 1.5rem;
+    width: auto;
+    display: block;
   }
 
   .footer-kontakt {
