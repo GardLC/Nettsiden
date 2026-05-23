@@ -1,5 +1,6 @@
 ---
 tittel: Strukturert intervju – bruker du tvangstrøye eller redningsvest?
+tittelDisplay: "Strukturert intervju – bruker du tvangstrøye<br>eller redningsvest?"
 publisert: 2026-03-19
 type: artikkel
 headerbilde: /pictures/redningsvest_tvangstroye.jpg
