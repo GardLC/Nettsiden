@@ -96,13 +96,6 @@ const currentPath = Astro.url.pathname;
     list-style: none;
   }
 
-  @keyframes linkHover {
-    0%   { transform: scaleX(1); transform-origin: right top; }
-    49%  { transform: scaleX(0); transform-origin: right top; }
-    50%  { transform: scaleX(0); transform-origin: left top; }
-    100% { transform: scaleX(1); transform-origin: left top; }
-  }
-
   .nav-lenke {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
@@ -120,14 +113,16 @@ const currentPath = Astro.url.pathname;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 1.5px;
     background-color: var(--color-accent);
     transform: scaleX(0);
-    transform-origin: right top;
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .nav-lenke:hover::after {
-    animation: linkHover 0.55s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+    transform: scaleX(1);
+    transform-origin: left;
   }
 
   .nav-lenke[aria-current="page"]::after {
@@ -136,19 +131,17 @@ const currentPath = Astro.url.pathname;
 
   .hamburger {
     display: none;
-    flex-direction: column;
-    gap: 0;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    width: 38px;
   }
 
   .hamburger-strek {
     display: block;
     width: 30px;
-    height: 7px;
-    mix-blend-mode: multiply;
+    height: 6px;
     pointer-events: none;
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55),
                 opacity 0.2s ease;
@@ -157,15 +150,17 @@ const currentPath = Astro.url.pathname;
   .hamburger-strek:first-child {
     transform: translate(4px, 0px) rotate(3deg);
     background-color: var(--color-oker);
+    margin-bottom: 4px;
   }
 
   .hamburger-strek:nth-child(2) {
-    transform: translate(0px, -1px) rotate(-2deg);
+    transform: translate(0px, 0px) rotate(-2deg);
     background-color: var(--color-terrakotta);
+    margin-bottom: 4px;
   }
 
   .hamburger-strek:nth-child(3) {
-    transform: translate(4px, -2px) rotate(5deg);
+    transform: translate(4px, 0px) rotate(5deg);
     background-color: var(--color-salviegronn);
   }
 
@@ -174,11 +169,11 @@ const currentPath = Astro.url.pathname;
   }
 
   .hamburger.aapen .hamburger-strek:nth-child(2) {
-    transform: rotate(-45deg) translate(0px, 0px);
+    transform: translateY(10px) rotate(-45deg);
   }
 
   .hamburger.aapen .hamburger-strek:nth-child(3) {
-    transform: rotate(45deg) translate(-4px, -6px);
+    transform: rotate(45deg);
   }
 
   /* Mobil-overlay */
@@ -243,7 +238,7 @@ const currentPath = Astro.url.pathname;
     }
 
     .hamburger {
-      display: flex;
+      display: block;
     }
   }
 </style>
