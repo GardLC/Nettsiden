@@ -10,14 +10,18 @@
       <p class="body-large cta-tekst">
         <!-- PLASSHOLDER: kort tekst om hva man kan kontakte for -->
       </p>
-      <a href="mailto:gard@gardlc.com" class="cta-epost">kontakt@gardlc.com</a>
+      <!-- LinkedIn-lenke — bytt ut href med din LinkedIn-URL og legg inn ikon -->
+      <a href="https://www.linkedin.com/in/DITT-BRUKERNAVN" class="cta-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Besøk LinkedIn-profilen min">
+        <!-- ICON KOMMER HER -->
+        LinkedIn
+      </a>
     </div>
 
     <div class="cta-skjema-wrapper">
-      <!-- PLASSHOLDER: Erstatt action-URL med din Formspree-endpoint, f.eks. https://formspree.io/f/XXXXXXX -->
+      <!-- Formspree: gå til formspree.io, opprett skjema med gardlchristiansen@gmail.com, erstatt XXXXXXX med din form-ID -->
       <form
         class="kontaktskjema"
-        action="https://formspree.io/f/XXXXXXX"
+        action="https://formspree.io/f/xykvdzba"
         method="POST"
         aria-label="Kontaktskjema"
         novalidate
@@ -89,17 +93,18 @@
     margin-bottom: 1.5rem;
   }
 
-  .cta-epost {
-    display: inline-block;
+  .cta-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-body);
     font-weight: var(--fw-medium);
     font-size: var(--fs-body-large);
     color: var(--color-off-white);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-decoration: none;
   }
 
-  .cta-epost:hover {
+  .cta-linkedin:hover {
     color: rgba(229, 225, 222, 0.7);
   }
 
