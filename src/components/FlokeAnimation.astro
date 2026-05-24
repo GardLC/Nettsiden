@@ -70,7 +70,7 @@
     { id:'sp0', color:'#D68973',
       path:'M0 297.77L114.48 51.5 381.13 0 266.65 246.27 0 297.77z',
       vw:381, vh:298, x:0.78, y:240, a:-0.10,
-      density:0.015, restitution:0.06, friction:0.40, frictionAir:0.025 },
+      density:0.015, restitution:0.06, friction:0.70, frictionAir:0.035 },
   ];
 
   var OVAL = {
@@ -125,7 +125,7 @@
     });
 
     var ovalBody = makeBody(OVAL, W * OVAL.x, -OVAL.y,
-      { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON }, scale);
+      { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON | CAT_SHAPE }, scale);
     bodies.push(ovalBody);
     Matter.World.add(engine.world, ovalBody);
 
