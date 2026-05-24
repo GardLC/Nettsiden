@@ -113,18 +113,22 @@
 
     Matter.Common.setDecomp(window.decomp);
     engine = Matter.Engine.create();
+    engine.positionIterations = 10;
+    engine.velocityIterations = 8;
     engine.world.gravity.y = 0.65;
+
+    var maxY = H * 0.45;
 
     SHAPES.forEach(function (s) {
       var cf = s.id === 'sp0'
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
         : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON };
-      var body = makeBody(s, W * s.x, -s.y, cf, scale);
+      var body = makeBody(s, W * s.x, -Math.min(s.y, maxY), cf, scale);
       bodies.push(body);
       Matter.World.add(engine.world, body);
     });
 
-    var ovalBody = makeBody(OVAL, W * OVAL.x, -OVAL.y,
+    var ovalBody = makeBody(OVAL, W * OVAL.x, -Math.min(OVAL.y, maxY),
       { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON | CAT_SHAPE }, scale);
     bodies.push(ovalBody);
     Matter.World.add(engine.world, ovalBody);
@@ -134,7 +138,7 @@
       collisionFilter: { category: CAT_WALL, mask: CAT_SHAPE | CAT_CHEVRON | CAT_OVAL }
     };
     Matter.World.add(engine.world, [
-      Matter.Bodies.rectangle(W / 2,  H + 55, W * 3, 220, wOpts),
+      Matter.Bodies.rectangle(W / 2,  H + 55, W * 3, 110, wOpts),
       Matter.Bodies.rectangle(-55,    H / 2,  110, H * 3, wOpts),
       Matter.Bodies.rectangle(W + 55, H / 2,  110, H * 3, wOpts),
     ]);
