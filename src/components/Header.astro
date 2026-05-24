@@ -155,13 +155,25 @@ const currentPath = Astro.url.pathname;
 
   .hamburger-strek:nth-child(2) {
     transform: translate(0px, 0px) rotate(-2deg);
-    background-color: var(--color-terrakotta);
+    background-color: var(--color-oliven-dyp);
     margin-bottom: 4px;
   }
 
   .hamburger-strek:nth-child(3) {
     transform: translate(4px, 0px) rotate(5deg);
     background-color: var(--color-salviegronn);
+  }
+
+  .hamburger:hover .hamburger-strek:first-child {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  .hamburger:hover .hamburger-strek:nth-child(2) {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  .hamburger:hover .hamburger-strek:nth-child(3) {
+    transform: translate(0px, 0px) rotate(0deg);
   }
 
   .hamburger.aapen .hamburger-strek:first-child {
