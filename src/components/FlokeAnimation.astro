@@ -122,7 +122,7 @@
     SHAPES.forEach(function (s) {
       var cf = s.id === 'sp0'
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
-        : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON };
+        : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON | CAT_OVAL };
       var body = makeBody(s, W * s.x, -Math.min(s.y, maxY), cf, scale);
       bodies.push(body);
       Matter.World.add(engine.world, body);
