@@ -1,4 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#514D34"/>
-  <text x="16" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="400" fill="#E5E1DE" text-anchor="middle">G</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+  <!-- Generator: Adobe Illustrator 30.4.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 226)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 12px;
+      }
+
+      .st1 {
+        fill: #514d34;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="32" height="32" rx="4" ry="4"/>
+  <text class="st0" transform="translate(5.79 12.63)"><tspan x="0" y="0">g</tspan></text>
+  <text class="st0" transform="translate(20.23 14.56)"><tspan x="0" y="0">l</tspan></text>
+  <text class="st0" transform="translate(12.7 27.43)"><tspan x="0" y="0">c</tspan></text>
 </svg>
