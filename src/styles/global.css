@@ -12,6 +12,7 @@ html {
   font-size: 100%;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--color-bg);
 }
 
 body {
@@ -23,6 +24,13 @@ body {
   background-color: var(--color-bg);
   min-height: 100dvh;
   overflow-wrap: break-word;
+}
+
+.pagina-boks {
+  background-color: var(--color-bg-box);
+  border-radius: 1.5rem;
+  margin: clamp(1rem, 2.5vw, 2rem);
+  overflow: hidden;
 }
 
 img, video, svg {
@@ -119,6 +127,18 @@ section {
   scroll-margin-top: var(--headline-anchor);
 }
 
+/* Kildereferanser — nede i høyre hjørne på seksjoner */
+.kilde-blokk {
+  position: absolute;
+  bottom: var(--section-spacing);
+  right: var(--gutter);
+  text-align: right;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  font-weight: var(--fw-book);
+  color: var(--color-text-muted);
+}
+
 /* Horisontale skillelinjer */
 hr {
   border: none;
@@ -205,7 +225,7 @@ hr {
 /* Responsivt */
 @media (max-width: 768px) {
   section {
-    padding-block: 12vh calc(var(--section-spacing) * 0.7);
+    padding-block: var(--headline-anchor) calc(var(--section-spacing) * 0.7);
     min-height: 80vh;
   }
 }

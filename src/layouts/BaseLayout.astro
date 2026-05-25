@@ -49,6 +49,29 @@ const fullTittel = tittel === nettstedNavn ? tittel : `${tittel} – ${nettstedN
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
+  <style is:global>
+    html, body {
+      background-color: var(--color-bg);
+    }
+    body {
+      padding: 2rem;
+    }
+    .pagina-boks {
+      background-color: var(--color-bg);
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      background-color: var(--color-bg);
+    }
+    section, footer {
+      background-color: var(--color-bg-box);
+      border-radius: 1.5rem;
+    }
+  </style>
   <body>
     <a class="skip-link" href="#hovedinnhold">Hopp til innhold</a>
     <Header />

@@ -12,20 +12,23 @@
     </li>
     <p class="stat-fremhevet">12% sier de har fått en god innfasing</p>
     <li class="sitat-blokk">
-      <blockquote class="sitat">«Det viktigste for meg er egentlig å føle at folk forventer at jeg skal begynne. At utstyr er klart, at noen tar deg imot, og at du slipper å sitte alene og være usikker.»</blockquote>
+      <blockquote class="sitat">«Det viktigste for meg er egentlig å føle at folk forventer at jeg skal begynne. At utstyr er klartm at noen tar deg imot, og at du slipper å sitte alene og være usikker.»</blockquote>
       <p class="sitat-kilde">Nyansatt</p>
     </li>
   </div>
+  <footer class="kilde-blokk" aria-label="Kilder">
+    <p>Global Employee and Leadership Index 2017</p>
+    <p>Egne intervjuer 2023</p>
+  </footer>
 </section>
 
 <style>
   .nyansattsitater {
-    background-color: var(--color-mosegronn);
-    padding-block-start: calc(var(--headline-anchor) - 24px);
+    position: relative;
   }
 
   .nyansattsitater-tittel {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 3.75rem;
     line-height: var(--lh-heading);
@@ -55,8 +58,8 @@
   }
 
   .stat-fremhevet {
-    font-family: var(--font-display);
-    font-weight: 600;
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     line-height: var(--lh-heading);
     margin-block: calc(3rem - 8px) 3rem;

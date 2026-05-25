@@ -48,6 +48,6 @@
   --content-width: 800px;
   --gutter: clamp(1rem, 4vw, 3rem);
   --section-spacing: clamp(5rem, 10vw, 10rem);
-  --headline-anchor: 28vh;
+  --headline-anchor: clamp(3rem, 6vw, 5rem);
   --radius: 4px;
 }
