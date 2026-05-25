@@ -30,9 +30,9 @@
   --fs-display: clamp(3rem, 6vw, 5.5rem);
   --fs-h1: clamp(2.25rem, 4vw, 3.5rem);
   --fs-h2: clamp(1.125rem, 1.5vw, 1.375rem);
-  --fs-body-large: 1.25rem;
-  --fs-body: 1.125rem;
-  --fs-small: 1rem;
+  --fs-body-large: 1.625rem; /* 26px — basic medium */
+  --fs-body: 1.5rem;        /* 24px — basic paragraph */
+  --fs-small: 1.125rem;     /* 18px — tittel under sitat */
 
   /* Linjehøyder */
   --lh-display: 1.05;
@@ -51,6 +51,6 @@
   --content-width: 800px;
   --gutter: clamp(1rem, 4vw, 3rem);
   --section-spacing: clamp(5rem, 10vw, 10rem);
-  --headline-anchor: clamp(3rem, 6vw, 5rem);
+  --headline-anchor: 28vh;
   --radius: 4px;
 }

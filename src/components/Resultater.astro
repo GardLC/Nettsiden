@@ -8,29 +8,27 @@
       <div class="stat">
         <span class="stat-tall" aria-label="50 prosent">50%</span>
         <p class="stat-beskrivelse">høyere produktivitet</p>
+        <p class="stat-kilde">Klein &amp; Heuser 2008</p>
       </div>
       <div class="stat">
         <span class="stat-tall" aria-label="50 prosent">50%</span>
         <p class="stat-beskrivelse">kortere tid til fullstendig innfasing</p>
+        <p class="stat-kilde">A. Hirsch 2017</p>
       </div>
     </div>
   </div>
-  <footer class="resultater-kilder" aria-label="Kilder">
-    <p>Klein &amp; Heuser 2008</p>
-    <p>A. Hirsch 2017</p>
-  </footer>
 </section>
 
 <style>
   .resultater {
-    position: relative;
+    padding-block: var(--section-spacing);
     background-color: var(--color-salviegronn);
   }
 
   .seksjon-overskrift {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     font-size: 3.75rem;
-    font-weight: var(--fw-regular);
+font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
     max-width: var(--content-width);
     margin-bottom: clamp(3rem, 6vw, 5rem);
@@ -45,10 +43,10 @@
 
   .stat-tall {
     display: block;
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     font-size: var(--fs-display);
     line-height: var(--lh-display);
-    font-weight: var(--fw-regular);
+    font-weight: var(--fw-medium);
     margin-bottom: 0.5rem;
   }
 
@@ -60,11 +58,7 @@
     margin-bottom: 0.75rem;
   }
 
-  .resultater-kilder {
-    position: absolute;
-    bottom: var(--section-spacing);
-    right: var(--gutter);
-    text-align: right;
+  .stat-kilde {
     font-size: var(--fs-small);
     line-height: var(--lh-small);
     font-weight: var(--fw-book);

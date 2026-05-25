@@ -29,15 +29,11 @@ const punkter = [
       ))}
     </ol>
   </div>
-  <footer class="kilde-blokk" aria-label="Kilder">
-    <p>HR Norge 2021/23</p>
-    <p>Egne intervjuer 2023</p>
-  </footer>
 </section>
 
 <style>
   .monster {
-    position: relative;
+    padding-block: var(--section-spacing);
     background-color: var(--color-sand);
   }
 
@@ -85,8 +81,8 @@ const punkter = [
   }
 
   .monster-tittel {
-    font-family: var(--font-body);
-    font-weight: var(--fw-book);
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: 2.625rem;
     line-height: var(--lh-heading);
     margin-bottom: 0.25rem;
@@ -94,7 +90,7 @@ const punkter = [
 
   .monster-detalj {
     font-family: var(--font-body);
-    font-weight: var(--fw-regular);
+    font-weight: var(--fw-medium);
     font-size: 1.875rem;
     font-style: normal;
     color: var(--color-text);
