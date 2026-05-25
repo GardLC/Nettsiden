@@ -23,6 +23,14 @@ body {
   background-color: var(--color-bg);
   min-height: 100dvh;
   overflow-wrap: break-word;
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.pagina-boks {
+  background-color: var(--color-bg-box);
+  border-radius: 1.25rem;
+  min-height: calc(100dvh - clamp(1rem, 3vw, 2rem));
+  overflow-x: hidden;
 }
 
 img, video, svg {
