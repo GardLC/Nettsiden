@@ -23,6 +23,12 @@ h1 { font-size: 3.75rem; }
 h2 { font-size: 2.25rem; }
 h3 { font-size: 1.5rem; }
 
+.body-large {
+  font-size: var(--fs-body-large);
+  line-height: var(--lh-body);
+  max-width: 52ch;
+}
+
 .sitat {                  /* Instrument Serif 36 */
   font-family: "Instrument Serif", serif;
   font-weight: 400;
