@@ -7,8 +7,11 @@
   --color-mosegronn: #ABB087;
   --color-off-white: #E5E1DE;
 
-  /* Aksent — PLASSHOLDER: bytt ut når valgt */
-  --color-accent: #00FFAA;
+  /* Aksent */
+  --color-accent: #dcffa7;
+
+  /* Boks-bakgrunn */
+  --color-bg-box: #8c8d75;
 
   /* Funksjonelle farger */
   --color-text: #000000;

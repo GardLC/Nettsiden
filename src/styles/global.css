@@ -24,13 +24,18 @@ body {
   background-color: var(--color-bg);
   min-height: 100dvh;
   overflow-wrap: break-word;
+  padding: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .pagina-boks {
   background-color: var(--color-bg-box);
   border-radius: 1.5rem;
-  margin: clamp(1rem, 2.5vw, 2rem);
-  overflow: hidden;
+  min-height: calc(100dvh - clamp(1rem, 3vw, 2rem));
+  overflow-x: hidden;
+}
+
+.hero {
+  background-color: var(--color-bg);
 }
 
 img, video, svg {
