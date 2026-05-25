@@ -22,6 +22,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   min-height: 100dvh;
+  overflow-wrap: break-word;
 }
 
 img, video, svg {
@@ -115,6 +116,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  scroll-margin-top: var(--headline-anchor);
 }
 
 /* Horisontale skillelinjer */
