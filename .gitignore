@@ -19,3 +19,6 @@ Thumbs.db
 # Lokalt miljø
 .env
 .env.*
+
+# Obsidian
+.obsidian/
