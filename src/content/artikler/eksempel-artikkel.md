@@ -6,7 +6,7 @@ type: artikkel
 tema:
   - onboarding
   - ledelse
-utkast: false
+utkast: true
 ---
 
 Brødtekst i markdown. Skriv artikkelen din her.
