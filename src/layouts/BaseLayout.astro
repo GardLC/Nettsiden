@@ -51,9 +51,7 @@ const fullTittel = tittel === nettstedNavn ? tittel : `${tittel} – ${nettstedN
   </head>
   <body>
     <a class="skip-link" href="#hovedinnhold">Hopp til innhold</a>
-    <div class="pagina-boks">
-      <Header />
-      <slot />
-    </div>
+    <Header />
+    <slot />
   </body>
 </html>

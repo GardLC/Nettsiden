@@ -26,12 +26,6 @@ body {
   padding: clamp(0.5rem, 1.5vw, 1rem);
 }
 
-.pagina-boks {
-  background-color: var(--color-bg-box);
-  border-radius: 1.25rem;
-  min-height: calc(100dvh - clamp(1rem, 3vw, 2rem));
-  overflow-x: hidden;
-}
 
 img, video, svg {
   display: block;
@@ -125,6 +119,9 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   scroll-margin-top: var(--headline-anchor);
+  background-color: var(--color-bg-box);
+  border-radius: 1.25rem;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 /* Horisontale skillelinjer */
