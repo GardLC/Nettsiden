@@ -73,7 +73,7 @@
 <style>
   .cta {
     padding-block: var(--section-spacing);
-    color: var(--color-off-white);
+    color: var(--color-text);
   }
 
   .cta .container {
@@ -88,7 +88,7 @@
   }
 
   .cta-tekst {
-    color: rgba(229, 225, 222, 0.75);
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
   }
 
@@ -99,18 +99,18 @@
     font-family: var(--font-body);
     font-weight: var(--fw-medium);
     font-size: var(--fs-body-large);
-    color: var(--color-off-white);
+    color: var(--color-text);
     text-decoration: none;
   }
 
   .cta-linkedin:hover {
-    color: rgba(229, 225, 222, 0.7);
+    color: var(--color-text-muted);
   }
 
   .cta-linkedin-ikon {
     width: 1.25rem;
     height: 1.25rem;
-    filter: brightness(0) invert(1);
+    filter: brightness(0);
   }
 
   .kontaktskjema {
@@ -125,20 +125,20 @@
     gap: 0.4rem;
   }
 
-  .skjema-label {
+   .skjema-label {
     font-family: var(--font-body);
     font-weight: var(--fw-medium);
     font-size: var(--fs-small);
-    color: var(--color-off-white);
+    color: var(--color-text);
   }
 
   .skjema-felt {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: var(--fs-body);
-    color: var(--color-off-white);
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1.5px solid rgba(229, 225, 222, 0.25);
+    color: var(--color-text);
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
     border-radius: var(--radius);
     padding: 0.625rem 0.875rem;
     width: 100%;
@@ -147,11 +147,11 @@
 
   .skjema-felt:focus {
     outline: none;
-    border-color: var(--color-off-white);
+    border-color: var(--color-text);
   }
 
   .skjema-felt:focus-visible {
-    outline: 2px solid var(--color-off-white);
+    outline: 2px solid var(--color-text);
     outline-offset: 2px;
   }
 
@@ -165,13 +165,13 @@
   }
 
   .btn {
-    border-color: var(--color-off-white);
-    color: var(--color-off-white);
+    border-color: var(--color-text);
+    color: var(--color-text);
   }
 
   .btn:hover {
-    background: var(--color-off-white);
-    color: var(--color-oliven-dyp);
+    background: var(--color-text);
+    color: var(--color-bg);
   }
 
   @media (max-width: 768px) {
