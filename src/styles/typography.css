@@ -1,12 +1,5 @@
 /* === Fonter === */
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/Fraunces.woff2") format("woff2");
-  font-weight: 100 900;   /* variabel font */
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Instrument Serif";
   src: url("/fonts/InstrumentSerif-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -39,8 +32,8 @@ h3 { font-size: 1.5rem; }                              /* 24px */
   max-width: 52ch;
 }
 
-.sitat {                  /* Instrument Serif 32px */
+.sitat {                  /* Instrument Serif 40px */
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
