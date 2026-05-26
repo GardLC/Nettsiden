@@ -124,7 +124,9 @@
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
         : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON | CAT_OVAL };
       var posX = s.id === 'sp5' ? (W - 50) : (W * s.x);
-      var body = makeBody(s, posX, -Math.min(s.y, maxY), cf, scale);
+      var startY = -Math.min(s.y, maxY);
+      var body = makeBody(s, posX, startY, cf, scale);
+      if (s.id === 'sp5') Matter.Body.setPosition(body, { x: W - 50, y: startY });
       if (s.id === 'sp4') Matter.Body.setInertia(body, Infinity);
       bodies.push(body);
       Matter.World.add(engine.world, body);
