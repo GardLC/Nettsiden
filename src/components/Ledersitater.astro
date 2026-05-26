@@ -6,8 +6,7 @@
     <h2 id="ledersitater-overskrift" class="ledersitater-tittel">
       Norske ledere om egen innfasing
     </h2>
-  </div>
-  <ul class="sitatliste" role="list">
+    <ul class="sitatliste" role="list">
     <li class="sitat-blokk">
       <blockquote class="sitat">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</blockquote>
       <p class="sitat-kilde">CTO</p>
@@ -20,7 +19,8 @@
       <blockquote class="sitat">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</blockquote>
       <p class="sitat-kilde">Tech lead</p>
     </li>
-  </ul>
+    </ul>
+  </div>
   <footer class="kilde-blokk">
     <p class="kilde-tekst">Egne intervjuer 2023</p>
   </footer>
@@ -40,12 +40,15 @@ font-weight: var(--fw-regular);
     margin-bottom: 3rem;
   }
 
+  .ledersitater .container {
+    max-width: none;
+  }
+
   .sitatliste {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    padding-inline: var(--gutter);
   }
 
   .ledersitater .sitat {
