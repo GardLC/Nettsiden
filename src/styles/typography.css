@@ -29,7 +29,7 @@ p, li, blockquote {
   text-wrap: pretty;
 }
 
-h1 { font-size: 3.375rem; font-weight: var(--fw-medium); letter-spacing: -0.015em; } /* 54px */
+h1 { font-size: 3.375rem; font-weight: var(--fw-regular); letter-spacing: -0.015em; } /* 54px */
 h2 { font-size: 2.5rem; font-weight: var(--fw-book); } /* 40px, light */
 h3 { font-size: 1.5rem; }                              /* 24px */
 
