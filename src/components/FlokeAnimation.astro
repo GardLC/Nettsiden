@@ -119,20 +119,19 @@
 
     var maxY = H * 0.45;
 
-    SHAPES.forEach(function (s) {
+   SHAPES.forEach(function (s) {
       var cf = s.id === 'sp0'
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
         : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON | CAT_OVAL };
-      var body = makeBody(s, W * s.x, -Math.min(s.y, maxY), cf, scale);
+
+      // Tvinger sekskanten (sp5) til å starte 50px fra høyre vegg, uansett hva
+      var posX = s.id === 'sp5' ? (W - 50) : (W * s.x);
+      var body = makeBody(s, posX, -Math.min(s.y, maxY), cf, scale);
+      
       if (s.id === 'sp4') Matter.Body.setInertia(body, Infinity);
       bodies.push(body);
       Matter.World.add(engine.world, body);
     });
-
-    var ovalBody = makeBody(OVAL, W * OVAL.x, -Math.min(OVAL.y, maxY),
-      { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON | CAT_SHAPE }, scale);
-    bodies.push(ovalBody);
-    Matter.World.add(engine.world, ovalBody);
 
     var wOpts = {
       isStatic: true,
