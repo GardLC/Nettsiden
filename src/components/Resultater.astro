@@ -4,70 +4,74 @@
 <section class="resultater" aria-labelledby="resultater-overskrift">
   <div class="container">
     <h2 id="resultater-overskrift" class="seksjon-overskrift">Når innfasingen er designet for de nyansatte</h2>
-    <div class="stat-grid">
-      <div class="stat">
-        <span class="stat-tall" aria-label="50 prosent">50%</span>
-        <p class="stat-beskrivelse">høyere produktivitet</p>
-        <p class="stat-kilde">Klein &amp; Heuser 2008</p>
-      </div>
-      <div class="stat">
-        <span class="stat-tall" aria-label="50 prosent">50%</span>
-        <p class="stat-beskrivelse">kortere tid til fullstendig innfasing</p>
-        <p class="stat-kilde">A. Hirsch 2017</p>
-      </div>
+    <div class="stat">
+      <span class="stat-tall">50%</span>
+      <ul class="stat-liste">
+        <li>høyere produktivitet</li>
+        <li>kortere innfasingstid</li>
+      </ul>
     </div>
   </div>
+  <footer class="kilde-blokk">
+    <p class="kilde-tekst">Klein &amp; Heuser 2008, A. Hirsch 2017</p>
+  </footer>
 </section>
 
 <style>
   .resultater {
     padding-block: var(--section-spacing);
-    background-color: var(--color-salviegronn);
+    background-color: var(--color-bg-box);
+    position: relative;
   }
 
   .seksjon-overskrift {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-size: 3.75rem;
-font-weight: var(--fw-regular);
+    font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
     max-width: var(--content-width);
     margin-bottom: clamp(3rem, 6vw, 5rem);
   }
 
-  .stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 6vw, 5rem);
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
     max-width: var(--content-width);
   }
 
   .stat-tall {
-    display: block;
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-size: var(--fs-display);
     line-height: var(--lh-display);
     font-weight: var(--fw-medium);
-    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
   }
 
-  .stat-beskrivelse {
+  .stat-liste {
+    list-style: none;
     font-family: var(--font-body);
     font-size: var(--fs-h2);
-    line-height: var(--lh-heading);
     font-weight: var(--fw-regular);
-    margin-bottom: 0.75rem;
+    line-height: var(--lh-heading);
   }
 
-  .stat-kilde {
-    font-size: var(--fs-small);
-    line-height: var(--lh-small);
-    font-weight: var(--fw-book);
-    color: var(--color-text-muted);
+  .stat-liste li::before {
+    content: '–';
+    margin-right: 0.4em;
   }
 
-  @media (max-width: 600px) {
-    .stat-grid {
-      grid-template-columns: 1fr;
-    }
+  .kilde-blokk {
+    position: absolute;
+    bottom: 2rem;
+    right: var(--gutter);
+  }
+
+  .kilde-tekst {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text);
   }
 </style>

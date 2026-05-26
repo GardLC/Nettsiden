@@ -21,11 +21,15 @@
       </li>
     </ul>
   </div>
+  <footer class="kilde-blokk">
+    <p class="kilde-tekst">Egne intervjuer 2023</p>
+  </footer>
 </section>
 
 <style>
   .ledersitater {
     padding-block-start: calc(var(--headline-anchor) - 40px);
+    position: relative;
   }
 
   .ledersitater-tittel {
@@ -52,10 +56,23 @@ font-weight: var(--fw-regular);
     margin-bottom: 0.5rem;
   }
 
+  .kilde-blokk {
+    position: absolute;
+    bottom: 2rem;
+    right: var(--gutter);
+  }
+
+  .kilde-tekst {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+
   .sitat-kilde {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
-    color: var(--color-text-muted);
+    color: var(--color-text);
   }
 </style>

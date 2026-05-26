@@ -16,11 +16,28 @@
       <p class="sitat-kilde">Nyansatt</p>
     </li>
   </div>
+  <footer class="kilde-blokk">
+    <p class="kilde-tekst">Global Employee and Leadership Index 2017</p>
+  </footer>
 </section>
 
 <style>
   .nyansattsitater {
     padding-block-start: calc(var(--headline-anchor) - 24px);
+    position: relative;
+  }
+
+  .kilde-blokk {
+    position: absolute;
+    bottom: 2rem;
+    right: var(--gutter);
+  }
+
+  .kilde-tekst {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text);
   }
 
   .nyansattsitater-tittel {
@@ -49,7 +66,7 @@
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     text-align: left;
   }
 
