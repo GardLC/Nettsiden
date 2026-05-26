@@ -46,15 +46,16 @@
     line-height: var(--lh-display);
     font-weight: var(--fw-medium);
     color: var(--color-accent);
-    flex-shrink: 0;
+    flex: 0 0 50%;
   }
 
   .stat-liste {
     list-style: none;
     font-family: var(--font-body);
-    font-size: var(--fs-h2);
+    font-size: 1.875rem; /* fs-h2 + 8px */
     font-weight: var(--fw-regular);
-    line-height: var(--lh-heading);
+    line-height: 2;
+    text-align: center;
   }
 
   .stat-liste li::before {
