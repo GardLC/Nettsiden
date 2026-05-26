@@ -55,17 +55,17 @@
       path:'M315 158c0 87.26-70.52 158-157.5 158S0 245.26 0 158 70.52 0 157.5 0 315 70.74 315 158',
       vw:315, vh:316, x:0.16, y:320, a:0.00,
       density:0.001, restitution:0.78, friction:0.05, frictionAir:0.003 },
-    { id:'sp4', color:'#8c8d75',
+    { id:'sp4', color:'#ABB087',
       path:'M884.5 52.47L24.05 447.6 0 395.13 860.46 0l24.04 52.47z',
       vw:885, vh:448, x:0.40, y:160, a:-0.20,
       density:0.003, restitution:0.04, friction:0.90, frictionAir:0.014 },
-    { id:'sp1', color:'#8c8d75',
+    { id:'sp1', color:'#ABB087',
       path:'M305 391.55L143.52 451 0 59.45 161.48 0 305 391.55z',
       vw:305, vh:451, x:0.50, y:360, a:0.03,
       density:0.002, restitution:0.08, friction:0.75, frictionAir:0.018 },
-   { id:'sp5', color:'#DCFFA7',
+    { id:'sp5', color:'#DCFFA7',
       path:'M222.91 162.71l-94.16 74.98L17.3 193.83 0 74.98 94.16 0l111.45 43.86 17.3 118.85z',
-      vw:223, vh:238, x: 0.05, y: 100, a: 0.00, // <-- Slik endrer du denne linjen
+      vw:223, vh:238, x:0.78, y:360, a:0.12,
       density:0.002, restitution:0.10, friction:0.50, frictionAir:0.022 },
     { id:'sp0', color:'#D68973',
       path:'M0 297.77L114.48 51.5 381.13 0 266.65 246.27 0 297.77z',
@@ -119,19 +119,20 @@
 
     var maxY = H * 0.45;
 
-   SHAPES.forEach(function (s) {
+    SHAPES.forEach(function (s) {
       var cf = s.id === 'sp0'
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
         : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON | CAT_OVAL };
-
-      // Tvinger sekskanten (sp5) til å starte 50px fra høyre vegg, uansett hva
-      var posX = s.id === 'sp5' ? (W - 50) : (W * s.x);
-      var body = makeBody(s, posX, -Math.min(s.y, maxY), cf, scale);
-      
+      var body = makeBody(s, W * s.x, -Math.min(s.y, maxY), cf, scale);
       if (s.id === 'sp4') Matter.Body.setInertia(body, Infinity);
       bodies.push(body);
       Matter.World.add(engine.world, body);
     });
+
+    var ovalBody = makeBody(OVAL, W * OVAL.x, -Math.min(OVAL.y, maxY),
+      { category: CAT_OVAL, mask: CAT_WALL | CAT_CHEVRON | CAT_SHAPE }, scale);
+    bodies.push(ovalBody);
+    Matter.World.add(engine.world, ovalBody);
 
     var wOpts = {
       isStatic: true,
