@@ -122,6 +122,8 @@
     SHAPES.forEach(function (s) {
       var cf = s.id === 'sp0'
         ? { category: CAT_CHEVRON, mask: CAT_WALL | CAT_SHAPE | CAT_OVAL }
+        : s.id === 'sp5'
+        ? { category: CAT_SHAPE,   mask: CAT_WALL }
         : { category: CAT_SHAPE,   mask: CAT_WALL | CAT_SHAPE | CAT_CHEVRON | CAT_OVAL };
       var body = makeBody(s, W * s.x, -Math.min(s.y, maxY), cf, scale);
       if (s.id === 'sp4') Matter.Body.setInertia(body, Infinity);
