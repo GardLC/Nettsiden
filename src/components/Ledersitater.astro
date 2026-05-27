@@ -1,4 +1,24 @@
 ---
+const sitater = [
+  {
+    linje1: 'Det er svært stressende',
+    linje2: 'Jeg gjør jo ikke dette hver dag',
+    rolle: 'Avdelingsleder',
+    side: 'venstre',
+  },
+  {
+    linje1: 'Vår innfasing er pinlig dårlig',
+    linje2: 'Vi har snakket om det lenge',
+    rolle: 'Tech lead',
+    side: 'hoyre',
+  },
+  {
+    linje1: 'Teknologistøtte?',
+    linje2: 'Jeg har en sjekkliste i et regneark',
+    rolle: 'CTO',
+    side: 'venstre',
+  },
+];
 ---
 
 <section class="ledersitater" aria-labelledby="ledersitater-overskrift">
@@ -6,19 +26,26 @@
     <h2 id="ledersitater-overskrift" class="ledersitater-tittel">
       Norske ledere om egen innfasing
     </h2>
-    <ul class="sitatliste" role="list">
-    <li class="sitat-blokk">
-      <blockquote class="sitat">«Teknologistøtte? Jeg har en sjekkliste i et regneark.»</blockquote>
-      <p class="sitat-kilde">CTO</p>
-    </li>
-    <li class="sitat-blokk">
-      <blockquote class="sitat">«Det er svært stressende. Jeg gjør jo ikke dette hver dag.»</blockquote>
-      <p class="sitat-kilde">Avdelingsleder</p>
-    </li>
-    <li class="sitat-blokk">
-      <blockquote class="sitat">«Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.»</blockquote>
-      <p class="sitat-kilde">Tech lead</p>
-    </li>
+    <ul class="boble-liste" role="list">
+      {sitater.map((s) => (
+        <li class={`boble-element boble-element--${s.side}`}>
+          <figure class="boble">
+            <img
+              src={`/boble-${s.side}.svg`}
+              class="boble-bilde"
+              alt=""
+              aria-hidden="true"
+              width="376"
+              height="144"
+            />
+            <blockquote class="boble-sitat">
+              <span class="boble-linje">{s.linje1}</span>
+              <span class="boble-linje">{s.linje2}</span>
+            </blockquote>
+            <figcaption class="boble-rolle">{s.rolle}</figcaption>
+          </figure>
+        </li>
+      ))}
     </ul>
   </div>
   <footer class="kilde-blokk">
@@ -29,31 +56,102 @@
 <style>
   .ledersitater {
     padding-block-start: calc(var(--headline-anchor) - 40px);
+    padding-block-end: 6rem;
+    /* Ekstra horisontal padding så bobler kan stikke utenfor H1-bredden */
+    padding-inline: clamp(1rem, 4vw, 3rem);
     position: relative;
   }
 
   .ledersitater-tittel {
     font-family: var(--font-body);
-    font-size: 3.375rem; /* 54px */
-font-weight: var(--fw-regular);
+    font-size: 3.375rem;
+    font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
-    margin-bottom: 3rem;
+    margin: 0 0 3rem 0;
+    /* Begrenset bredde lar bobler bryte ut til siden uten å treffe viewport-kanten */
+    max-width: 22ch;
   }
 
-  .sitatliste {
+  .boble-liste {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    margin-right: calc(-1 * var(--gutter));
+    gap: 3.5rem;
   }
 
-  .ledersitater .sitat {
-    font-family: "Instrument Serif", serif;
-    font-weight: 400;
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    line-height: 1.25;
-    margin: 0 0 0.5rem 0;
+  /* Tett komposisjon: 420 px gir mindre luft og lar tre bobler føles balanserte */
+  .boble-element {
+    width: min(420px, 100%);
+    position: relative;
+  }
+
+  /* "Bryt rammen": negativ horisontal margin trekker bobler utenfor H1-tekstens kant.
+     Beholdes innenfor section-paddingen så ingenting flyter ut i viewport-margen. */
+  .boble-element--venstre {
+    align-self: flex-start;
+    margin-inline-start: -1.5rem;
+  }
+
+  .boble-element--hoyre {
+    align-self: flex-end;
+    margin-inline-end: -1.5rem;
+  }
+
+  /* Boblen har fast aspect-ratio = SVG sin viewBox (376.38 / 143.50) */
+  .boble {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 376.38 / 143.50;
+    margin: 0;
+  }
+
+  .boble-bilde {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Tekst plasseres innenfor boble-kroppen, over halens emergence-punkt (~75 %).
+     14 % topp + 35 % bunn sentrerer to linjer pent i den ovale kroppen. */
+  .boble-sitat {
+    position: absolute;
+    inset: 14% 7% 35% 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+
+  .boble-linje {
+    display: block;
+  }
+
+  /* Rolle-label justeres mot halespissen.
+     Halespiss-x i SVG: ~13 % fra venstre (venstre-boble), ~87 % (høyre-boble). */
+  .boble-rolle {
+    position: absolute;
+    bottom: -1.4em;
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    color: var(--color-text);
+  }
+
+  .boble-element--venstre .boble-rolle {
+    left: 13%;
+  }
+
+  .boble-element--hoyre .boble-rolle {
+    right: 13%;
   }
 
   .kilde-blokk {
@@ -63,16 +161,23 @@ font-weight: var(--fw-regular);
   }
 
   .kilde-tekst {
+    margin: 0;
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
     color: var(--color-text);
   }
 
-  .sitat-kilde {
-    font-family: var(--font-body);
-    font-weight: var(--fw-regular);
-    font-size: 1.125rem;
-    color: var(--color-text);
+  @media (max-width: 600px) {
+    .ledersitater-tittel {
+      font-size: 2.25rem;
+      max-width: none;
+    }
+
+    /* På små skjermer dropper vi "bryt rammen"-effekten */
+    .boble-element--venstre,
+    .boble-element--hoyre {
+      margin-inline: 0;
+    }
   }
 </style>
