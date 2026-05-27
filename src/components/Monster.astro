@@ -9,7 +9,7 @@ const punkter = [
     detalj: '– uten å involvere brukerne, ledere og ansatte',
   },
   {
-    tittel: 'Arbeidsgivere spør ikke om opplevelsen',
+    tittel: 'Arbeidsgivere spør sjelden om opplevelsen',
     detalj: '– som gjør egen kvalitet til en blindsone',
   },
 ];
@@ -29,11 +29,28 @@ const punkter = [
       ))}
     </ol>
   </div>
+  <footer class="kilde-blokk">
+    <p class="kilde-tekst">HR Norge 2021/23, Egne intervjuer 2023</p>
+  </footer>
 </section>
 
 <style>
   .monster {
     padding-block: var(--section-spacing);
+    position: relative;
+  }
+
+  .kilde-blokk {
+    position: absolute;
+    bottom: 2rem;
+    right: var(--gutter);
+  }
+
+  .kilde-tekst {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text);
   }
 
   .monster h1 {
