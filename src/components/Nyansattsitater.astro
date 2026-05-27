@@ -1,4 +1,26 @@
 ---
+const RADER = 5;
+const KOLONNER = 20;
+const RADIUS = 6;
+const AVSTAND = 16;
+const LIME_FRA = 4;
+const LIME_TIL = 16;
+const BUNN_RAD = RADER - 1;
+const BREDDE = 2 * RADIUS + (KOLONNER - 1) * AVSTAND;
+const HOYDE = 2 * RADIUS + (RADER - 1) * AVSTAND;
+
+type Prikk = { cx: number; cy: number; erLime: boolean };
+const prikker: Prikk[] = [];
+for (let r = 0; r < RADER; r++) {
+  for (let k = 0; k < KOLONNER; k++) {
+    const erBunn = r === BUNN_RAD;
+    prikker.push({
+      cx: RADIUS + k * AVSTAND,
+      cy: RADIUS + r * AVSTAND,
+      erLime: erBunn && k >= LIME_FRA && k < LIME_TIL,
+    });
+  }
+}
 ---
 
 <section class="nyansattsitater" aria-labelledby="nyansattsitater-overskrift">
@@ -6,25 +28,130 @@
     <h2 id="nyansattsitater-overskrift" class="nyansattsitater-tittel">
       Hva de nyansatte sier
     </h2>
-    <li class="sitat-blokk">
-      <blockquote class="sitat">«Det handler om at jeg vil lykkes og trives godt i jobben. Som ung er det mye som må læres, og da er det betryggende å bli møtt med en god plan.»</blockquote>
-      <p class="sitat-kilde">Nyutdannet</p>
-    </li>
-    <p class="stat-fremhevet">12% sier de har fått en god innfasing</p>
-    <li class="sitat-blokk">
-      <blockquote class="sitat">«Det viktigste for meg er egentlig å føle at folk forventer at jeg skal begynne. At utstyr er klart, at noen tar deg imot, og at du slipper å sitte alene og være usikker.»</blockquote>
-      <p class="sitat-kilde">Nyansatt</p>
-    </li>
+  </div>
+
+  <div class="to-kolonner">
+    <div class="venstre-kolonne">
+      <ul class="sitat-liste" role="list">
+        <li class="sitat-blokk">
+          <blockquote class="sitat">«Det viktigste for meg er egentlig å føle at folk forventer at jeg skal begynne. At utstyr er klart, at noen tar deg imot, og at du slipper å sitte alene og være usikker.»</blockquote>
+          <p class="sitat-kilde">Nyansatt</p>
+        </li>
+        <li class="sitat-blokk">
+          <blockquote class="sitat">«Det handler om at jeg vil lykkes og trives godt i jobben. Som ung er det mye som må læres, og da er det betryggende å bli møtt med en god plan.»</blockquote>
+          <p class="sitat-kilde">Nyutdannet</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="stat-blokk">
+      <p class="stat-tall">12 %</p>
+      <svg
+        class="prikke-grid"
+        viewBox={`0 0 ${BREDDE} ${HOYDE}`}
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        {prikker.map((p) => (
+          <circle
+            cx={p.cx}
+            cy={p.cy}
+            r={RADIUS}
+            style={`fill: ${p.erLime ? 'var(--color-accent)' : 'var(--color-salviegronn)'}`}
+          />
+        ))}
+      </svg>
+      <p class="stat-tekst">sier de har fått en god innfasing</p>
+    </div>
   </div>
   <footer class="kilde-blokk">
-    <p class="kilde-tekst">Global Employee and Leadership Index 2017</p>
+    <p class="kilde-tekst">HR Norge / Egne intervjuer 2023</p>
   </footer>
 </section>
 
 <style>
   .nyansattsitater {
-    padding-block-start: calc(var(--headline-anchor) - 24px);
+    padding-block-end: 6rem;
     position: relative;
+  }
+
+  .nyansattsitater-tittel {
+    font-family: var(--font-body);
+    font-size: 3.375rem;
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-heading);
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+  }
+
+  .to-kolonner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    padding-inline: var(--gutter);
+  }
+
+  .venstre-kolonne {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sitat-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .sitat-blokk {
+    max-width: 560px;
+  }
+
+  .sitat {
+    font-family: var(--font-serif);
+    font-weight: var(--fw-regular);
+    font-size: 2.125rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .sitat-kilde {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .stat-blokk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-tall {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-display);
+    line-height: 1;
+    color: var(--color-accent);
+    margin: 0 0 2rem;
+  }
+
+  .prikke-grid {
+    width: 60%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .stat-tekst {
+    font-family: var(--font-body);
+    font-weight: var(--fw-book);
+    font-size: 42px;
+    line-height: var(--lh-heading);
+    color: var(--color-accent);
   }
 
   .kilde-blokk {
@@ -38,45 +165,5 @@
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
     color: var(--color-text);
-  }
-
-  .nyansattsitater-tittel {
-    font-family: var(--font-body);
-    font-size: 3.375rem; /* 54px */
-    font-weight: var(--fw-regular);
-    line-height: var(--lh-heading);
-    margin-bottom: 3rem;
-    color: var(--color-accent);
-  }
-
-  .sitat-blokk {
-    list-style: none;
-    max-width: 760px;
-    margin-bottom: 2.5rem;
-  }
-
-  .sitat {
-    font-family: var(--font-serif);
-    font-weight: var(--fw-regular);
-    font-size: 2.125rem; /* 34px */
-    line-height: 1.25;
-    margin-bottom: 0.5rem;
-  }
-
-  .sitat-kilde {
-    font-family: var(--font-body);
-    font-weight: var(--fw-regular);
-    font-size: 1.125rem;
-    color: var(--color-text);
-    text-align: left;
-  }
-
-  .stat-fremhevet {
-    font-family: var(--font-body);
-    font-weight: var(--fw-regular);
-    font-size: 2.125rem; /* 34px */
-    line-height: var(--lh-heading);
-    margin-block: calc(3rem - 8px) 3rem;
-    text-align: center;
   }
 </style>
