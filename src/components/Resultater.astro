@@ -13,7 +13,7 @@
     </div>
   </div>
   <footer class="kilde-blokk">
-    <p class="kilde-tekst">Klein &amp; Heuser 2008, A. Hirsch 2017</p>
+    <p class="kilde-tekst">Klein &amp; Heuser 2008<br>A. Hirsch 2017</p>
   </footer>
 </section>
 
@@ -21,7 +21,7 @@
   .resultater {
     padding-block: var(--headline-anchor) var(--section-spacing);
     background-color: var(--color-bg-box);
-    position: relative;
+    min-height: auto;
   }
 
   .seksjon-overskrift {
@@ -66,15 +66,16 @@
   }
 
   .kilde-blokk {
-    position: absolute;
-    bottom: 2rem;
-    right: var(--gutter);
+    margin-top: 3rem;
+    padding-inline: var(--gutter);
+    text-align: right;
   }
 
   .kilde-tekst {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
+    line-height: 1.4;
     color: var(--color-text);
   }
 </style>
