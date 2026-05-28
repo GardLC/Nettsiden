@@ -24,8 +24,7 @@
   .resultater {
     padding-block: var(--headline-anchor) var(--section-spacing);
     background-color: var(--color-bg-box);
-    /* min-height fjernet — arver 100vh fra global section, så kilden kan
-       skyves til bunnen. Vil du ha lavere boks, sett f.eks. min-height: 70vh; */
+    min-height: calc(100vh - 3cm);
   }
 
   .seksjon-overskrift {
@@ -71,6 +70,11 @@
     color: var(--color-accent);
   }
 
+  .stat-liste li,
+  .stat-notat {
+    white-space: nowrap;
+  }
+
   .stat-liste li::before {
     content: '-';
     margin-right: 0.4em;
@@ -94,6 +98,6 @@
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
     line-height: 1.4;
-    color: var(--color-accent);     /* accent */
+    color: var(--color-text);
   }
 </style>
