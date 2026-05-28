@@ -3,13 +3,16 @@
 
 <section class="resultater" aria-labelledby="resultater-overskrift">
   <div class="container">
-    <h2 id="resultater-overskrift" class="seksjon-overskrift">Når innfasingen er strukturert rundt nyansattes behov</h2>
+    <h2 id="resultater-overskrift" class="seksjon-overskrift">Når innfasingen er strukturert rundt ansattes behov</h2>
     <div class="stat">
       <span class="stat-tall">50%</span>
-      <ul class="stat-liste">
-        <li>høyere produktivitet</li>
-        <li>kortere innfasingstid</li>
-      </ul>
+      <div class="stat-detaljer">
+        <ul class="stat-liste">
+          <li>høyere produktivitet</li>
+          <li>kortere innfasingstid</li>
+        </ul>
+        <p class="stat-notat">effekten kan måles flere år senere</p>
+      </div>
     </div>
   </div>
   <footer class="kilde-blokk">
@@ -21,15 +24,17 @@
   .resultater {
     padding-block: var(--headline-anchor) var(--section-spacing);
     background-color: var(--color-bg-box);
-    min-height: auto;
+    /* min-height fjernet — arver 100vh fra global section, så kilden kan
+       skyves til bunnen. Vil du ha lavere boks, sett f.eks. min-height: 70vh; */
   }
 
   .seksjon-overskrift {
     font-family: var(--font-body);
-    font-size: 3.375rem;
-    font-weight: var(--fw-medium);
+    font-size: 3.375rem;            /* 54px */
+    font-weight: var(--fw-regular); /* 400 */
     letter-spacing: -0.015em;
     line-height: var(--lh-heading);
+    color: var(--color-accent);
     max-width: var(--content-width);
     margin-top: 1rem;
     margin-bottom: clamp(3rem, 6vw, 5rem);
@@ -48,25 +53,38 @@
     line-height: var(--lh-display);
     font-weight: var(--fw-medium);
     color: var(--color-accent);
-    flex: 0 0 50%;
+    flex: 0 0 40%;
+  }
+
+  .stat-detaljer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .stat-liste {
     list-style: none;
     font-family: var(--font-body);
-    font-size: 1.875rem; /* fs-h2 + 8px */
-    font-weight: var(--fw-regular);
-    line-height: 2;
-    text-align: center;
+    font-size: 2.8424rem;
+    font-weight: var(--fw-book);   /* light, 300 */
+    line-height: 1.25;
+    color: var(--color-accent);
   }
 
   .stat-liste li::before {
-    content: '–';
+    content: '-';
     margin-right: 0.4em;
   }
 
+  .stat-notat {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular); /* 400 */
+    font-size: 2.0064rem;
+    color: var(--color-text);       /* svart */
+  }
+
   .kilde-blokk {
-    margin-top: 3rem;
+    margin-top: auto;               /* skyver til bunnen */
     padding-inline: var(--gutter);
     text-align: right;
   }
@@ -76,6 +94,6 @@
     font-weight: var(--fw-regular);
     font-size: 1.125rem;
     line-height: 1.4;
-    color: var(--color-text);
+    color: var(--color-accent);     /* accent */
   }
 </style>
