@@ -68,8 +68,7 @@ const sitater = [
     font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
     margin: 0 0 3rem 0;
-    /* Begrenset bredde lar bobler bryte ut til siden uten å treffe viewport-kanten */
-    max-width: 22ch;
+    white-space: nowrap;
   }
 
   .boble-liste {
@@ -83,7 +82,7 @@ const sitater = [
 
   /* Tett komposisjon: 420 px gir mindre luft og lar tre bobler føles balanserte */
   .boble-element {
-    width: min(420px, 100%);
+    width: min(630px, 100%);
     position: relative;
   }
 
@@ -91,12 +90,24 @@ const sitater = [
      Beholdes innenfor section-paddingen så ingenting flyter ut i viewport-margen. */
   .boble-element--venstre {
     align-self: flex-start;
-    margin-inline-start: -1.5rem;
   }
 
   .boble-element--hoyre {
     align-self: flex-end;
-    margin-inline-end: -1.5rem;
+  }
+
+  /* Bryt symmetri: ulike forskyvninger og lett rotasjon per boble */
+  .boble-element:nth-child(1) {
+    margin-inline-start: -2.5rem;
+    transform: rotate(-1.6deg);
+  }
+  .boble-element:nth-child(2) {
+    margin-inline-end: -3.5rem;
+    transform: rotate(1.2deg);
+  }
+  .boble-element:nth-child(3) {
+    margin-inline-start: 4rem;
+    transform: rotate(-0.6deg);
   }
 
   /* Boblen har fast aspect-ratio = SVG sin viewBox (376.38 / 143.50) */
@@ -174,10 +185,16 @@ const sitater = [
       max-width: none;
     }
 
-    /* På små skjermer dropper vi "bryt rammen"-effekten */
-    .boble-element--venstre,
-    .boble-element--hoyre {
+    .ledersitater-tittel {
+      white-space: normal;
+    }
+
+    /* På små skjermer dropper vi "bryt rammen"-effekten og rotasjonen */
+    .boble-element:nth-child(1),
+    .boble-element:nth-child(2),
+    .boble-element:nth-child(3) {
       margin-inline: 0;
+      transform: none;
     }
   }
 </style>
