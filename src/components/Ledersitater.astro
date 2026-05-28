@@ -1,18 +1,24 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
+
+const lesSvg = (filnavn: string) =>
+  fs.readFileSync(path.resolve(`./public/pictures/${filnavn}`), 'utf-8');
+
 const bobler = [
   {
-    fil: 'snakkeboble1g.svg',
-    alt: 'Avdelingsleder: Det er svært stressende. Jeg gjør jo ikke dette hver dag.',
+    svg: lesSvg('snakkeboble1g.svg'),
+    label: 'Avdelingsleder: Det er svært stressende. Jeg gjør jo ikke dette hver dag.',
     side: 'venstre',
   },
   {
-    fil: 'snakkeboble2g.svg',
-    alt: 'Tech lead: Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.',
+    svg: lesSvg('snakkeboble2g.svg'),
+    label: 'Tech lead: Vår innfasing er pinlig dårlig. Vi har snakket om det lenge.',
     side: 'hoyre',
   },
   {
-    fil: 'snakkeboble3g.svg',
-    alt: 'CTO: Teknologistøtte? Jeg har en sjekkliste i et regneark.',
+    svg: lesSvg('snakkeboble3g.svg'),
+    label: 'CTO: Teknologistøtte? Jeg har en sjekkliste i et regneark.',
     side: 'venstre',
   },
 ];
@@ -26,13 +32,9 @@ const bobler = [
     <ul class="boble-liste" role="list">
       {bobler.map((b) => (
         <li class={`boble-element boble-element--${b.side}`}>
-          <img
-            src={`/pictures/${b.fil}`}
-            alt={b.alt}
-            class="boble-bilde"
-            width="377"
-            height="142"
-          />
+          <figure class="boble" role="img" aria-label={b.label}>
+            <Fragment set:html={b.svg} />
+          </figure>
         </li>
       ))}
     </ul>
@@ -69,7 +71,7 @@ const bobler = [
   }
 
   .boble-element {
-    width: min(630px, 100%);
+    width: min(504px, 80%);
     position: relative;
   }
 
@@ -81,7 +83,6 @@ const bobler = [
     align-self: flex-end;
   }
 
-  /* Bryt symmetri: ulike forskyvninger og lett rotasjon per boble */
   .boble-element:nth-child(1) {
     margin-inline-start: -2.5rem;
     transform: rotate(-1.6deg);
@@ -95,7 +96,12 @@ const bobler = [
     transform: rotate(-0.6deg);
   }
 
-  .boble-bilde {
+  .boble {
+    margin: 0;
+  }
+
+  /* Sørg for at inlinede SVG-er skalerer responsivt */
+  .boble :global(svg) {
     display: block;
     width: 100%;
     height: auto;
