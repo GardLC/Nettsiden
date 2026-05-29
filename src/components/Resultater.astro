@@ -100,4 +100,33 @@
     line-height: 1.4;
     color: var(--color-text);
   }
+
+  @media (max-width: 600px) {
+    .stat {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .stat-tall {
+      flex: none;
+      font-size: clamp(3rem, 18vw, var(--fs-display));
+    }
+
+    .stat-liste {
+      font-size: clamp(1.5rem, 6vw, 2.8424rem);
+    }
+
+    .stat-liste li,
+    .stat-notat {
+      white-space: normal;
+    }
+
+    .stat-notat {
+      font-size: clamp(1rem, 4vw, 2.0064rem);
+    }
+
+    .seksjon-overskrift {
+      font-size: clamp(1.75rem, 7vw, 3.375rem);
+    }
+  }
 </style>

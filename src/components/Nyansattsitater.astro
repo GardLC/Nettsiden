@@ -171,4 +171,29 @@ for (let r = 0; r < RADER; r++) {
     color: var(--color-text);
     text-align: right;
   }
+
+  @media (max-width: 700px) {
+    .to-kolonner {
+      grid-template-columns: 1fr;
+      padding-inline: var(--gutter);
+      transform: none;
+    }
+
+    .stat-tekst {
+      white-space: normal;
+      font-size: clamp(1.5rem, 6vw, 42px);
+    }
+
+    .stat-tall {
+      font-size: clamp(3rem, 18vw, var(--fs-display));
+    }
+
+    .sitat {
+      font-size: clamp(1.25rem, 5vw, 2.125rem);
+    }
+
+    .nyansattsitater-tittel {
+      font-size: clamp(1.75rem, 7vw, 3.375rem);
+    }
+  }
 </style>
