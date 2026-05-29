@@ -18,6 +18,10 @@ const punkter = [
 <section class="monster" aria-labelledby="monster-overskrift">
   <div class="container">
     <h1 id="monster-overskrift">Mønsteret er tydelig</h1>
+    <footer class="kilde-blokk">
+      <p class="kilde-tekst">HR Norge 2021/23</p>
+      <p class="kilde-tekst">Egne intervjuer 2023</p>
+    </footer>
     <ol class="monster-liste" role="list">
       {punkter.map((punkt, i) => (
         <li class="monster-punkt">
@@ -29,9 +33,6 @@ const punkter = [
       ))}
     </ol>
   </div>
-  <footer class="kilde-blokk">
-    <p class="kilde-tekst">HR Norge 2021/23, Egne intervjuer 2023</p>
-  </footer>
 </section>
 
 <style>
@@ -41,9 +42,7 @@ const punkter = [
   }
 
   .kilde-blokk {
-    position: absolute;
-    bottom: 2rem;
-    right: var(--gutter);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
   }
 
   .kilde-tekst {
