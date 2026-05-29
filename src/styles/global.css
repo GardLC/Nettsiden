@@ -114,7 +114,6 @@ a:focus-visible {
 
 section {
   padding-block: var(--headline-anchor) var(--section-spacing);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -122,6 +121,10 @@ section {
   background-color: var(--color-bg-box);
   border-radius: 1.25rem;
   margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.fullscreen {
+  min-height: 100vh;
 }
 
 /* Horisontale skillelinjer */
@@ -209,7 +212,7 @@ hr {
 
 /* Responsivt */
 @media (max-width: 768px) {
-  section {
+  .fullscreen {
     padding-block: 12vh calc(var(--section-spacing) * 0.7);
     min-height: 80vh;
   }
