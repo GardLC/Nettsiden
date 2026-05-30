@@ -1,77 +1,190 @@
 ---
 ---
 
-<section id="kontakt" class="cta" aria-labelledby="cta-overskrift">
-  <div class="container">
-    <div class="cta-intro">
-      <h1 id="cta-overskrift">
-        <!-- PLASSHOLDER: overskrift som inviterer til samtale -->
-      </h1>
-      <p class="body-large cta-tekst">
-        <!-- PLASSHOLDER: kort tekst om hva man kan kontakte for -->
-      </p>
-      <!-- LinkedIn-lenke — bytt ut href med din LinkedIn-URL og legg inn ikon -->
-      <a href="https://www.linkedin.com/in/gardc/" class="cta-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Besøk LinkedIn-profilen min">
-        <img src="/linkedin.svg" alt="" aria-hidden="true" class="cta-linkedin-ikon" />
-        LinkedIn
-      </a>
-    </div>
+<section id="kontakt" class="cta" aria-labelledby="cta-heading">
+  <h1 id="cta-heading">Hei, jeg tar gjerne <em>en prat</em> om bedre arbeidshverdager hos dere.</h1>
+  <p class="cta-sub">Send meg en melding så svarer jeg så snart jeg kan.</p>
 
-    <hr class="cta-skillelinje" aria-hidden="true" />
+  <div class="cta-columns">
+    <form class="cta-form" action="https://formspree.io/f/xykvdzba" method="POST">
+      <div class="cta-field">
+        <input type="text" name="navn" placeholder="Navnet ditt" autocomplete="name" required />
+      </div>
+      <div class="cta-field">
+        <input type="email" name="epost" placeholder="E-post" autocomplete="email" required />
+      </div>
+      <div class="cta-field">
+        <textarea name="melding" placeholder="Hva er situasjonen hos dere?" rows="3"></textarea>
+      </div>
+      <button type="submit" class="cta-send">Send melding <span aria-hidden="true">→</span></button>
+    </form>
+
+    <aside class="cta-sidebar">
+      <div>
+        <p class="cta-sidebar-label">Eller</p>
+        <a href="https://www.linkedin.com/in/gardc/" class="cta-linkedin-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Finn meg på LinkedIn
+        </a>
+      </div>
+      <div class="cta-referral">
+        <p class="cta-sidebar-label">Tips noen</p>
+        <p>Kjenner du noen som burde lese dette? <a href="#">Send dem en lenke.</a></p>
+      </div>
+    </aside>
   </div>
 </section>
 
 <style>
   .cta {
-    padding-block: var(--section-spacing);
+    padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 4rem);
+    max-width: 1200px;
+    margin: 0 auto;
     color: var(--color-off-white);
   }
 
-  .cta .container {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2rem, 4vw, 3rem);
-  }
-
-  .cta-skillelinje {
-    border: none;
-    border-top: 1.5px solid var(--color-off-white);
-    margin: 0;
-  }
-
-  .cta-intro h1 {
-    margin-bottom: 1rem;
-  }
-
-  .cta-tekst {
-    color: rgba(229, 225, 222, 0.75);
+  .cta h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.15;
+    max-width: 14ch;
     margin-bottom: 1.5rem;
   }
 
-  .cta-linkedin {
+  .cta h1 em {
+    font-style: italic;
+  }
+
+  .cta-sub {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    line-height: 1.6;
+    color: rgba(229, 225, 222, 0.55);
+    max-width: 42ch;
+    margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .cta-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  /* ── Form ── */
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-field input,
+  .cta-field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(229, 225, 222, 0.3);
+    color: var(--color-off-white);
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    padding: 1.6rem 0 0.8rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .cta-field input::placeholder,
+  .cta-field textarea::placeholder {
+    color: rgba(229, 225, 222, 0.55);
+  }
+
+  .cta-field input:focus,
+  .cta-field textarea:focus {
+    border-bottom-color: var(--color-off-white);
+  }
+
+  .cta-field textarea {
+    resize: vertical;
+    min-height: 5rem;
+    line-height: 1.5;
+  }
+
+  .cta-send {
+    margin-top: 2.5rem;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid rgba(229, 225, 222, 0.3);
+    color: var(--color-off-white);
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: var(--fw-medium);
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .cta-send:hover {
+    border-color: var(--color-off-white);
+    background: rgba(229, 225, 222, 0.06);
+  }
+
+  /* ── Sidebar ── */
+  .cta-sidebar {
+    padding-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .cta-sidebar-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(229, 225, 222, 0.55);
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-linkedin-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-body);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-body-large);
     color: var(--color-off-white);
     text-decoration: none;
+    font-size: 1rem;
   }
 
-  .cta-linkedin:hover {
-    color: rgba(229, 225, 222, 0.7);
+  .cta-linkedin-link:hover {
+    text-decoration: underline;
   }
 
-  .cta-linkedin-ikon {
-    width: 1.25rem;
-    height: 1.25rem;
-    filter: brightness(0) invert(1);
+  .cta-linkedin-link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .cta-intro {
-      max-width: 100%;
+  .cta-referral p {
+    font-size: 1rem;
+    color: rgba(229, 225, 222, 0.55);
+    line-height: 1.5;
+  }
+
+  .cta-referral a {
+    color: var(--color-off-white);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cta-referral a:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 700px) {
+    .cta-columns {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
   }
 </style>
