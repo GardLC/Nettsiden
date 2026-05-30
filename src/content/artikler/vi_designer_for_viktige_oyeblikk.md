@@ -4,7 +4,7 @@ publishDate: 2026-05-30
 description: "Ansattopplevelsen formes av noen få emosjonelt ladede øyeblikk. Denne artikkelen handler om å finne dem, prioritere dem og designe dem bevisst."
 type: "artikkel"
 tags: ["ansattopplevelse", "onboarding", "design"]
-draft: true
+draft: false
 ---
 
 Tenk tilbake på din første arbeidsdag. Ikke det praktiske, men følelsen. Kanskje husker du noen som tok seg tid til å hilse deg velkommen. Eller kanskje husker du det motsatte: et tomt skrivebord og en leder som var på ferie. Det er sannsynligvis ett av de sterkeste minnene du har fra hele det første året. Ikke fordi det var det viktigste som skjedde, men fordi det traff deg emosjonelt i et sårbart øyeblikk. Denne artikkelen handler om å finne de øyeblikkene, og bevisst designe dem for ansattes behov.
