@@ -3,7 +3,7 @@ tittel: Vi designer for viktige øyeblikk
 publisert: 2026-05-30
 ingress: Ansattopplevelsen formes av noen få emosjonelt ladede øyeblikk. Denne artikkelen handler om å finne dem, prioritere dem og designe dem bevisst.
 type: artikkel
-tema:
+tema: []
 utkast: false
 ---
 Tenk tilbake på din første arbeidsdag. Ikke det praktiske, men følelsen. 
