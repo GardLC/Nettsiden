@@ -1,10 +1,5 @@
 /* === Fonter === */
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("/fonts/InstrumentSerif-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
+/* Maku lastes via TypeKit (etg7can) */
 
 /* === Skala === */
 h1, h2, h3, h4, h5, h6 {
@@ -40,8 +35,8 @@ h3 {
   max-width: 52ch;
 }
 
-.sitat {                  /* Instrument Serif 40px */
-  font-family: "Instrument Serif", serif;
+.sitat {                  /* Maku 40px */
+  font-family: "maku", serif;
   font-weight: 400;
   font-size: 2.5rem;
 }

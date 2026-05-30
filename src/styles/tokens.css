@@ -24,7 +24,7 @@
   /* Skrifttyper */
 --font-display: alfabet, sans-serif;
 --font-body: alfabet, sans-serif;
---font-serif: "Instrument Serif", serif;
+--font-serif: "maku", serif;
 
   /* Type scale */
   --fs-display: clamp(3rem, 6vw, 5.5rem);
