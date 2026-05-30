@@ -41,7 +41,7 @@ Hvorfor husker vi noen opplevelser godt, mens andre forsvinner?
 Daniel Kahnemans "Peak-end rule" viste at vi bedømmer opplevelser etter to ting: 
 det mest intense øyeblikket og avslutningen. 
 
-Det betyr at en intenst første uke kan prege hvordan en nyansatt vurderer hele det første halvåret. At lederutviklingsprogrammet avsluttes gjennomtenktOg det betyr også at avslutningen av et arbeidsforhold, former det varige inntrykket av hele forholdet. 
+Det betyr at en intenst første uke kan prege hvordan en nyansatt vurderer hele det første halvåret. At lederutviklingsprogrammet avsluttes gjennomtenkt. Og det betyr ikke minst at avslutningen av et arbeidsforhold, former det varige inntrykket av hele perioden. 
 
 Brødrene Chip og Dan Heath bygger videre på Kahnemans forskning i boken The Power of Moments. Deres designprinsipp er enkelt og praktisk: fyll gropene og bygg toppene. Ikke forsøk å gjøre alt litt bedre. Fjern det som er direkte vondt, og invester i noen prioriterte øyeblikk som virkelig løfter trivsel, produktivitet og engasjement.
 
