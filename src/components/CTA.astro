@@ -2,10 +2,11 @@
 ---
 
 <section id="kontakt" class="cta" aria-labelledby="cta-heading">
-  <h1 id="cta-heading">Hei, jeg tar gjerne <em>en prat</em> om bedre arbeidshverdager hos dere.</h1>
-  <p class="cta-sub">Send meg en melding så svarer jeg så snart jeg kan.</p>
+  <div class="container">
+    <h1 id="cta-heading">Hei, jeg tar gjerne en prat om bedre arbeidshverdager hos dere.</h1>
+    <p class="cta-sub">Send meg en melding så svarer jeg så snart jeg kan.</p>
 
-  <div class="cta-columns">
+    <div class="cta-columns">
     <form class="cta-form" action="https://formspree.io/f/xykvdzba" method="POST">
       <div class="cta-field">
         <input type="text" name="navn" placeholder="Navnet ditt" autocomplete="name" required />
@@ -32,28 +33,23 @@
         <p>Kjenner du noen som burde lese dette? <a href="#">Send dem en lenke.</a></p>
       </div>
     </aside>
+    </div>
   </div>
 </section>
 
 <style>
   .cta {
-    padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 4rem);
-    max-width: 1200px;
-    margin: 0 auto;
+    padding-block: var(--section-spacing);
     color: var(--color-off-white);
   }
 
   .cta h1 {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-size: 54px;
     line-height: 1.15;
     max-width: 14ch;
     margin-bottom: 1.5rem;
-  }
-
-  .cta h1 em {
-    font-style: italic;
   }
 
   .cta-sub {
