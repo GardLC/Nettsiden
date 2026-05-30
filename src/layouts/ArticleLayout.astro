@@ -40,7 +40,6 @@ const dato = publisert.toLocaleDateString('nb-NO', {
             ? <h1 set:html={tittelDisplay} />
             : <h1>{tittel}</h1>
           }
-{ingress && <p class="artikkel-ingress">{ingress}</p>}
         </header>
 
         <div class="prose">
@@ -104,9 +103,7 @@ const dato = publisert.toLocaleDateString('nb-NO', {
     margin-bottom: 1.25rem;
   }
 
-  .artikkel-ingress {
-    font-size: var(--fs-body-large);
-    line-height: 1.5;
-    color: var(--color-text-muted);
+  .prose {
+    color: var(--color-text);
   }
 </style>
