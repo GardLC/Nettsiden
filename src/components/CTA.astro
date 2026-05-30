@@ -17,56 +17,7 @@
       </a>
     </div>
 
-    <div class="cta-skjema-wrapper">
-      <!-- Formspree: gå til formspree.io, opprett skjema med gardlchristiansen@gmail.com, erstatt XXXXXXX med din form-ID -->
-      <form
-        class="kontaktskjema"
-        action="https://formspree.io/f/xykvdzba"
-        method="POST"
-        aria-label="Kontaktskjema"
-        novalidate
-      >
-        <div class="skjema-gruppe">
-          <label for="navn" class="skjema-label">Navn</label>
-          <input
-            type="text"
-            id="navn"
-            name="navn"
-            class="skjema-felt"
-            autocomplete="name"
-            required
-            aria-required="true"
-          />
-        </div>
-
-        <div class="skjema-gruppe">
-          <label for="epost" class="skjema-label">E-post</label>
-          <input
-            type="email"
-            id="epost"
-            name="epost"
-            class="skjema-felt"
-            autocomplete="email"
-            required
-            aria-required="true"
-          />
-        </div>
-
-        <div class="skjema-gruppe">
-          <label for="melding" class="skjema-label">Melding</label>
-          <textarea
-            id="melding"
-            name="melding"
-            class="skjema-felt skjema-textarea"
-            rows="5"
-            required
-            aria-required="true"
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn skjema-send">Send melding</button>
-      </form>
-    </div>
+    <hr class="cta-skillelinje" aria-hidden="true" />
   </div>
 </section>
 
@@ -77,10 +28,15 @@
   }
 
   .cta .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 6vw, 5rem);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .cta-skillelinje {
+    border: none;
+    border-top: 1.5px solid var(--color-off-white);
+    margin: 0;
   }
 
   .cta-intro h1 {
@@ -113,70 +69,9 @@
     filter: brightness(0) invert(1);
   }
 
-  .kontaktskjema {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .skjema-gruppe {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-   .skjema-label {
-    font-family: var(--font-body);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-small);
-    color: var(--color-off-white);
-  }
-
-  .skjema-felt {
-    font-family: var(--font-body);
-    font-weight: var(--fw-regular);
-    font-size: var(--fs-body);
-    color: var(--color-off-white);
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1.5px solid rgba(229, 225, 222, 0.25);
-    border-radius: var(--radius);
-    padding: 0.625rem 0.875rem;
-    width: 100%;
-    transition: border-color 0.15s ease;
-  }
-
-  .skjema-felt:focus {
-    outline: none;
-    border-color: var(--color-off-white);
-  }
-
-  .skjema-felt:focus-visible {
-    outline: 2px solid var(--color-off-white);
-    outline-offset: 2px;
-  }
-
-  .skjema-textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  .skjema-send {
-    align-self: flex-start;
-  }
-
-  .btn {
-    border-color: var(--color-off-white);
-    color: var(--color-off-white);
-  }
-
-  .btn:hover {
-    background: var(--color-off-white);
-    color: var(--color-oliven-dyp);
-  }
-
   @media (max-width: 768px) {
-    .cta .container {
-      grid-template-columns: 1fr;
+    .cta-intro {
+      max-width: 100%;
     }
   }
 </style>
