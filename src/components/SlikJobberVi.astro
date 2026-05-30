@@ -25,11 +25,17 @@
   }
 
   .slik-tekst {
-    max-width: var(--content-width);
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    max-width: var(--max-width);
+    columns: 2;
+    column-gap: clamp(2rem, 4vw, 3rem);
     margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .slik-tekst {
+      columns: 1;
+      max-width: var(--content-width);
+    }
   }
 
   .slik-tekst p {
