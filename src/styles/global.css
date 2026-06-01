@@ -128,6 +128,20 @@ a:focus-visible {
   }
 }
 
+/* Høyrekolonne i .two-col: bilde/grafikk justeres mot høyre marg
+   for symmetrisk luft. Sentreres på mobil. */
+.two-col-figur {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .two-col-figur {
+    justify-content: center;
+  }
+}
+
 section {
   padding-block: var(--headline-anchor) var(--section-spacing);
   display: flex;
