@@ -4,12 +4,17 @@
 <section class="tilnaerming" aria-labelledby="tilnaerming-overskrift">
   <div class="container">
     <div class="tilnaerming-inner">
-      <h1 id="tilnaerming-overskrift">Fra antagelser<br class="bryt-d"> til taktisk empati</h1>
-      <div class="tilnaerming-tekst">
-        <p>Mange innfasingsprogram tar utgangspunkt i<br>organisasjonens egne behov, og i beste fall <br>antagelser om hva den nyansatte trenger.</p>
-        <p>Vi starter et annet sted - gjennom samtaler,<br> observasjoner og andre øvelser lærer vi å<br> forstå hva ansatte og ledere opplever,<br>hva som hemmer dem og hva de ønsker å oppnå.</p>
-        <p>Antagelser kan bli til gode hypoteser,<br>som vi må teste før de brukes til å ta kostbare valg.</p>
-        <p>Noen ganger må vi grave dypt for å forstå et problem,<br>andre ganger holder det å snakke godt med noen få.</p>
+      <div class="tilnaerming-venstre">
+        <h1 id="tilnaerming-overskrift">Fra antagelser<br class="bryt-d"> til taktisk empati</h1>
+        <div class="tilnaerming-tekst">
+          <p>Mange innfasingsprogram tar utgangspunkt i<br>organisasjonens egne behov, og i beste fall <br>antagelser om hva den nyansatte trenger.</p>
+          <p>Vi starter et annet sted - gjennom samtaler,<br> observasjoner og andre øvelser lærer vi å<br> forstå hva ansatte og ledere opplever,<br>hva som hemmer dem og hva de ønsker å oppnå.</p>
+          <p>Antagelser kan bli til gode hypoteser,<br>som vi må teste før de brukes til å ta kostbare valg.</p>
+          <p>Noen ganger må vi grave dypt for å forstå et problem,<br>andre ganger holder det å snakke godt med noen få.</p>
+        </div>
+      </div>
+      <div class="tilnaerming-bilde">
+        <img src="/pictures/Empati-to-hoder.svg" alt="" aria-hidden="true" />
       </div>
     </div>
   </div>
@@ -21,7 +26,38 @@
   }
 
   .tilnaerming-inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 6vw, 5rem);
+  }
+
+  .tilnaerming-venstre {
     max-width: var(--content-width);
+  }
+
+  .tilnaerming-bilde {
+    width: clamp(200px, 50vw, 400px);
+  }
+
+  .tilnaerming-bilde img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 700px) {
+    .tilnaerming-inner {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .tilnaerming-venstre {
+      flex: 1;
+    }
+
+    .tilnaerming-bilde {
+      flex-shrink: 0;
+      width: clamp(200px, 30vw, 400px);
+    }
   }
 
   .tilnaerming h1 {

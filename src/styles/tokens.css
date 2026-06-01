@@ -8,6 +8,8 @@
   --color-mosegronn: #ABB087;
   --color-off-white: #E5E1DE;
 
+  --color-terrakotta: #D68973;
+
   /* Aksent */
   --color-accent: #dcffa7;
 
@@ -25,7 +27,7 @@
   /* Skrifttyper */
 --font-display: alfabet, sans-serif;
 --font-body: alfabet, sans-serif;
---font-serif: "maku", serif;
+--font-serif: "Courier New", Courier, monospace;
 
   /* Type scale */
   --fs-display: clamp(3rem, 6vw, 5.5rem);
