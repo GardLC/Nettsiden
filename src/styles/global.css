@@ -257,3 +257,9 @@ hr {
 /* Designede linjeskift. Plain <br> brekker overalt; .bryt-d kun på desktop. */
 br.bryt-d { display: none; }
 @media (min-width: 769px) { br.bryt-d { display: inline; } }
+
+.nyansattsitater > .container,
+.tilnaerming > .container,
+.slik-jobber-vi > .container {
+  max-width: none;
+}
