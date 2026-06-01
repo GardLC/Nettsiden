@@ -11,7 +11,7 @@
       }
 
       .d {
-        font-family: Alfabet-Regular, Alfabet;
+        font-family: alfabet, sans-serif;
         font-size: 18px;
       }
 
