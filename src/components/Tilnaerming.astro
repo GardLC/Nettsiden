@@ -29,16 +29,17 @@
   }
 
   .tilnaerming-bilde {
-    width: clamp(240px, 60vw, 480px);
+    display: flex;
+    justify-content: center;
   }
 
   .tilnaerming-bilde img {
-    width: 100%;
+    width: clamp(240px, 60vw, 480px);
     height: auto;
   }
 
   @media (min-width: 700px) {
-    .tilnaerming-bilde {
+    .tilnaerming-bilde img {
       width: clamp(240px, 36vw, 480px);
     }
   }
