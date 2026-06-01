@@ -1,7 +1,7 @@
 ---
 tittel: Vi designer for viktige øyeblikk
 publisert: 2026-05-30
-ingress: Ansattopplevelsen formes av noen få emosjonelt ladede øyeblikk. Denne artikkelen handler om å finne dem, prioritere dem og designe dem bevisst.
+ingress:
 type: artikkel
 tema: []
 utkast: false
@@ -16,13 +16,11 @@ emosjonelt i et sårbart øyeblikk.
 Denne artikkelen handler om å finne de øyeblikkene, 
 og bevisst forme dem rundt deres ansatte og ledere sine behov.
 
-Medarbeideropplevelser består av utallige små og store hendelser, møter, 
-prosesser og interaksjoner. Ingen organisasjon har ressurser til å gi 
-hver eneste av dem full oppmerksomhet, og det er heller ikke nødvendig. 
+Opplevelsene ansatte møter på arbeidsplassen består av utallige små og store hendelser, møter, prosesser og interaksjoner. Ingen organisasjon har ressurser til å gi hver eneste av dem full oppmerksomhet, og det er heller ikke nødvendig. 
 Derfor identifiserer vi hvilke øyeblikk som betyr mest, og prioritere innsatsen der. 
-Viktige øyeblikk er de emosjonelt ladede øyeblikken i en reise som har 
+Viktige øyeblikk er de emosjonelt ladede opplevelsene i en ansettelse som har 
 uforholdsmessig stor innvirkning på den samlede opplevelsen. 
-Disse øyeblikkene former helheten mer enn alt som skjer imellom.
+Disse øyeblikkene betyr mest for de ansatte, og blir derfor en prioritet 
 
 ## Fire typer øyeblikk
 

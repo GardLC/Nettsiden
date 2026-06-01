@@ -114,6 +114,12 @@ a:focus-visible {
   padding-inline: var(--gutter);
 }
 
+/* Fullbredde-wrapper: som container, men uten max-width */
+.wide-inner {
+  width: 100%;
+  padding-inline: var(--gutter);
+}
+
 /* Felles to-kolonner layout */
 .two-col {
   display: grid;
