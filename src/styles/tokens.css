@@ -1,6 +1,7 @@
 :root {
   /* Grunnpalett */
   --color-sand: #EDDFCD;
+  --color-sand-dyp: #D9C3A5;
   --color-oker: #E8C08D;
   --color-oliven-dyp: #514D34;
   --color-salviegronn: #B6B798;
@@ -11,12 +12,12 @@
   --color-accent: #dcffa7;
 
   /* Boks-bakgrunn */
-  --color-bg-box: #8c8d75;
+  --color-bg-box: #EDDFCD;
 
   /* Funksjonelle farger */
   --color-text: #000000;
   --color-text-muted: #6B6750;
-  --color-bg: var(--color-sand);
+  --color-bg: var(--color-sand-dyp);
   --color-link: var(--color-accent);
   --color-link-hover: var(--color-oliven-dyp);
   --color-border: rgba(81, 77, 52, 0.15);
