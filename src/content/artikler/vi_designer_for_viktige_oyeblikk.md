@@ -1,7 +1,7 @@
 ---
 tittel: Vi designer for viktige øyeblikk
 publisert: 2026-05-30
-ingress: .
+ingress: Dette skal være en ingress
 type: artikkel
 tema: []
 utkast: false
