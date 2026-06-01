@@ -30,7 +30,7 @@ for (let r = 0; r < RADER; r++) {
     </h2>
   </div>
 
-  <div class="to-kolonner">
+  <div class="two-col">
     <div class="venstre-kolonne">
       <ul class="sitat-liste" role="list">
         <li class="sitat-blokk">
@@ -85,17 +85,6 @@ for (let r = 0; r < RADER; r++) {
     margin: 0 0 3rem 0;
   }
 
-  .to-kolonner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: start;
-    margin-block: auto;
-    transform: translateY(-4.8rem);
-    padding-inline-start: clamp(7.5rem, 15vw, 13.5rem);
-    padding-inline-end: calc(var(--gutter) + max(0px, (100vw - var(--max-width)) / 2));
-  }
-
   .venstre-kolonne {
     display: flex;
     flex-direction: column;
@@ -133,7 +122,6 @@ for (let r = 0; r < RADER; r++) {
     align-items: center;
     gap: 1.5rem;
     text-align: center;
-    justify-self: end;
   }
 
   .stat-tall {
@@ -175,12 +163,6 @@ for (let r = 0; r < RADER; r++) {
   }
 
   @media (max-width: 700px) {
-    .to-kolonner {
-      grid-template-columns: 1fr;
-      padding-inline: var(--gutter);
-      transform: none;
-    }
-
     .stat-tekst {
       white-space: normal;
       font-size: clamp(1.5rem, 6vw, 42px);
