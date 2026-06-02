@@ -45,16 +45,23 @@
     color: var(--color-text);
   }
 
+  .slik-jobber-vi .two-col {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .slik-bilde {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .slik-bilde img {
-    width: clamp(374px, 56vw, 786px);
-    max-width: none;
+    width: 100%;
     height: auto;
-    transform: translateX(100px);
   }
 
   @media (max-width: 768px) {
-    .slik-bilde img {
-      width: clamp(374px, 60vw, 674px);
+    .slik-jobber-vi .two-col {
+      grid-template-columns: 1fr;
     }
   }
 </style>
