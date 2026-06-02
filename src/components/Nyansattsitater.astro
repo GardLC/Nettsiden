@@ -78,7 +78,7 @@ for (let r = 0; r < RADER; r++) {
 
   .nyansattsitater-tittel {
     font-family: var(--font-body);
-    font-size: 3.375rem;
+    font-size: var(--fs-h1);
     font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
     color: #000000;
@@ -104,7 +104,7 @@ for (let r = 0; r < RADER; r++) {
   .sitat {
     font-family: var(--font-sitat);
     font-weight: var(--fw-regular);
-    font-size: 26.67px;
+    font-size: var(--fs-h4);
     line-height: 1.25;
     margin-bottom: 0.5rem;
   }
@@ -112,7 +112,7 @@ for (let r = 0; r < RADER; r++) {
   .sitat-kilde {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
-    font-size: 1.125rem;
+    font-size: var(--fs-small);
     color: var(--color-text);
   }
 
@@ -158,7 +158,7 @@ for (let r = 0; r < RADER; r++) {
   .kilde-tekst {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
-    font-size: 1.125rem;
+    font-size: var(--fs-small);
     color: var(--color-text);
     text-align: right;
   }
@@ -174,11 +174,11 @@ for (let r = 0; r < RADER; r++) {
     }
 
     .sitat {
-      font-size: 26.67px;
+      font-size: var(--fs-h4);
     }
 
     .nyansattsitater-tittel {
-      font-size: clamp(1.75rem, 7vw, 3.375rem);
+      font-size: clamp(1.75rem, 7vw, var(--fs-h1));
     }
   }
 </style>

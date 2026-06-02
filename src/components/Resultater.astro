@@ -29,7 +29,7 @@
 
   .seksjon-overskrift {
     font-family: var(--font-body);
-    font-size: 3.375rem;            /* 54px */
+    font-size: var(--fs-h1);
     font-weight: var(--fw-regular); /* 400 */
     letter-spacing: -0.015em;
     line-height: var(--lh-heading);
@@ -96,7 +96,7 @@
   .kilde-tekst {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
-    font-size: 1.125rem;
+    font-size: var(--fs-small);
     line-height: 1.4;
     color: var(--color-text);
   }
@@ -126,7 +126,7 @@
     }
 
     .seksjon-overskrift {
-      font-size: clamp(1.75rem, 7vw, 3.375rem);
+      font-size: clamp(1.75rem, 7vw, var(--fs-h1));
     }
   }
 </style>
