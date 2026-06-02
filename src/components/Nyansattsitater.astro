@@ -60,7 +60,7 @@ for (let r = 0; r < RADER; r++) {
           />
         ))}
       </svg>
-      <p class="stat-tekst">sier de har fått en god innfasing</p>
+      <p class="stat-tekst">sier de har fått<br>en god innfasing</p>
     </div>
   </div>
   </div>
@@ -104,7 +104,7 @@ for (let r = 0; r < RADER; r++) {
   .sitat {
     font-family: var(--font-sitat);
     font-weight: var(--fw-regular);
-    font-size: var(--fs-h4);
+    font-size: var(--fs-sitat);
     line-height: 1.25;
     margin-bottom: 0.5rem;
   }
@@ -122,7 +122,7 @@ for (let r = 0; r < RADER; r++) {
     align-items: flex-end;
     gap: 1.5rem;
     text-align: right;
-    max-width: 380px;
+    max-width: 456px;
     justify-self: end;
   }
 
@@ -141,12 +141,11 @@ for (let r = 0; r < RADER; r++) {
   }
 
   .stat-tekst {
-    font-family: var(--font-body);
-    font-weight: var(--fw-book);
-    font-size: 36px;
+    font-family: var(--font-sitat);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-sitat);
     line-height: var(--lh-heading);
     color: var(--color-terrakotta);
-    white-space: normal;
   }
 
   .kilde-blokk {
@@ -174,7 +173,7 @@ for (let r = 0; r < RADER; r++) {
     }
 
     .sitat {
-      font-size: var(--fs-h4);
+      font-size: var(--fs-sitat);
     }
 
     .nyansattsitater-tittel {
