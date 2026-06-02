@@ -112,7 +112,7 @@
       return sec.id || 'Seksjon ' + (i + 1);
     }
 
-    let html = '<h3>Bakgrunnsfarge per seksjon</h3>';
+    let html = '<p>Bakgrunnsfarge per seksjon</p>';
     sections.forEach((sec, i) => {
       const opts = PALETTE
         .map(p => `<option value="${p.hex}">${p.label}</option>`)

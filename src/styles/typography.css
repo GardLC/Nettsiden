@@ -28,10 +28,10 @@ h2 {
   font-weight: var(--fw-book);
 }
 h3 {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h4);
 }
 .body-large {
-  font-size: var(--fs-body-large);
+  font-size: var(--fs-h4);
   line-height: var(--lh-body);
   max-width: 52ch;
 }

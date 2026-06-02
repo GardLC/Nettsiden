@@ -19,6 +19,7 @@
   /* Funksjonelle farger */
   --color-text: #000000;
   --color-text-muted: #6B6750;
+  --color-text-light: #ffffff;
   --color-bg: var(--color-sand-dyp);
   --color-link: var(--color-accent);
   --color-link-hover: var(--color-oliven-dyp);
@@ -27,19 +28,17 @@
   /* Skrifttyper */
 --font-display: alfabet, sans-serif;
 --font-body: alfabet, sans-serif;
---font-serif: "Courier New", Courier, monospace;
+--font-sitat: "Courier New", Courier, monospace;
 
-  /* Type scale */
-  --fs-display: clamp(3rem, 6vw, 5.5rem);
-  --fs-h1: clamp(2.25rem, 4vw, 3.5rem);
-  --fs-h2: clamp(2rem, 3vw, 2.5rem);
-  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
-  --fs-body-large: 1.625rem; /* 26px — basic medium */
-  --fs-body: 1.25rem;       /* 20px — basic paragraph */
-  --fs-small: 1.125rem;     /* 18px — tittel under sitat */
+  /* Type scale — fluid mellom 375px og 1200px */
+  --fs-h1:    clamp(2rem, 2.67vw + 1.375rem, 3.375rem); /* 54px @ 1200px — Alfabet regular */
+  --fs-h2:    clamp(1.625rem, 1.7vw + 1.225rem, 2.5rem); /* 40px @ 1200px — Alfabet light */
+  --fs-h4:    clamp(1.375rem, 0.73vw + 1.2rem, 1.75rem); /* 28px @ 1200px — Alfabet regular */
+  --fs-sitat: 1.5rem;   /* 24px — Courier */
+  --fs-body:  1.25rem;  /* 20px — Alfabet regular */
+  --fs-small: 1.125rem; /* 18px — kilder, under-titler */
 
   /* Linjehøyder */
-  --lh-display: 1.05;
   --lh-heading: 1.2;
   --lh-body: 1.6;
   --lh-small: 1.5;
