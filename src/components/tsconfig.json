@@ -1,0 +1,60 @@
+---
+---
+
+<section class="slik-jobber-vi" aria-labelledby="slik-jobber-vi-overskrift">
+  <div class="container">
+    <h2 id="slik-jobber-vi-overskrift">Slik jobber jeg</h2>
+    <div class="two-col">
+      <div class="slik-venstre">
+        <div class="slik-tekst">
+          <p>
+           Jeg kommer ikke med ferdige løsninger som skal passe for alle. Gjennom menneskeorientert designmetodikk finner jeg ut av problemene sammen med de ansatte. Det er de som vet hvilke utfordringer det er verdt å løse i sin egen arbeidshverdag.<p>
+  Vi starter med å forstå menneskenes behov, motivasjon og adferd. Med prinsipper som taktisk empati, iterasjon og samskaping sørger vi for at tiltakene fungerer i praksis, fordi de er forankret der arbeidet faktisk gjøres.
+          </p>
+        </div>
+        <a href="/slik-jobber-jeg" class="btn slik-les-mer">Les mer</a>
+      </div>
+      <div class="slik-bilde two-col-figur">
+        <img src="/pictures/papirfly.svg" alt="" aria-hidden="true" />
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .slik-jobber-vi {
+    padding-block: calc(var(--section-spacing) * 1.5);
+  }
+
+  .slik-venstre {
+    max-width: var(--content-width);
+  }
+
+  .slik-jobber-vi h2 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-regular);
+    font-family: var(--font-body);
+    line-height: var(--lh-heading);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .slik-tekst {
+    margin-bottom: 2.5rem;
+  }
+
+  .slik-tekst p {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-text);
+  }
+
+  .slik-bilde img {
+    width: clamp(200px, 30vw, 420px);
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .slik-bilde img {
+      width: clamp(200px, 60vw, 360px);
+    }
+  }
+</style>
