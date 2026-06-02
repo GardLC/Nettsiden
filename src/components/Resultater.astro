@@ -6,14 +6,12 @@
     <h2 id="resultater-overskrift" class="seksjon-overskrift">Når innfasingen er strukturert rundt ansattes behov</h2>
     <div class="stat">
       <span class="stat-tall">50%</span>
-      <div class="stat-detaljer">
-        <ul class="stat-liste">
-          <li>høyere produktivitet</li>
-          <li>kortere innfasingstid</li>
-        </ul>
-        <p class="stat-notat">effekten kan måles flere år senere</p>
-      </div>
+      <ul class="stat-liste">
+        <li>høyere produktivitet</li>
+        <li>kortere innfasingstid</li>
+      </ul>
     </div>
+    <p class="stat-notat">effekten kan måles flere år senere</p>
   </div>
   <footer class="kilde-blokk">
     <p class="kilde-tekst">Klein &amp; Heuser 2008<br>A. Hirsch 2017</p>
@@ -48,17 +46,11 @@
 
   .stat-tall {
     font-family: var(--font-body);
-    font-size: var(--fs-h1);
+    font-size: 3.375rem;
     line-height: var(--lh-heading);
     font-weight: var(--fw-regular);
     color: #000000;
     flex: 0 0 40%;
-  }
-
-  .stat-detaljer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
 
   .stat-liste {
@@ -82,9 +74,11 @@
 
   .stat-notat {
     font-family: var(--font-body);
-    font-weight: var(--fw-regular); /* 400 */
+    font-weight: var(--fw-regular);
     font-size: 2.0064rem;
-    color: var(--color-text);       /* svart */
+    color: var(--color-text);
+    margin-top: 1.5rem;
+    max-width: var(--content-width);
   }
 
   .kilde-blokk {
