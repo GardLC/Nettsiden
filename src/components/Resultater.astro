@@ -10,8 +10,8 @@
         <li>høyere produktivitet</li>
         <li>kortere innfasingstid</li>
       </ul>
+      <p class="stat-notat">effekten kan måles flere år senere</p>
     </div>
-    <p class="stat-notat">effekten kan måles flere år senere</p>
   </div>
   <footer class="kilde-blokk">
     <p class="kilde-tekst">Klein &amp; Heuser 2008<br>A. Hirsch 2017</p>
@@ -38,9 +38,11 @@
   }
 
   .stat {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
     max-width: var(--content-width);
   }
 
@@ -50,7 +52,8 @@
     line-height: var(--lh-heading);
     font-weight: var(--fw-regular);
     color: #000000;
-    flex: 0 0 40%;
+    grid-row: 1 / 3;
+    align-self: center;
   }
 
   .stat-liste {
@@ -77,8 +80,6 @@
     font-weight: var(--fw-regular);
     font-size: 2.0064rem;
     color: var(--color-text);
-    margin-top: 1.5rem;
-    max-width: var(--content-width);
   }
 
   .kilde-blokk {
