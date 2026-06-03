@@ -71,7 +71,7 @@
      --col-gap: luft MELLOM kolonner (overstyr per instans med inline style).
      --two-col-collapse: container-bredden der to kolonner blir til én.
      --measure: lesbar tekstbredde. */
-  --col-gap: clamp(var(--space-l), 5vw, var(--space-2xl));
+  --col-gap: clamp(var(--space-xl), 7vw, var(--space-3xl));
   --two-col-collapse: 48rem;
   --measure: 65ch;
 }
