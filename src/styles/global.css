@@ -140,11 +140,13 @@ a:focus-visible {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-inline-end: calc(-1 * var(--gutter));
 }
 
 @media (max-width: 700px) {
   .two-col-figur {
     justify-content: center;
+    margin-inline-end: 0;
   }
 }
 

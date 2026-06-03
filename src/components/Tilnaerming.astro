@@ -21,7 +21,6 @@
 <style>
   .tilnaerming {
     padding-block: var(--headline-anchor) var(--section-spacing);
-    overflow: hidden;
   }
 
   .tilnaerming h2 {
@@ -38,16 +37,8 @@
   }
 
   .tilnaerming-bilde img {
-    width: clamp(276px, 69vw, 552px);
-    max-width: none;
+    width: 100%;
     height: auto;
-    transform: translateX(160px);
-  }
-
-  @media (min-width: 700px) {
-    .tilnaerming-bilde img {
-      width: clamp(276px, 41vw, 552px);
-    }
   }
 
   .tilnaerming-tekst {
