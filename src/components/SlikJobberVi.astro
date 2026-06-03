@@ -4,7 +4,7 @@
 <section class="slik-jobber-vi" aria-labelledby="slik-jobber-vi-overskrift">
   <div class="content-grid">
     <h2 id="slik-jobber-vi-overskrift">Slik jobber jeg <br> med utviklingsarbeid</h2>
-    <div class="two-col">
+    <div class="two-col" style="--two-col-template: 5fr 4fr">
       <div class="slik-venstre">
         <div class="slik-tekst">
           <p>
@@ -22,17 +22,13 @@
 </section>
 <style>
   .slik-jobber-vi {
-    padding-block: calc(var(--section-spacing) * 1.5);
-  }
-
-  .slik-venstre {
-    max-width: 48ch;
+    padding-block: var(--space-2xl) var(--space-3xl);
   }
 
   .slik-jobber-vi h2 {
     font-size: var(--fs-h1);
     font-weight: var(--fw-regular);
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-xl);
   }
 
   .slik-tekst {

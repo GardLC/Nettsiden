@@ -4,7 +4,7 @@
 <section class="tilnaerming" aria-labelledby="tilnaerming-overskrift">
   <div class="content-grid">
     <h2 id="tilnaerming-overskrift">Fra antagelser<br class="bryt-d"> til taktisk empati</h2>
-    <div class="two-col">
+    <div class="two-col" style="--two-col-template: 5fr 4fr">
       <div class="tilnaerming-tekst">
         <p>Mange innfasingsprogram tar utgangspunkt i organisasjonens egne behov, og i beste fall antagelser om hva den nyansatte trenger.</p>
         <p>Vi starter et annet sted - gjennom samtaler, observasjoner og andre øvelser lærer vi å forstå ansatte og lederes frustrasjoner, motivasjoner og adferd..</p>
@@ -20,7 +20,7 @@
 
 <style>
   .tilnaerming {
-    padding-block: var(--headline-anchor) var(--section-spacing);
+    padding-block: var(--space-2xl) var(--space-3xl);
   }
 
   .tilnaerming h2 {
@@ -28,7 +28,7 @@
     font-weight: var(--fw-regular);
     font-family: var(--font-body);
     line-height: 1.4;
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-xl);
   }
 
   .tilnaerming-bilde {
@@ -52,6 +52,5 @@
     color: var(--color-text);
     font-size: var(--fs-body);
     line-height: var(--lh-body);
-    max-width: 52ch;
   }
 </style>
