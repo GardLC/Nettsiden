@@ -12,17 +12,16 @@
       </ul>
       <p class="stat-notat">effekten kan måles flere år senere</p>
     </div>
+    <footer class="kilde-blokk">
+      <p class="kilde-tekst">Klein &amp; Heuser 2008<br>A. Hirsch 2017</p>
+    </footer>
   </div>
-  <footer class="kilde-blokk">
-    <p class="kilde-tekst">Klein &amp; Heuser 2008<br>A. Hirsch 2017</p>
-  </footer>
 </section>
 
 <style>
   .resultater {
     padding-block: var(--headline-anchor) var(--section-spacing);
     background-color: #8c8d75;
-    min-height: calc(100vh - 3cm);
   }
 
   .seksjon-overskrift {
@@ -83,8 +82,7 @@
   }
 
   .kilde-blokk {
-    margin-top: auto;               /* skyver til bunnen */
-    padding-inline: var(--gutter);
+    margin-top: clamp(2rem, 4vw, 3rem);
     text-align: right;
   }
 
