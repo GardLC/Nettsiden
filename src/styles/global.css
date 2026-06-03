@@ -120,18 +120,39 @@ a:focus-visible {
   padding-inline: var(--gutter);
 }
 
+.content-grid {
+  --content-max: var(--max-width);
+  --measure-max: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  container-type: inline-size;
+  container-name: layout;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [wide-start] minmax(0, calc((var(--content-max) - var(--measure-max)) / 2))
+    [content-start] min(100% - var(--gutter) * 2, var(--measure-max)) [content-end]
+    minmax(0, calc((var(--content-max) - var(--measure-max)) / 2)) [wide-end]
+    minmax(var(--gutter), 1fr) [full-end];
+}
+
+.content-grid > * { grid-column: wide; }
+.content-grid > .measure { grid-column: content; }
+.content-grid > .full { grid-column: full; }
+
+.full.content-grid > * { grid-column: wide; }
+.full.content-grid > .measure { grid-column: content; }
+
 /* Felles to-kolonner layout */
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: start;
+  grid-template-columns: var(--two-col-template, 1fr 1fr);
+  gap: var(--col-gap);
+  align-items: var(--two-col-align, start);
 }
 
-@media (max-width: 700px) {
-  .two-col {
-    grid-template-columns: 1fr;
-  }
+@container layout (max-width: 48rem) {
+  .two-col { grid-template-columns: 1fr; }
 }
 
 /* Høyrekolonne i .two-col: innholdet fyller sitt eget grid-spor.
@@ -143,14 +164,17 @@ a:focus-visible {
 }
 
 section {
-  padding-block: var(--headline-anchor) var(--section-spacing);
+  padding-block: var(--space-2xl) var(--space-3xl);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   scroll-margin-top: var(--headline-anchor);
-  background-color: var(--color-bg-box);
   border-radius: 0;
-  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  margin-bottom: var(--space-xs);
+}
+
+main > section {
+  background-color: var(--color-bg-box);
 }
 
 .fullscreen {

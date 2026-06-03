@@ -24,7 +24,7 @@ for (let r = 0; r < RADER; r++) {
 ---
 
 <section class="nyansattsitater" aria-labelledby="nyansattsitater-overskrift">
-  <div class="container">
+  <div class="content-grid">
     <h2 id="nyansattsitater-overskrift" class="nyansattsitater-tittel">
       Hva de nyansatte sier
     </h2>
@@ -80,7 +80,7 @@ for (let r = 0; r < RADER; r++) {
     font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
     color: #000000;
-    margin: 0 0 3rem 0;
+    margin: 0 0 var(--space-xl) 0;
   }
 
   .venstre-kolonne {
@@ -92,7 +92,7 @@ for (let r = 0; r < RADER; r++) {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: var(--space-xl);
   }
 
   .sitat-blokk {
@@ -115,7 +115,7 @@ for (let r = 0; r < RADER; r++) {
   }
 
   .nyansattsitater .two-col {
-    margin-top: 60px;
+    margin-block-start: var(--space-2xl);
   }
 
   .stat-blokk {
@@ -149,7 +149,7 @@ for (let r = 0; r < RADER; r++) {
   }
 
   .kilde-blokk {
-    margin-top: 3rem;
+    margin-block-start: var(--space-xl);
     padding-inline: var(--gutter);
     align-self: flex-end;
   }
