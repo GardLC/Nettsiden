@@ -115,8 +115,14 @@ for (let r = 0; r < RADER; r++) {
   }
 
   .nyansattsitater .two-col {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     margin-top: 60px;
+  }
+
+  @media (max-width: 700px) {
+    .nyansattsitater .two-col {
+      grid-template-columns: 1fr;
+    }
   }
 
   .stat-blokk {
