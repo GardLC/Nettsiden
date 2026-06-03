@@ -72,8 +72,6 @@ for (let r = 0; r < RADER; r++) {
 <style>
   .nyansattsitater {
     padding-block-end: 6rem;
-    position: relative;
-    min-height: calc(100vh - 3cm);
   }
 
   .nyansattsitater-tittel {
@@ -127,8 +125,6 @@ for (let r = 0; r < RADER; r++) {
     align-items: center;
     gap: 1.5rem;
     text-align: center;
-    width: 100%;
-    justify-self: end;
   }
 
   .stat-tall {
@@ -154,9 +150,9 @@ for (let r = 0; r < RADER; r++) {
   }
 
   .kilde-blokk {
-    position: absolute;
-    bottom: 2rem;
-    right: var(--gutter);
+    margin-top: 3rem;
+    padding-inline: var(--gutter);
+    align-self: flex-end;
   }
 
   .kilde-tekst {
