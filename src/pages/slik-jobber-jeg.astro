@@ -75,7 +75,7 @@ const metodesteg = [
 >
   <main id="hovedinnhold">
     <article class="side-innhold">
-      <div class="content-grid" style="--content-max: 1700px">
+      <div class="content-grid">
         <header class="side-header">
           <h1>Slik jobber jeg</h1>
           <p class="body-large side-ingress">
@@ -93,7 +93,7 @@ const metodesteg = [
         </section>
 
         <!-- Metode -->
-        <section class="metode-seksjon" aria-labelledby="metode-overskrift">
+        <section class="metode-seksjon full" aria-labelledby="metode-overskrift">
           <h2 id="metode-overskrift" class="seksjon-etikkett small">Designfaser tilpasset HR</h2>
           <ol class="metode-liste" role="list">
             {metodesteg.map((steg, i) => (
@@ -160,7 +160,9 @@ const metodesteg = [
 
   /* Metode */
   .metode-seksjon {
-    /* Ingen max-width — bruker full wide-kolonne (opp til 1400px) */
+    width: min(1700px, 100%);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
   }
 
   .metode-seksjon .seksjon-etikkett {
