@@ -99,7 +99,8 @@ const metodesteg = [
             {metodesteg.map((steg, i) => (
               <li class="metode-steg">
                 <div class="steg-ikon-wrapper">
-                  <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
+                  <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true"
+                    style={i === 2 ? 'transform: scale(1.2); transform-origin: bottom center' : i === 3 ? 'transform: scale(1.4); transform-origin: bottom center' : undefined} />
                 </div>
                 <div class="steg-header">
                   <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
