@@ -1,4 +1,4 @@
----
+r---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 import Accordion from '../components/Accordion.astro';
@@ -13,7 +13,7 @@ const prinsipperItems = [
     forklaring: 'Strategisk design tar utgangspunkt i behovene, erfaringene og situasjonene til menneskene tjenestene er til for. Innsikt fra ansatte og ledere brukes aktivt for å skape løsninger som svarer til deres behov.',
   },
   {
-    tittel: 'Samskapende',
+    tittel: 'Inkluderende',
     forklaring: 'Når ansatte involveres i både problemdefinering og nyskaping, bidrar de som eksperter på sine arbeidshverdager. Det gir bedre løsninger og endringsprosesser enklere. Vi fremmer kraften av tverrfaglig samarbeid, og involverer relevante aktører gjennom hele prosessen.',
   },
   {
@@ -34,22 +34,31 @@ const metodesteg = [
   {
     navn: 'Forstå og ramme inn',
     ikon: '/pictures/fase1.svg',
-    forklaring: 'Vi går i dybden på menneskene og konteksten før vi definerer problemet. Innsikt fra observasjoner, samtaler og innhentet informasjon formes til en presis problemstilling som styrer alt arbeidet videre. Med ny informasjon vil problemstillingen endres.',
+    forklaring: [
+      'Vi går i dybden på menneskene og konteksten før vi definerer problemet. Innsikt fra observasjoner, samtaler og innhentet informasjon formes til en presis problemstilling som viser retning for videre arbeid.',
+      'Med ny informasjon endrer vi problemstillingen underveis.',
+    ],
   },
   {
     navn: 'Utforske muligheter',
     ikon: '/pictures/fase2.svg',
-    forklaring: 'Vi frigjør de kreative kreftene som bor i organisasjonen og åpner opp for å lete bredt etter mange mulige løsninger før vi velger. Poenget er å utforske flere retninger sammen, slik at vi finner svar som ikke var åpenbare fra start.',
+    forklaring: [
+      'Vi frigjør de kreative kreftene som bor i organisasjonen og åpner opp for å lete bredt etter mange mulige løsninger før vi velger. Poenget er å utforske flere retninger sammen, slik at vi finner svar som ikke var åpenbare fra start.',
+    ],
   },
   {
     navn: 'Teste og justere',
     ikon: '/pictures/fase3.svg',
-    forklaring: 'Vi bygger raske og enkle prototyper og prøver dem på ansatte. Tilbakemeldingene avdekker hva som faktisk fungerer, slik at vi kan justere før vi investerer tungt i én retning.',
+    forklaring: [
+      'Vi bygger raske og enkle prototyper og prøver dem på ansatte. Tilbakemeldingene avdekker hva som faktisk fungerer, slik at vi kan justere før vi investerer tungt i én retning.',
+    ],
   },
   {
     navn: 'Implementere, lede og engasjere',
     ikon: '/pictures/fase4.svg',
-    forklaring: 'Vi tar løsningen ut i virkeligheten sammen med dem som har vært med å forme den. Når mellomledere og medarbeidere allerede har eierskap, handler implementering om å holde engasjementet levende slik at endringen fester seg og varer over tid.',
+    forklaring: [
+      'Vi tar løsningen ut i virkeligheten og de som skal leve med den. Når mellomledere og medarbeidere allerede har eierskap, handler implementering i større grad om å holde engasjementet levende slik at endringen fester seg og varer over tid.',
+    ],
   },
 ];
 ---
@@ -87,7 +96,9 @@ const metodesteg = [
                 <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
                 <div class="steg-tekst">
                   <p class="steg-navn">{steg.navn}</p>
-                  <p class="steg-forklaring">{steg.forklaring}</p>
+                  {steg.forklaring.map(avsnitt => (
+                    <p class="steg-forklaring">{avsnitt}</p>
+                  ))}
                 </div>
               </li>
             ))}
@@ -178,7 +189,7 @@ const metodesteg = [
 
   .metode-steg:nth-child(3) .steg-ikon,
   .metode-steg:nth-child(4) .steg-ikon {
-    height: 6.4rem;
+    height: 10rem;
   }
 
   .steg-navn {
