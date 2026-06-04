@@ -57,7 +57,9 @@ const metodesteg = [
     navn: 'Implementere, lede og engasjere',
     ikon: '/pictures/fase4.svg',
     forklaring: [
-      'Vi tar løsningen ut i virkeligheten og de som skal leve med den. Når mellomledere og medarbeidere allerede har eierskap, handler implementering i større grad om å holde engasjementet levende slik at endringen fester seg og varer over tid.',
+      'Her stopper gode løsninger ofte opp, fordi hverdagen er vanskeligere å endre enn å tegne.',
+      'Når ledere og ansatte har vært med å forme løsningen, går de fra å være mål for endringen til å bli arkitekter bak den.',
+      'Det som forankrer den, er at noen leder prosessen videre og forsterker de nye arbeidsmåtene til de er blitt det normale.',
     ],
   },
 ];
@@ -93,7 +95,9 @@ const metodesteg = [
             {metodesteg.map((steg, i) => (
               <li class="metode-steg">
                 <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
-                <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
+                <div class="steg-ikon-wrapper">
+                  <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
+                </div>
                 <div class="steg-tekst">
                   <p class="steg-navn">{steg.navn}</p>
                   {steg.forklaring.map(avsnitt => (
@@ -179,17 +183,18 @@ const metodesteg = [
     margin-bottom: var(--space-xl);
   }
 
-  .steg-ikon {
-    display: block;
-    height: 8rem;
-    width: auto;
-    max-width: 100%;
+  .steg-ikon-wrapper {
+    height: 10rem;
+    display: flex;
+    align-items: flex-end;
     margin-bottom: var(--space-m);
   }
 
-  .metode-steg:nth-child(3) .steg-ikon,
-  .metode-steg:nth-child(4) .steg-ikon {
-    height: 10rem;
+  .steg-ikon {
+    display: block;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
   }
 
   .steg-navn {
