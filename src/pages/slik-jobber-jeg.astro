@@ -102,8 +102,8 @@ const metodesteg = [
                 <div class="steg-ikon-wrapper">
                   <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
                 </div>
-                <div class="steg-tekst">
-                  <p class="steg-navn">{steg.navn}</p>
+                <p class="steg-navn">{steg.navn}</p>
+                <div class="steg-body">
                   {steg.forklaring.map(avsnitt => (
                     <p class="steg-forklaring">{avsnitt}</p>
                   ))}
@@ -169,12 +169,14 @@ const metodesteg = [
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--col-gap);
+    column-gap: var(--col-gap);
+    row-gap: 0;
   }
 
   .metode-steg {
-    display: flex;
-    flex-direction: column;
+    grid-row: span 4;
+    display: grid;
+    grid-template-rows: subgrid;
   }
 
   .steg-nummer {
@@ -206,7 +208,11 @@ const metodesteg = [
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
     line-height: var(--lh-heading);
-    margin-bottom: var(--space-s);
+    align-self: end;
+  }
+
+  .steg-body {
+    margin-top: var(--space-s);
   }
 
   .steg-forklaring {
