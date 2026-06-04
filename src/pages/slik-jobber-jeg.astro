@@ -31,10 +31,26 @@ const prinsipperItems = [
 ].map((p, i) => ({ ...p, etikett: String(i + 1).padStart(2, '0') }));
 
 const metodesteg = [
-  { navn: 'Forstå og ramme inn' },
-  { navn: 'Utforske mulighetsrommet' },
-  { navn: 'Teste' },
-  { navn: 'Implementere' },
+  {
+    navn: 'Forstå og ramme inn',
+    ikon: '/pictures/fase1.svg',
+    forklaring: 'Vi går i dybden på menneskene og konteksten før vi definerer problemet. Innsikt fra observasjoner, samtaler og innhentet informasjon formes til en presis problemstilling som styrer alt arbeidet videre. Med ny informasjon vil problemstillingen endres.',
+  },
+  {
+    navn: 'Utforske muligheter',
+    ikon: '/pictures/fase2.svg',
+    forklaring: 'Vi frigjør de kreative kreftene som bor i organisasjonen og åpner opp for å lete bredt etter mange mulige løsninger før vi velger. Poenget er å utforske flere retninger sammen, slik at vi finner svar som ikke var åpenbare fra start.',
+  },
+  {
+    navn: 'Teste og justere',
+    ikon: '/pictures/fase3.svg',
+    forklaring: 'Vi bygger raske og enkle prototyper og prøver dem på ansatte. Tilbakemeldingene avdekker hva som faktisk fungerer, slik at vi kan justere før vi investerer tungt i én retning.',
+  },
+  {
+    navn: 'Implementere, lede og engasjere',
+    ikon: '/pictures/fase4.svg',
+    forklaring: 'Vi tar løsningen ut i virkeligheten sammen med dem som har vært med å forme den. Når mellomledere og medarbeidere allerede har eierskap, handler implementering om å holde engasjementet levende slik at endringen fester seg og varer over tid.',
+  },
 ];
 ---
 
@@ -68,11 +84,10 @@ const metodesteg = [
             {metodesteg.map((steg, i) => (
               <li class="metode-steg">
                 <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
+                <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
                 <div class="steg-tekst">
                   <p class="steg-navn">{steg.navn}</p>
-                  <p class="body-large steg-forklaring">
-                    <!-- PLASSHOLDER: forklarende setning for {steg.navn} -->
-                  </p>
+                  <p class="steg-forklaring">{steg.forklaring}</p>
                 </div>
               </li>
             ))}
@@ -111,10 +126,6 @@ const metodesteg = [
     font-size: var(--fs-body);
   }
 
-  .steg-forklaring {
-    font-size: var(--fs-body);
-  }
-
   .seksjon-etikkett {
     color: var(--color-text);
     margin-bottom: 2rem;
@@ -128,20 +139,19 @@ const metodesteg = [
 
   /* Metode */
   .metode-seksjon {
-    max-width: var(--content-width);
+    /* Ingen max-width — bruker full wide-kolonne (opp til 1400px) */
   }
 
   .metode-liste {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--col-gap);
   }
 
   .metode-steg {
-    padding: 2rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
   }
 
   .steg-nummer {
@@ -151,22 +161,40 @@ const metodesteg = [
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1;
     color: var(--color-text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-m);
+    text-align: center;
+  }
+
+  .steg-ikon {
+    display: block;
+    height: 8rem;
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
+    margin-bottom: var(--space-m);
   }
 
   .steg-navn {
     font-family: var(--font-body);
     font-weight: var(--fw-book);
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h4);
     line-height: var(--lh-heading);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-s);
   }
 
   .steg-forklaring {
-    color: var(--color-text-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-text);
   }
 
-  @media (max-width: 600px) {
+  @container layout (max-width: 48rem) {
+    .metode-liste {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container layout (max-width: 30rem) {
     .metode-liste {
       grid-template-columns: 1fr;
     }
