@@ -160,7 +160,8 @@ const metodesteg = [
 
   /* Metode */
   .metode-seksjon {
-    /* Ingen max-width — bruker full wide-kolonne (opp til 1400px) */
+    grid-column: full;
+    padding-inline: var(--gutter);
   }
 
   .metode-seksjon .seksjon-etikkett {
@@ -182,19 +183,20 @@ const metodesteg = [
   }
 
   .steg-header {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-xs);
+    position: relative;
     align-self: end;
   }
 
   .steg-nummer {
+    position: absolute;
+    right: calc(100% + var(--space-xs));
+    top: 0;
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
     line-height: var(--lh-heading);
     color: var(--color-text-muted);
-    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .steg-ikon-wrapper {
