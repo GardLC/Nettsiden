@@ -98,13 +98,11 @@ const metodesteg = [
           <ol class="metode-liste" role="list">
             {metodesteg.map((steg, i) => (
               <li class="metode-steg">
+                <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
                 <div class="steg-ikon-wrapper">
                   <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
                 </div>
-                <div class="steg-header">
-                  <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
-                  <p class="steg-navn">{steg.navn}</p>
-                </div>
+                <p class="steg-navn">{steg.navn}</p>
                 <div class="steg-body">
                   {steg.forklaring.map(avsnitt => (
                     <p class="steg-forklaring">{avsnitt}</p>
@@ -160,8 +158,7 @@ const metodesteg = [
 
   /* Metode */
   .metode-seksjon {
-    grid-column: full;
-    padding-inline: var(--gutter);
+    /* Ingen max-width — bruker full wide-kolonne (opp til 1400px) */
   }
 
   .metode-seksjon .seksjon-etikkett {
@@ -177,26 +174,19 @@ const metodesteg = [
   }
 
   .metode-steg {
-    grid-row: span 3;
+    grid-row: span 4;
     display: grid;
     grid-template-rows: subgrid;
   }
 
-  .steg-header {
-    position: relative;
-    align-self: end;
-  }
-
   .steg-nummer {
-    position: absolute;
-    right: calc(100% + var(--space-xs));
-    top: 0;
+    display: block;
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
-    line-height: var(--lh-heading);
+    line-height: 1;
     color: var(--color-text-muted);
-    white-space: nowrap;
+    margin-bottom: var(--space-xl);
   }
 
   .steg-ikon-wrapper {
@@ -218,6 +208,7 @@ const metodesteg = [
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
     line-height: var(--lh-heading);
+    align-self: end;
   }
 
   .steg-body {
