@@ -75,7 +75,7 @@ const metodesteg = [
 >
   <main id="hovedinnhold">
     <article class="side-innhold">
-      <div class="content-grid">
+      <div class="content-grid" style="--content-max: 1700px">
         <header class="side-header">
           <h1>Slik jobber jeg</h1>
           <p class="body-large side-ingress">
@@ -98,11 +98,13 @@ const metodesteg = [
           <ol class="metode-liste" role="list">
             {metodesteg.map((steg, i) => (
               <li class="metode-steg">
-                <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
                 <div class="steg-ikon-wrapper">
                   <img class="steg-ikon" src={steg.ikon} alt="" aria-hidden="true" />
                 </div>
-                <p class="steg-navn">{steg.navn}</p>
+                <div class="steg-header">
+                  <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
+                  <p class="steg-navn">{steg.navn}</p>
+                </div>
                 <div class="steg-body">
                   {steg.forklaring.map(avsnitt => (
                     <p class="steg-forklaring">{avsnitt}</p>
@@ -174,19 +176,9 @@ const metodesteg = [
   }
 
   .metode-steg {
-    grid-row: span 4;
+    grid-row: span 3;
     display: grid;
     grid-template-rows: subgrid;
-  }
-
-  .steg-nummer {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: var(--fw-regular);
-    font-size: 1.8125rem;
-    line-height: 1;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xl);
   }
 
   .steg-ikon-wrapper {
@@ -203,12 +195,27 @@ const metodesteg = [
     max-width: 100%;
   }
 
+  .steg-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    align-self: end;
+  }
+
+  .steg-nummer {
+    font-family: var(--font-display);
+    font-weight: var(--fw-regular);
+    font-size: 1.8125rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
   .steg-navn {
     font-family: var(--font-body);
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
     line-height: var(--lh-heading);
-    align-self: end;
   }
 
   .steg-body {
