@@ -196,19 +196,19 @@ const metodesteg = [
   }
 
   .steg-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
+    position: relative;
     align-self: end;
   }
 
   .steg-nummer {
+    position: absolute;
+    right: calc(100% + 0.5rem);
+    top: 0;
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
-    line-height: 1;
+    line-height: var(--lh-heading);
     color: var(--color-text-muted);
-    flex-shrink: 0;
   }
 
   .steg-navn {
@@ -216,6 +216,7 @@ const metodesteg = [
     font-weight: var(--fw-regular);
     font-size: 1.8125rem;
     line-height: var(--lh-heading);
+    margin: 0;
   }
 
   .steg-body {
@@ -237,6 +238,16 @@ const metodesteg = [
   @container layout (max-width: 30rem) {
     .metode-liste {
       grid-template-columns: 1fr;
+    }
+
+    .steg-header {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .steg-nummer {
+      position: static;
     }
   }
 </style>
