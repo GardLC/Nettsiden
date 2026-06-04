@@ -104,7 +104,7 @@ const metodesteg = [
                 </div>
                 <div class="steg-header">
                   <span class="steg-nummer" aria-hidden="true">{i + 1}</span>
-                  <p class="steg-navn">{steg.navn}</p>
+                  <p class="steg-navn" set:html={i === 3 ? 'Implementere, lede<br>og engasjere' : steg.navn} />
                 </div>
                 <div class="steg-body">
                   {steg.forklaring.map(avsnitt => (
@@ -206,7 +206,7 @@ const metodesteg = [
 
   .steg-nummer {
     position: absolute;
-    right: calc(100% + 0.5rem);
+    right: calc(100% + 1rem);
     top: 0;
     font-family: var(--font-display);
     font-weight: var(--fw-regular);
