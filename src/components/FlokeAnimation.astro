@@ -117,7 +117,7 @@
   function init() {
     var stage = document.getElementById('shapes-stage');
     var W = stage.offsetWidth  || window.innerWidth;
-    var H = stage.offsetHeight || window.innerHeight;
+    var H = Math.max(stage.offsetHeight, window.innerHeight);
     var scale = (W / 1600) * 1.1;
 
     Matter.Common.setDecomp(window.decomp);
