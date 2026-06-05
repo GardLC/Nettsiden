@@ -127,3 +127,42 @@ const punkter = [
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector<HTMLElement>('.monster');
+  if (section) {
+    const heading = section.querySelector<HTMLElement>('.content-grid > h2');
+    const punkter = section.querySelectorAll<HTMLElement>('.monster-punkt');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 70%',
+      },
+    });
+
+    if (heading) {
+      tl.from(heading, {
+        opacity: 0,
+        filter: 'blur(14px)',
+        y: 10,
+        duration: 1.1,
+        ease: 'power2.out',
+      });
+    }
+
+    tl.from(punkter, {
+      opacity: 0,
+      filter: 'blur(14px)',
+      y: 10,
+      duration: 1.1,
+      ease: 'power2.out',
+      stagger: 0.25,
+    }, '-=0.5');
+  }
+</script>

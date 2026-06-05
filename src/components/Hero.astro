@@ -34,6 +34,11 @@ import FlokeAnimation from './FlokeAnimation.astro';
   .hero .content-grid {
     position: relative;
     z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero .content-grid * {
+    pointer-events: auto;
   }
 
   .hero-tekst {

@@ -17,7 +17,7 @@
   .shapes-stage {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    pointer-events: auto;
   }
 
   :global(.shapes-stage .shape) {
@@ -26,6 +26,15 @@
     mix-blend-mode: multiply;
     opacity: 0.75;
     pointer-events: none;
+  }
+
+  :global(.shapes-stage .shape path) {
+    pointer-events: auto;
+    cursor: grab;
+  }
+
+  :global(.shapes-stage.is-dragging) {
+    cursor: grabbing;
   }
 
   :global(.shapes-stage .shape svg) {
@@ -57,7 +66,7 @@
       density:0.001, restitution:0.78, friction:0.05, frictionAir:0.003 },
     { id:'sp4', color:'#8c8d75',
       path:'M884.5 52.47L24.05 447.6 0 395.13 860.46 0l24.04 52.47z',
-      vw:885, vh:448, x:0.40, y:160, a:-0.20,
+      vw:885, vh:448, x:0.40, y:160, a:-0.42,
       density:0.003, restitution:0.04, friction:0.90, frictionAir:0.014 },
     { id:'sp1', color:'#8c8d75',
       path:'M305 391.55L143.52 451 0 59.45 161.48 0 305 391.55z',
@@ -115,7 +124,7 @@
     engine = Matter.Engine.create();
     engine.positionIterations = 10;
     engine.velocityIterations = 8;
-    engine.world.gravity.y = 0.65;
+    engine.world.gravity.y = 1.6;
 
     var maxY = H * 0.45;
 
@@ -127,7 +136,7 @@
       var startY = -Math.min(s.y, maxY);
       var body = makeBody(s, posX, startY, cf, scale);
       if (s.id === 'sp5') Matter.Body.setPosition(body, { x: W - 50, y: startY });
-      if (s.id === 'sp4') Matter.Body.setInertia(body, Infinity);
+      if (s.id === 'sp4') Matter.Body.setAngularVelocity(body, -0.025);
       bodies.push(body);
       Matter.World.add(engine.world, body);
     });
@@ -160,6 +169,34 @@
         '<path fill="' + s.color + '" d="' + s.path + '"/></svg>';
       stage.appendChild(el);
       elements.push({ el: el, w: w, h: h });
+    });
+
+    elements.forEach(function (info, i) {
+      var path = info.el.querySelector('path');
+      if (!path) return;
+      path.addEventListener('click', function () {
+        var body = bodies[i];
+        Matter.Body.setVelocity(body, {
+          x: (Math.random() - 0.5) * 20,
+          y: -(Math.random() * 14 + 7)
+        });
+        Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.5);
+      });
+    });
+
+    var mouse = Matter.Mouse.create(stage);
+    var mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: { stiffness: 0.2, damping: 0.1, render: { visible: false } },
+      collisionFilter: { mask: CAT_SHAPE | CAT_CHEVRON | CAT_OVAL }
+    });
+    Matter.World.add(engine.world, mouseConstraint);
+
+    Matter.Events.on(mouseConstraint, 'startdrag', function () {
+      stage.classList.add('is-dragging');
+    });
+    Matter.Events.on(mouseConstraint, 'enddrag', function () {
+      stage.classList.remove('is-dragging');
     });
 
     runner = Matter.Runner.create();
